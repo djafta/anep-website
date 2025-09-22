@@ -7,7 +7,7 @@ import Image from "next/image";
 import { ChevronRight, Filter, Search } from "lucide-react";
 
 import { Footer } from "@/app/footer";
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 
 type NewsArticle = {
   title: string;

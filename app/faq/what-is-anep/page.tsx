@@ -5,7 +5,7 @@ import { Link, Button } from "@heroui/react";
 import { ChevronLeft, ThumbsUp, ThumbsDown } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 
 const faqDetail = {
   question: "O que é a ANEP?",

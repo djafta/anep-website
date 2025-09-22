@@ -3,9 +3,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/app/about/header";
 import { Footer } from "@/app/footer";
 import { MissionModal } from "@/app/about/mission-modal";
+import { Header } from "@/components/header";
 
 export default function SobrePage() {
   const timelineEvents = [
@@ -64,9 +64,16 @@ export default function SobrePage() {
         </section>
 
         <section className="py-24 px-4">
-          <div className="max-w-7xl mx-auto max-w-5xl">
+          <div className="max-w-7xl mx-auto">
             <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.8 }}>
               <h2 className="text-4xl font-bold text-center mb-12">Nossa Visão</h2>
+              <div className={"pb-10"}>
+                <p className={"italic text-center text-gray-800 max-w-3xl mx-auto"}>
+                  {
+                    '"Estabelecer um Sistema de Educação Profissional de excelência que responda às crescentes exigências da competitividade global."'
+                  }
+                </p>
+              </div>
               <div className="grid md:grid-cols-3 gap-12">
                 <div className="text-center">
                   <div className="mb-6 inline-block p-4 bg-[#003B71] rounded-full">
@@ -134,7 +141,7 @@ export default function SobrePage() {
         </section>
 
         <section className="py-24 px-4 bg-gray-50">
-          <div className="max-w-7xl mx-auto max-w-5xl">
+          <div className="max-w-7xl mx-auto">
             <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.8 }}>
               <h2 className="text-4xl font-bold text-center mb-16">Nossa Jornada</h2>
               <div className="relative">
@@ -164,7 +171,7 @@ export default function SobrePage() {
         </section>
 
         <section className="py-24 px-4">
-          <div className="max-w-7xl mx-auto max-w-5xl">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="text-center"
@@ -199,17 +206,18 @@ export default function SobrePage() {
         </section>
 
         <section className="py-24 px-4 bg-[#003B71] text-white">
-          <div className="max-w-7xl mx-auto max-w-5xl">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               animate={{ opacity: 1, y: 0 }}
               className="text-center"
               initial={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold mb-8">Junte-se à Nossa Missão</h2>
-              <p className="text-xl mb-12 max-w-3xl mx-auto">
-                Seja parte da transformação da educação profissional. Juntos, podemos construir um futuro mais
-                qualificado e próspero para todos.
+              <h2 className="text-4xl font-bold mb-8">Nossa Missão</h2>
+              <p className="text-md mb-12 mx-auto italic">
+                {
+                  '"Regular a educação profissional, com a participação dos parceiros sociais, para o desenvolvimento de um capital humano competitivo."'
+                }
               </p>
             </motion.div>
           </div>

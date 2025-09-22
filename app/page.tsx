@@ -6,7 +6,7 @@ import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { AtomIcon, BuildingIcon, ChevronRight, CompassIcon, HeartIcon, NetworkIcon, TractorIcon } from "lucide-react";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 export default function HomePage() {

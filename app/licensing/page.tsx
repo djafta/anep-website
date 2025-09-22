@@ -17,7 +17,7 @@ import {
   Users,
 } from "lucide-react";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 export default function LicenciamentoAcreditacaoPage() {

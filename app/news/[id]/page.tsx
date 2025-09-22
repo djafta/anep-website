@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Tag, ThumbsDown, ThumbsUp, User } from "lucide-react";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 import "@/styles/globals.css";

@@ -5,7 +5,7 @@ import { Accordion, AccordionItem, Button, Input, Link } from "@heroui/react";
 import { ChevronRight, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 
 const faqCategories = [
   {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 const contacts = {

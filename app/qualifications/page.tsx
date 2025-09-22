@@ -15,7 +15,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 const featuredQualifications = [

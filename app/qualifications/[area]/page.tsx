@@ -5,7 +5,7 @@ import { Button, Card, CardBody, Dropdown, DropdownItem, DropdownMenu, DropdownT
 import { ChevronDown, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/app/header";
+import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
 
 const qualifications = [
