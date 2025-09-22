@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { Button, Card, CardBody, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Input } from "@heroui/react";
 import { ChevronDown, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Header } from "@/components/header";
 import { Footer } from "@/app/footer";
+
+const areas: { [key: string]: string } = {
+  engenharia: "Engenharia",
+  saude: "Saúde",
+  administracao: "Administração",
+  agricultura: "Agricultura",
+  turismo: "Turismo",
+  "tecnologia-da-informacao": "Tecnologia da Informação",
+};
 
 const qualifications = [
   {
@@ -61,14 +70,18 @@ const qualifications = [
 
 const levels = ["Nível 3", "Nível 4", "Nível 5"];
 
-export default function QualificationsPage() {
+export default function QualificationsPage({ params }: { params: Promise<{ area: string }> }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("Todos Níveis");
+
+  const p = use(params);
+  const area = areas[p.area];
 
   const filteredQualifications = qualifications.filter(
     (qual) =>
       qual.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedLevel === "Todos Níveis" || qual.level === selectedLevel),
+      (selectedLevel === "Todos Níveis" || qual.level === selectedLevel) &&
+      qual.category === area,
   );
 
   return (
@@ -76,7 +89,7 @@ export default function QualificationsPage() {
       <Header />
       <main className="pb-0 flex-1">
         <div className={"max-w-7xl mx-auto py-3 "}>
-          <h1 className={"text-5xl text-primary"}>Engenharia</h1>
+          <h1 className={"text-5xl text-primary"}>{area}</h1>
         </div>
         <div className={"max-w-7xl mx-auto "}>
           <motion.div
