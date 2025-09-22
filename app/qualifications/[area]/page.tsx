@@ -380,7 +380,7 @@ export default function QualificationsPage({ params }: { params: Promise<{ area:
               </DropdownMenu>
             </Dropdown>
           </motion.div>
-          <div className={"grid lg:grid-cols-3 gap-6 py-16"}>
+          <div className={"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-16"}>
             {filteredQualifications.map((qual, index) => (
               <motion.div
                 key={qual.id}
