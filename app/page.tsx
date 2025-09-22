@@ -11,10 +11,11 @@ import { Footer } from "@/app/footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
+      <div className={"grid-subtle w-screen h-screen absolute"} />
       <Header />
-      <main>
-        <section className="py-32">
+      <main className={"z-30 relative"}>
+        <section className="py-32 z-50 bg-transparent">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6">
@@ -47,7 +48,7 @@ export default function HomePage() {
         </section>
 
         {/* Key Numbers Section */}
-        <section className="py-20 border-y border-gray-200">
+        <section className="py-20 border-y border-gray-200 bg-background">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
