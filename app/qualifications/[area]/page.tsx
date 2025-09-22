@@ -339,7 +339,7 @@ export default function QualificationsPage({ params }: { params: Promise<{ area:
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
-      <main className="pb-0 flex-1">
+      <main className="pb-0 flex-1 px-4">
         <div className={"max-w-7xl mx-auto py-3 "}>
           <h1 className={"text-5xl text-primary"}>{area}</h1>
         </div>
@@ -380,7 +380,7 @@ export default function QualificationsPage({ params }: { params: Promise<{ area:
               </DropdownMenu>
             </Dropdown>
           </motion.div>
-          <div className={"grid grid-cols-3 gap-6 py-16"}>
+          <div className={"grid lg:grid-cols-3 gap-6 py-16"}>
             {filteredQualifications.map((qual, index) => (
               <motion.div
                 key={qual.id}
