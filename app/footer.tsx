@@ -45,6 +45,15 @@ export function Footer() {
                   Licenciamento
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-gray-600 hover:text-gray-900"
+                  href="/https://validar.anep.gov.mz"
+                  target={"_blank"}
+                >
+                  Validação de identidades
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
