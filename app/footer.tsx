@@ -48,7 +48,7 @@ export function Footer() {
               <li>
                 <Link
                   className="text-gray-600 hover:text-gray-900"
-                  href="/https://validar.anep.gov.mz"
+                  href="https://validar.anep.gov.mz"
                   target={"_blank"}
                 >
                   Validação de identidades
