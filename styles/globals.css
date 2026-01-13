@@ -19,16 +19,16 @@
   --popover-foreground: oklch(0.145 0 0);
 
   /* Cores principais */
-  --primary: #003B71;
+  --primary: #003b71;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
-  --secondary-foreground: #003B71;
+  --secondary-foreground: #003b71;
 
   /* Suportes */
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
-  --accent-foreground: #003B71;
+  --accent-foreground: #003b71;
   --destructive: oklch(0.577 0.245 27.325);
 
   /* Bordas e inputs */
@@ -46,10 +46,10 @@
   /* Sidebar */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #003B71;
+  --sidebar-primary: #003b71;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: #003B71;
+  --sidebar-accent-foreground: #003b71;
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
@@ -60,13 +60,13 @@
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
 
-  --card: #003B71;
+  --card: #003b71;
   --card-foreground: oklch(0.985 0 0);
-  --popover: #003B71;
+  --popover: #003b71;
   --popover-foreground: oklch(0.985 0 0);
 
   --primary: oklch(0.922 0 0);
-  --primary-foreground: #003B71;
+  --primary-foreground: #003b71;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
 
@@ -86,7 +86,7 @@
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
 
-  --sidebar: #003B71;
+  --sidebar: #003b71;
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
@@ -172,7 +172,8 @@
 }
 
 .grid-subtle {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 30px 30px;
 }
