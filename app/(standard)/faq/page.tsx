@@ -5,8 +5,6 @@ import { Accordion, AccordionItem, Button, Input, Link } from "@heroui/react";
 import { ChevronRight, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/components/header";
-
 const faqCategories = [
   {
     category: "Sobre a ANEP",
@@ -75,7 +73,6 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="max-w-7xl mx-auto px-4 py-12">
         <motion.h1
           animate={{ opacity: 1, y: 0 }}
@@ -141,31 +138,12 @@ export default function FAQPage() {
           <Button
             as={Link}
             className="bg-[#003B71] text-white font-medium hover:bg-[#003B71]/90 transition-colors"
-            href="/contato"
+            href="/contact"
           >
             Entre em Contato
           </Button>
         </motion.div>
       </main>
-
-      <footer className="bg-gray-50 border-t border-gray-200 py-12 mt-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-sm text-gray-500 mb-4">
-            &copy; 2024 Autoridade Nacional de Educação Profissional (ANEP). Todos os direitos reservados.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Link className="text-gray-400 hover:text-[#003B71] transition-colors text-xs" href="#">
-              Termos de Uso
-            </Link>
-            <Link className="text-gray-400 hover:text-[#003B71] transition-colors text-xs" href="#">
-              Política de Privacidade
-            </Link>
-            <Link className="text-gray-400 hover:text-[#003B71] transition-colors text-xs" href="#">
-              Contato
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

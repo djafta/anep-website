@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ChevronRight, Filter, Search } from "lucide-react";
 
-import { Footer } from "@/app/footer";
-import { Header } from "@/components/header";
-
 type NewsArticle = {
   title: string;
   date: string;
@@ -39,7 +36,6 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="mx-auto px-4 py-16 max-w-5xl">
         <motion.h1
           animate={{ opacity: 1, y: 0 }}
@@ -137,7 +133,6 @@ export default function NewsPage() {
           )}
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

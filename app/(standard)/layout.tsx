@@ -5,6 +5,8 @@ import localFont from "next/font/local";
 
 import "@/styles/globals.css";
 import { Providers } from "@/app/providers";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -16,12 +18,12 @@ export const viewport: Viewport = {
 const sfProText = localFont({
   src: [
     {
-      path: "../public/fonts/sf-pro-text/SF-Pro-Text-Regular.otf",
+      path: "../../public/fonts/sf-pro-text/SF-Pro-Text-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/sf-pro-text/SF-Pro-Text-Bold.otf",
+      path: "../../public/fonts/sf-pro-text/SF-Pro-Text-Bold.otf",
       weight: "700",
       style: "normal",
     },
@@ -42,7 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sfProText.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <main className={"relative"}>
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   );

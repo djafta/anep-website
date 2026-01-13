@@ -3,9 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { Footer } from "@/app/footer";
-import { MissionModal } from "@/app/about/mission-modal";
-import { Header } from "@/components/header";
+import { MissionModal } from "@/app/(standard)/about/mission-modal";
 
 export default function SobrePage() {
   const timelineEvents = [
@@ -43,7 +41,6 @@ export default function SobrePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="overflow-hidden">
         <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#003B71] to-[#0056a4]">
           <motion.div
@@ -223,7 +220,6 @@ export default function SobrePage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

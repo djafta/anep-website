@@ -7,7 +7,7 @@ import Image from "next/image";
 import { ArrowLeft, Calendar, Tag, ThumbsDown, ThumbsUp, User } from "lucide-react";
 
 import { Header } from "@/components/header";
-import { Footer } from "@/app/footer";
+import { Footer } from "@/components/footer";
 
 import "@/styles/globals.css";
 

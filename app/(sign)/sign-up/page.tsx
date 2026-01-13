@@ -5,7 +5,7 @@ import { Button, Input, Link } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Calendar, Mail, User } from "lucide-react";
 
-import { Header } from "@/app/sign-up/header";
+import { Header } from "@/app/(sign)/sign-up/header";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({

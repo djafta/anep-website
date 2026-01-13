@@ -5,8 +5,6 @@ import { Link, Button } from "@heroui/react";
 import { ChevronLeft, ThumbsUp, ThumbsDown } from "lucide-react";
 import { motion } from "framer-motion";
 
-import { Header } from "@/components/header";
-
 const faqDetail = {
   question: "O que é a ANEP?",
   answer: `
@@ -68,7 +66,6 @@ const faqDetail = {
 export default function FAQDetailPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="max-w-7xl mx-auto px-4 py-12">
         <motion.div
           animate={{ opacity: 1, y: 0 }}

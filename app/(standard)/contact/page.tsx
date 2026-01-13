@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
-import { Header } from "@/components/header";
-import { Footer } from "@/app/footer";
-
 const contacts = {
   phone: "+258 21 484 030",
 };
@@ -11,7 +8,6 @@ const contacts = {
 export default function Page() {
   return (
     <>
-      <Header />
       <main className="min-h-[calc(100vh-12rem)] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-semibold mb-12">Entrar em contacto</h1>
 
@@ -87,12 +83,11 @@ export default function Page() {
             Antes de entrar em contacto, consulte nossas perguntas frequentes para encontrar respostas rápidas para suas
             dúvidas.
           </p>
-          <Link className="text-blue-500 hover:underline font-medium" href="/suporte/faq">
+          <Link className="text-blue-500 hover:underline font-medium" href="/faq">
             Ver perguntas frequentes
           </Link>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

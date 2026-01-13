@@ -3,7 +3,6 @@
 import React from "react";
 import { Button, Card, CardBody, CardHeader } from "@heroui/react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   Award,
   BookOpen,
@@ -17,8 +16,7 @@ import {
   Users,
 } from "lucide-react";
 
-import { Header } from "@/components/header";
-import { Footer } from "@/app/footer";
+import { LicensingProcessCarousel } from "@/components/licensing-process-carousel";
 
 export default function LicenciamentoAcreditacaoPage() {
   const licenseTypes = [
@@ -158,7 +156,6 @@ export default function LicenciamentoAcreditacaoPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <main className="overflow-hidden">
         <section className="relative py-36 bg-gradient-to-r from-[#003B71] to-[#0056a4]">
           <motion.div
@@ -201,70 +198,10 @@ export default function LicenciamentoAcreditacaoPage() {
           </div>
         </section>
 
-        <section className="py-24 px-4 bg-gray-50">
-          <div className=" mx-auto max-w-7xl">
-            <motion.div animate={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 50 }} transition={{ duration: 0.8 }}>
-              <h2 className="text-4xl font-bold text-center mb-16">Processo de Licenciamento</h2>
-              <div className="grid md:grid-cols-2 gap-12">
-                <div
-                  className={
-                    "before:absolute before:border-l before:h-[90%] before:w-full before:max-w-7xl before:left-[calc(50%+1.5rem)] before:top-0 before:-translate-x-1/2 before:translate-y-10 before:border-[#003B71] relative"
-                  }
-                >
-                  <div className="flex flex-col justify-center p-4 gap-2 w-full h-24 bg-white rounded-3xl shadow-lg my-10 relative border border-[#003B71]">
-                    <h3 className="text-lg font-bold text-primary">Criação</h3>
-                    <p className={"text-gray-600 text-sm"}>
-                      O processo de criação torna-o ilegível ao processo de início de funcionamento / renovação.
-                    </p>
-                  </div>
-                  {creationSteps.map((step, index) => (
-                    <div key={index} className="flex mb-8 relative">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#003B71] text-white flex items-center justify-center text-xl font-bold z-10">
-                        {index + 1}
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-xl font-semibold mb-2 flex items-center">
-                          {step.icon}
-                          <span className="ml-2">{step.title}</span>
-                        </h3>
-                        <p dangerouslySetInnerHTML={{ __html: step.description }} className="text-gray-600" />
-                      </div>
-                    </div>
-                  ))}
-                  <div className="flex flex-col justify-center p-4 gap-2 h-24 bg-white rounded-3xl shadow-lg my-10 relative border border-[#003B71]">
-                    <h3 className="text-lg font-bold text-primary">
-                      Início de funcionamento / Renovação do alvará ou C. acreditação
-                    </h3>
-                    <p className={"text-gray-600 text-sm"}>
-                      Este processo o autoriza a iniciar as atividades na sua instituição de ensino.{" "}
-                    </p>
-                  </div>
-                  {licensingSteps.map((step, index) => (
-                    <div key={index} className="flex mb-8">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#003B71] text-white flex items-center justify-center text-xl font-bold z-10">
-                        {index + 1}
-                      </div>
-                      <div className="ml-4">
-                        <h3 className="text-xl font-semibold mb-2 flex items-center">
-                          {step.icon}
-                          <span className="ml-2">{step.title}</span>
-                        </h3>
-                        <p className="text-gray-600">{step.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center justify-center">
-                  <Image
-                    alt="Processo de Licenciamento e Acreditação"
-                    className="rounded-lg shadow-lg"
-                    height={400}
-                    src="/placeholder.svg?height=400&width=400"
-                    width={400}
-                  />
-                </div>
-              </div>
-            </motion.div>
+        <section className="py-24 px-4 ">
+          <div className=" mx-auto max-w-7xl flex flex-col items-center">
+            <h2 className="text-4xl font-bold text-center mb-16">Processo de Licenciamento</h2>
+            <LicensingProcessCarousel />
           </div>
         </section>
 
@@ -357,7 +294,6 @@ export default function LicenciamentoAcreditacaoPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

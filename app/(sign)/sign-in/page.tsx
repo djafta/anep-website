@@ -5,7 +5,7 @@ import { Button, Checkbox, Input, Link } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 
-import { Header } from "@/app/sign-in/header";
+import { Header } from "@/app/(sign)/sign-in/header";
 
 export default function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
