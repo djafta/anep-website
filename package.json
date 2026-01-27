@@ -10,6 +10,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
+    "@base-ui/react": "^1.1.0",
     "@eslint/compat": "^1.3.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.33.0",
@@ -56,9 +57,11 @@
     "install": "^0.13.0",
     "intl-messageformat": "10.7.16",
     "lucide-react": "^0.536.0",
+    "navigation-menu": "link:@base-ui/react/navigation-menu",
     "next": "16.0.10",
     "next-themes": "0.4.6",
     "npm": "^11.7.0",
+    "popover": "link:@base-ui/react/popover",
     "prisma": "^6.14.0",
     "react": "18.3.1",
     "react-day-picker": "^9.11.3",
