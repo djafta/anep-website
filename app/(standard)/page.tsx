@@ -7,6 +7,7 @@ import { BriefcaseBusiness, Building2, LucideStar, ShieldCheck } from "lucide-re
 
 import { CnqpFields } from "@/components/cnqp-fields";
 import { StatsCard } from "@/components/stats-card";
+import Link from "next/link";
 
 const generalStats = [
   { number: "150+", label: "Instituições Acreditadas", icon: Building2 },
@@ -28,17 +29,21 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row justify-start gap-4">
               <Button
                 className="bg-[#003B71] text-white font-medium hover:bg-[#003B71]/90 px-8 h-12"
-                href="/cnqp#qualifications"
+                asChild
                 size="lg"
               >
-                Explorar Qualificações
+                <Link href="/cnqp#qualifications">
+                  Explorar Qualificações
+                </Link>
               </Button>
               <Button
                 className="bg-white text-gray-900 border-2 border-gray-200 font-medium hover:bg-gray-50 px-8 h-12"
-                href="/about"
                 size="lg"
+                asChild
               >
-                Saiba Mais
+                <Link href={ '/about' }>
+                  Saiba Mais
+                </Link>
               </Button>
             </div>
           </div>
@@ -200,10 +205,12 @@ export default function HomePage() {
             </p>
             <Button
               className="bg-[#003B71] text-white font-medium hover:bg-[#003B71]/90 px-8 h-12"
-              href="/contact"
               size="lg"
+              asChild
             >
-              Fale Conosco
+              <Link href="/contact">
+                Fale Connosco
+              </Link>
             </Button>
           </div>
         </div>
