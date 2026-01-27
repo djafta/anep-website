@@ -26,7 +26,7 @@ export default function LicenciamentoAcreditacaoPage() {
       description: "Instituições de Educação Profissional geridas pelo Estado.",
     },
     {
-      title: "Instituições Semi-Públicas",
+      title: "Instituições Mistas",
       icon: <Users className="w-8 h-8 text-[#003B71]" />,
       description: "Instituições com gestão mista entre Estado e entidades privadas.",
     },

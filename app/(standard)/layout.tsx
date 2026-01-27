@@ -4,8 +4,6 @@ import type { ReactNode } from "react";
 import localFont from "next/font/local";
 
 import "@/styles/globals.css";
-import { Providers } from "@/app/providers";
-import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const viewport: Viewport = {
@@ -36,22 +34,21 @@ export const metadata: Metadata = {
   description: "Autoridade Nacional da Educação Profissional",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export type StandardLayoutProps = {
   children: ReactNode;
-}>) {
+  header?: ReactNode;
+}
+
+export default function StandardLayout({ children, header }: StandardLayoutProps) {
   return (
     <html lang="en">
-      <body className={sfProText.className}>
-        <Providers>
-          <main className={"relative"}>
-            <Header />
-            {children}
-            <Footer />
-          </main>
-        </Providers>
-      </body>
+    <body className={ sfProText.className }>
+    { header }
+    <main className={ "relative" }>
+      { children }
+    </main>
+    <Footer/>
+    </body>
     </html>
   );
 }
