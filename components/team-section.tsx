@@ -14,12 +14,17 @@ const teamSection = [
   {
     name: "Augusto Machunguene",
     title: "Director da Divisão do Fundo Nacional da Educação Profissional",
-    avatarUrl: "https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80",
+    avatarUrl: "/images/directors/fnep.png",
   },
   {
     name: "Alexandra Mangore",
     title: "Directora da Divisão de Garantia de Qualidade",
     avatarUrl: "https://www.untitledui.com/images/avatars/amelie-laurent?fm=webp&q=80",
+  },
+  {
+    name: "Júlio Agibo",
+    title: "Director da Divisão de Registro e Certificação",
+    avatarUrl: "/images/directors/fnep.png",
   },
 ];
 
@@ -52,7 +57,7 @@ export const TeamSection = () => {
         </div>
         <div className="mt-12 md:mt-16">
           <ul
-            className="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            className="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             { teamSection.map((item) => (
               <li key={ item.title } className="flex flex-col items-center gap-4 md:gap-5">
                 <Avatar className={ 'size-20 md:size-28' }>
