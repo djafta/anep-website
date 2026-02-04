@@ -1,15 +1,15 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const teamSection = [
   {
     name: "Fenias Tonela",
     title: "Director da Divisão do Desenvolvimento Estratégico e Institucional",
-    avatarUrl: "https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80",
+    avatarUrl: "",
   },
   {
     name: "Ermelinda Notiço",
     title: "Directora da Divisão das Qualificações Profissionais",
-    avatarUrl: "https://www.untitledui.com/images/avatars/amelie-laurent?fm=webp&q=80",
+    avatarUrl: "/images/directors/cnqp.png",
   },
   {
     name: "Augusto Machunguene",
@@ -19,12 +19,12 @@ const teamSection = [
   {
     name: "Alexandra Mangore",
     title: "Directora da Divisão de Garantia de Qualidade",
-    avatarUrl: "https://www.untitledui.com/images/avatars/amelie-laurent?fm=webp&q=80",
+    avatarUrl: "/images/directors/dgq.png",
   },
   {
     name: "Júlio Agibo",
     title: "Director da Divisão de Registro e Certificação",
-    avatarUrl: "/images/directors/fnep.png",
+    avatarUrl: "/images/directors/drc.png",
   },
 ];
 
@@ -46,8 +46,9 @@ export const TeamSection = () => {
         <div>
           <div className="flex flex-col items-center gap-4 md:gap-5">
             <Avatar className={ 'size-20 md:size-28' }>
-              <AvatarImage src={ 'https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80' }
+              <AvatarImage src={ '' }
                            alt={ 'Uilson Timane Avatar' } className="size-20 md:size-28"/>
+              <AvatarFallback/>
             </Avatar>
             <div className="text-center">
               <h3 className="text-lg font-semibold text-primary">{ 'Uilson Timane' }</h3>
@@ -62,6 +63,7 @@ export const TeamSection = () => {
               <li key={ item.title } className="flex flex-col items-center gap-4 md:gap-5">
                 <Avatar className={ 'size-20 md:size-28' }>
                   <AvatarImage src={ item.avatarUrl } alt={ item.name } className="size-20 md:size-28"/>
+                  <AvatarFallback/>
                 </Avatar>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold text-primary">{ item.name }</h3>
