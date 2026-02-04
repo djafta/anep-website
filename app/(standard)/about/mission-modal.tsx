@@ -15,7 +15,7 @@ export function MissionModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant={ 'secondary' }>
+        <Button variant={ 'outline' } className={'text-black'}>
           Descubra Nossa Missão
         </Button>
       </DialogTrigger>
