@@ -8,6 +8,7 @@ import { BriefcaseBusiness, Building2, LucideStar, ShieldCheck } from "lucide-re
 import { CnqpFields } from "@/components/cnqp-fields";
 import { StatsCard } from "@/components/stats-card";
 import Link from "next/link";
+import { AboutSection } from "@/components/about/about-section";
 
 const generalStats = [
   { number: "150+", label: "Instituições Acreditadas", icon: Building2 },
@@ -18,7 +19,7 @@ const generalStats = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen w-screen bg-no-repeat">
+    <div className="min-h-screen w-screen bg- bg-no-repeat">
       <section className="py-32 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -28,17 +29,18 @@ export default function HomePage() {
             <p className="text-xl text-gray-500 mb-12 leading-relaxed">[Frase apelativa]</p>
             <div className="flex flex-col sm:flex-row justify-start gap-4">
               <Button
-                className="bg-[#003B71] text-white font-medium hover:bg-[#003B71]/90 px-8 h-12"
                 asChild
                 size="lg"
+                className={ 'rounded-full shadow-none' }
               >
                 <Link href="/cnqp#qualifications">
                   Explorar Qualificações
                 </Link>
               </Button>
               <Button
-                className="bg-white text-gray-900 border-2 border-gray-200 font-medium hover:bg-gray-50 px-8 h-12"
                 size="lg"
+                variant={ 'outline' }
+                className={ 'rounded-full shadow-none ring-primary ring' }
                 asChild
               >
                 <Link href={ '/about' }>
@@ -61,50 +63,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */ }
-      <section className="py-32" id="sobre">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Nossa Missão</h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                <span className={ "font-bold text-3xl text-secondary font-serif" }>{ '"' }</span>
-                Regular a educação profissional, com a participaçãode parceiros sociais,para on desenvolvimento de um
-                capital humano competitivo.
-                <span className={ "font-bold text-3xl text-secondary font-serif" }>{ '"' }</span>
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-20">
-              { [
-                {
-                  title: "Qualidade",
-                },
-                {
-                  title: "Inclusão",
-                },
-                {
-                  title: "Parceria",
-                },
-                {
-                  title: "Competência",
-                },
-                {
-                  title: "Integridade",
-                },
-                {
-                  title: "Inovação",
-                },
-              ].map((item) => (
-                <div key={ item.title } className="h-16 bg-gray-50 border rounded-full relative flex items-center">
-                  <div className={ 'size-16 bg-primary rounded-full absolute -left-2' }/>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 ml-16">{ item.title }</h3>
-                </div>
-              )) }
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <AboutSection/>
       {/* Qualifications Section */ }
       <section className="py-32 bg-gray-50" id="qualifications">
         <div className="max-w-7xl mx-auto px-4">

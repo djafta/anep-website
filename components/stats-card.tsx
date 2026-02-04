@@ -7,7 +7,7 @@ export type StatsCardProps = {
 export function StatsCard({ number, icon: A, description }: StatsCardProps) {
   return (
     <div className={"flex gap-3 border bg-white shadow p-4 rounded-2xl"}>
-      <div className={"bg-primary text-3xl text-primary w-16 h-16 flex items-center justify-center rounded-2xl"}>
+      <div className={"bg-primary text-3xl text-primary w-16 h-16 flex items-center justify-center rounded-full"}>
         {<A className={"w-8  h-8 fill-white stroke-primary"} />}
       </div>
       <div className={"grid grid-rows-2"}>
