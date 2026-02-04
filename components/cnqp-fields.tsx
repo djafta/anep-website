@@ -115,7 +115,7 @@ export function CnqpFields() {
                 <div className={ "overflow-hidden rounded-full p-3 bg-secondary text-white aspect-square w-fit" }>
                   <course.icon className="w-6 h-6"/>
                 </div>
-                <h3 className="text-md text-gray-900 mb-2">{ course.title }</h3>
+                <h3 className="text-md text-white mb-2">{ course.title }</h3>
               </div>
             </CardContent>
           </Card>
