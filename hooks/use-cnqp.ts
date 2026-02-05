@@ -20,6 +20,7 @@ export function useCnqp() {
       level: Number(o.level),
       fieldCode: o.fieldCode.toLowerCase(),
       certificate: o.certificate,
+      url: o.url
     };
   });
 
