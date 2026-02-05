@@ -18,7 +18,7 @@ export function AccreditationsTable({
     <div className="space-y-4">
       <input
         type="text"
-        placeholder="Search qualification…"
+        placeholder="Procurar qualificações…"
         value={query}
         onChange={e => setQuery(e.target.value)}
         className="w-full rounded-lg border px-4 py-2 text-sm"
@@ -28,9 +28,9 @@ export function AccreditationsTable({
         <table className="w-full text-sm">
           <thead className="sticky top-0 bg-gray-50">
           <tr className="text-left text-gray-700">
-            <th className="px-4 py-2">Qualification</th>
-            <th className="px-4 py-2">Level</th>
-            <th className="px-4 py-2">Certificate</th>
+            <th className="px-4 py-2">Qualificações</th>
+            <th className="px-4 py-2">Nível</th>
+            <th className="px-4 py-2">Certificado</th>
           </tr>
           </thead>
           <tbody>
@@ -46,7 +46,7 @@ export function AccreditationsTable({
       </div>
 
       <p className="text-xs text-gray-500">
-        {filtered.length} of {accreditations.length} qualifications
+        {filtered.length} de {accreditations.length} qualificações
       </p>
     </div>
   );

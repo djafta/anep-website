@@ -9,12 +9,12 @@ const professionalEducationInstitutions: Institution[] = [
     type: "professional-education",
     accreditations: [
       {
-        qualification: "Industrial Electricity Technician",
+        qualification: "Técnico de Electricidade Industrial",
         level: 3,
         certificate: "B",
       },
       {
-        qualification: "Electrical Installations",
+        qualification: "Electricidade Instaladora",
         level: 2,
         certificate: "C",
       },
@@ -40,7 +40,7 @@ const higherEducationInstitutions: Institution[] = [
 
 export default function InstitutionsPage() {
   return (
-    <main className="py-32">
+    <main className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 space-y-24">
         <header className="max-w-3xl space-y-6">
           <h1 className="text-4xl font-bold text-gray-900">
@@ -57,14 +57,14 @@ export default function InstitutionsPage() {
         <InstitutionsSection
           id={ "iep" }
           title="Instituições de Educação Professional"
-          description="Institutions accredited by ANEP to deliver professional qualifications, training modules and RCA examinations."
+          description="Instituições de Educação Profissional Acreditadas pela ANEP para ministrar qualificações, módulos e exames de RCA."
           institutions={ professionalEducationInstitutions }
         />
 
         <InstitutionsSection
           id={ "ies" }
           title="Instituições de Ensino Superior"
-          description="Higher Education Institutions accredited by ANEP to deliver qualifications leading to Certificates A, B and C."
+          description="Instituições de ensino superior acreditadas pela Autoridade Nacional da Educação Profissional para lecionar qualificações de certificados A, B e C."
           institutions={ higherEducationInstitutions }
         />
       </div>

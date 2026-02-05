@@ -17,7 +17,7 @@ export function InstitutionCard({
   );
 
   return (
-    <article className="rounded-2xl border bg-white p-6 space-y-6">
+    <article className="rounded-2xl border border-primary bg-white p-6 space-y-6">
       <header className="space-y-1">
         <h3 className="text-lg font-semibold text-gray-900">
           { institution.name }
@@ -29,13 +29,13 @@ export function InstitutionCard({
 
       <div className="flex flex-wrap gap-6 text-sm text-gray-700">
     <span>
-      <strong>{ institution.accreditations.length }</strong> qualifications
+      <strong>{ institution.accreditations.length }</strong> Qualificações
     </span>
         <span>
-    <strong>{ levels.size }</strong> levels
+    <strong>{ levels.size }</strong> Níveis
     </span>
         <span>
-    <strong>{ certificates.size }</strong> certificates
+    <strong>{ certificates.size }</strong> Certificados
     </span>
       </div>
 
@@ -43,7 +43,7 @@ export function InstitutionCard({
         onClick={ () => setOpen(!open) }
         className="text-sm font-medium text-primary hover:underline"
       >
-        { open ? "Hide qualifications" : "View qualifications" }
+        { open ? "Esconder qualificações" : "Ver qualificações" }
       </button>
 
       { open && (
