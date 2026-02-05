@@ -4,7 +4,7 @@ const teamSection = [
   {
     name: "Fenias Tonela",
     title: "Director da Divisão do Desenvolvimento Estratégico e Institucional",
-    avatarUrl: "",
+    avatarUrl: "/images/directors/ddei.png",
   },
   {
     name: "Ermelinda Notiço",
@@ -46,7 +46,7 @@ export const TeamSection = () => {
         <div>
           <div className="flex flex-col items-center gap-4 md:gap-5">
             <Avatar className={ 'size-20 md:size-28' }>
-              <AvatarImage src={ '' }
+              <AvatarImage src={ '/images/directors/principal.png' }
                            alt={ 'Uilson Timane Avatar' } className="size-20 md:size-28"/>
               <AvatarFallback/>
             </Avatar>
