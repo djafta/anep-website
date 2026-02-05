@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import { CnqpFields } from "@/components/cnqp-fields";
+import { Input } from "@/components/ui/input";
 
 const featuredQualifications = [
   {
@@ -42,12 +43,13 @@ export default function QualificationsPage() {
   return (
     <div className="min-h-screen bg-white">
       <main className="pb-0">
-        <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#003B71] to-[#0056a4]">
+        <section
+          className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#003B71] to-[#0056a4]">
           <motion.div
-            animate={{ opacity: 1, y: 0 }}
+            animate={ { opacity: 1, y: 0 } }
             className="text-center text-white z-10"
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 1 }}
+            initial={ { opacity: 0, y: 50 } }
+            transition={ { duration: 1 } }
           >
             <h1 className="text-6xl font-bold mb-6">Catálogo Nacional das Qualificações Profissionais</h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -60,11 +62,13 @@ export default function QualificationsPage() {
         <div>
           <section className="py-32 bg-gray-50" id="qualifications">
             <div className="max-w-7xl mx-auto px-4">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Campos de Qualificações</h2>
-                <p className="text-gray-600 max-w-2xl mx-auto">[Descrição dos campos]</p>
+              <div className={ 'flex items-center justify-between' }>
+                <div className="mb-16">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Campos de Qualificações</h2>
+                  <p className="text-gray-600 max-w-2xl">[Descrição dos campos]</p>
+                </div>
               </div>
-              <CnqpFields />
+              <CnqpFields/>
             </div>
           </section>
         </div>
