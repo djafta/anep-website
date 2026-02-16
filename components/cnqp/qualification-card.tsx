@@ -21,7 +21,7 @@ export function QualificationCard({ qualification }: QualificationCardProps) {
 
   useEffect(() => {
     (async () => {
-      const url = `http://content.anep.gov.mz/qualifications/${ qualification.code }.pdf`;
+      const url = `${ process.env.NEXT_PUBLIC_QUALIFICATIONS_STORAGE_URL }/${ qualification.code }.pdf`;
       const response = await fetch(url, {
         method: 'HEAD',
       });
