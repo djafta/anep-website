@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="">
+    <footer className="order-last">
       <div className="max-w-7xl mx-auto px-4">
         <div className={"py-10 flex items-center gap-2"}>
           <Image alt="ANEP Logo" className="w-8" height={1000} src="/logo-min.png" width={1000} />

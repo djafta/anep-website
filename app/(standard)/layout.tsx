@@ -41,10 +41,10 @@ export type StandardLayoutProps = {
 
 export default function StandardLayout({ children, header }: StandardLayoutProps) {
   return (
-    <html lang="en">
-    <body className={ sfProText.className }>
+    <html lang="en" className={ "h-full w-full min-h-0" }>
+    <body className={ `${ sfProText.className }` }>
     { header }
-    <main className={ "relative" }>
+    <main className={ "relative h-full flex flex-col min-h-0" }>
       { children }
     </main>
     <Footer/>
