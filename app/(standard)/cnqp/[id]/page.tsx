@@ -7,6 +7,7 @@ import { useCnqp } from "@/hooks/use-cnqp";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 import { QualificationCard } from "@/components/cnqp/qualification-card";
+import { CloudDownload } from "lucide-react";
 
 const levels = ["Nível 3", "Nível 4", "Nível 5"];
 
@@ -66,6 +67,10 @@ export default function QualificationsPage({ params }: { params: Promise<{ id: s
               </SelectContent>
             </Select>
           </motion.div>
+          <div>
+            <p className={ 'text-sm text-gray-600' }>Use a { " " } <CloudDownload
+              className={ 'text-gray-600 inline-block size-4' }/> { " " } para descarregar o documento PDF da qualificação.</p>
+          </div>
           <div className={ "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-16" }>
             { filteredQualifications.map((qualification, index) => (
               <QualificationCard key={ qualification.id } qualification={ qualification }/>
