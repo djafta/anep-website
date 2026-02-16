@@ -26,7 +26,10 @@ export default function HomePage() {
             <h1 className="text-4xl max-w-2xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6">
               Autoridade Nacional da Educação Profissional
             </h1>
-            <p className="text-xl text-gray-500 mb-12 leading-relaxed">[Frase apelativa]</p>
+            <p className="text-xl text-gray-500 mb-12 leading-relaxed max-w-xl">
+              Educação Profissional de Excelência: Competências para o trabalho e talento para o desenvolvimento de
+              Moçambique
+            </p>
             <div className="flex flex-col sm:flex-row justify-start gap-4">
               <Button
                 asChild
