@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CloudDownload } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export type QualificationCardProps = {
   qualification: {
@@ -11,11 +12,24 @@ export type QualificationCardProps = {
     certificate: string;
     level: number;
     field: string;
-    url?: string
+    code: string
   }
 }
 
 export function QualificationCard({ qualification }: QualificationCardProps) {
+  const [url, setUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const url = `http://content.anep.gov.mz/qualifications/${ qualification.code }.pdf`;
+      const response = await fetch(url, {
+        method: 'HEAD',
+      });
+      if (response.ok) {
+        setUrl(url)
+      }
+    })()
+  }, []);
 
   return (
     <Card
@@ -36,9 +50,9 @@ export function QualificationCard({ qualification }: QualificationCardProps) {
         </p>
         <p className="text-gray-700">{ "" }</p>
         {
-          qualification.url && (
+          url && (
             <Button className={ 'absolute right-2 bottom-2' } size={ 'icon' } variant={ 'ghost' } asChild>
-              <Link href={ qualification.url } target={ '_blanks' }>
+              <Link href={ url } target={ '_blanks' }>
                 <CloudDownload/>
               </Link>
             </Button>
