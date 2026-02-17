@@ -70,10 +70,12 @@ export default function HomePage() {
       {/* Qualifications Section */ }
       <section className="py-32 bg-gray-50" id="qualifications">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-left mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Catálogo Nacional das Qualificações Profissionais</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              [Texto introdutório sobre o CNQP e sua importância para a educação profissional em Moçambique.]
+            <p className="text-gray-600 max-w-xl md:pt-5">
+              O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
+              profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
+              país, no Subsistema de Educação Profissional.
             </p>
           </div>
           <CnqpFields/>
