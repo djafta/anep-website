@@ -173,3 +173,10 @@
     linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 30px 30px;
 }
+
+
+.home-bg {
+  background-image: url(/home-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

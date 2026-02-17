@@ -19,7 +19,8 @@ const generalStats = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen w-screen bg- bg-no-repeat">
+    <div className="min-h-screen w-screen">
+      <div className={ 'absolute left-0 top-0 w-screen h-screen home-bg -z-10' }/>
       <section className="py-32 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-7xl mx-auto">
