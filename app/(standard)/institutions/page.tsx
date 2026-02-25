@@ -1,73 +1,81 @@
-import { InstitutionsSection } from "@/components/institutions/institutions-section";
-import { Institution } from "@/components/institutions/types";
+import publicInstitutionsByProvince from "@/public-institutions-by-province.json"
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { AccreditedInstitutions } from "@/components/institutions/accredited-institutions";
+import { ArrowRight } from "lucide-react";
 
-const professionalEducationInstitutions: Institution[] = [
-  {
-    id: "itimp",
-    name: "Maputo Industrial Technical Institute",
-    location: "Maputo",
-    type: "professional-education",
-    accreditations: [
-      {
-        qualification: "Técnico de Electricidade Industrial",
-        level: 3,
-        certificate: "B",
-      },
-      {
-        qualification: "Electricidade Instaladora",
-        level: 2,
-        certificate: "C",
-      },
-    ],
-  },
-];
+export default async function InstitutionsPage({ searchParams }: { searchParams: Promise<{ province?: string }> }) {
+  const institutions = Object.keys(publicInstitutionsByProvince);
+  const { province } = await searchParams;
 
-const higherEducationInstitutions: Institution[] = [
-  {
-    id: "utm",
-    name: "Technical University of Mozambique",
-    location: "Maputo",
-    type: "higher-education",
-    accreditations: [
-      {
-        qualification: "Computer Engineering",
-        level: 5,
-        certificate: "A",
-      },
-    ],
-  },
-];
+  if (province) {
+    return (
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 space-y-24">
+          <header className="max-w-4xl space-y-6">
+            <h1 className="text-3xl font-bold text-primary">
+              Instituições Públicas Acreditadas na Província de
+              <span className={ 'block pt-2' }>
+              { province }
+              </span>
+            </h1>
 
-export default function InstitutionsPage() {
+            <p className="text-lg text-gray-600 leading-relaxed">
+
+            </p>
+          </header>
+
+          <main>
+            <AccreditedInstitutions
+              institutions={ (publicInstitutionsByProvince as Record<string, string[]>)[province] }
+            />
+          </main>
+
+        </div>
+      </section>
+    )
+  }
+
   return (
-    <main className="py-32 bg-background">
+    <section className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 space-y-24">
         <header className="max-w-3xl space-y-6">
-          <h1 className="text-4xl font-bold text-gray-900">
+          <h1 className="text-4xl font-bold text-primary">
             Instituições Acreditadas
           </h1>
 
           <p className="text-lg text-gray-600 leading-relaxed">
-            Accreditation granted by ANEP is specific to each institution,
-            qualification, level and certificate, in accordance with the
-            National Professional Education System.
+
           </p>
         </header>
 
-        <InstitutionsSection
-          id={ "iep" }
-          title="Instituições de Educação Professional"
-          description="Instituições de Educação Profissional Acreditadas pela ANEP para ministrar qualificações, módulos e exames de RCA."
-          institutions={ professionalEducationInstitutions }
-        />
+        <main>
+          <div className={ 'grid grid-cols-4 gap-8' }>
+            {
+              institutions.map(province => (
+                <Link
+                  key={ province }
+                  href={ `/institutions?province=${ province }` }
+                  className={ cn('shadow p-3 rounded-2xl ring-1 bg-primary text-white ring-primary hover:bg-primary/90') }
+                >
+                  <p className={ 'p-2' }>
+                    { province }
+                  </p>
+                  <div className={ 'px-2 flex justify-between' }>
+                    <p className={ 'text-xs' }>
+                      { (publicInstitutionsByProvince as Record<string, string[]>)[province].length } instituições
+                    </p>
+                    <span>
+                      <ArrowRight className={ 'size-4' }/>
+                    </span>
+                  </div>
+                </Link>
+              ))
+            }
+          </div>
+        </main>
 
-        <InstitutionsSection
-          id={ "ies" }
-          title="Instituições de Ensino Superior"
-          description="Instituições de ensino superior acreditadas pela Autoridade Nacional da Educação Profissional para lecionar qualificações de certificados A, B e C."
-          institutions={ higherEducationInstitutions }
-        />
       </div>
-    </main>
+    </section>
   );
 }

@@ -44,9 +44,7 @@ export default function StandardLayout({ children, header }: StandardLayoutProps
     <html lang="en" className={ "h-full w-full min-h-0" }>
     <body className={ `${ sfProText.className }` }>
     { header }
-    <main className={ "relative h-full flex flex-col min-h-0" }>
-      { children }
-    </main>
+    { children }
     <Footer/>
     </body>
     </html>

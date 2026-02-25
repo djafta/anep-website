@@ -16,11 +16,11 @@ export function Navbar() {
   const { fields } = useCnqp();
   return (
     <div
-      className={ 'p-2 sticky top-0 z-50 border-b border-px bg-background backdrop-blur-xs flex items-center justify-between' }>
+      className={ 'p-2 sticky top-0 z-50 border-b border-px bg-primary backdrop-blur-xs flex items-center justify-between' }>
       <div className={ 'flex items-center gap-4' }>
-        <NavigationMenu viewport={ false } className="min-w-max rounded-lg bg-transparent text-gray-900">
+        <NavigationMenu viewport={ false } className="min-w-max rounded-lg bg-transparent text-white">
           <NavigationMenuList>
-            <NavigationMenuItem className={ "mr-5" }>
+            <NavigationMenuItem className={ "mr-5 bg-transparent" }>
               <NavigationMenuLink className={ 'flex flex-row items-center gap-2 flex-nowrap' } href={ "/" }>
                 <ChevronLeft className={ "stroke-1" }/> Início
               </NavigationMenuLink>
@@ -31,7 +31,7 @@ export function Navbar() {
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
+              <NavigationMenuTrigger className={ 'bg-transparent' }>
                 CNQP
               </NavigationMenuTrigger>
               <NavigationMenuContent className={ 'absolute min-w-250' }>
@@ -70,7 +70,7 @@ export function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>
+              <NavigationMenuTrigger className={ 'bg-transparent' }>
                 Instituições
               </NavigationMenuTrigger>
 

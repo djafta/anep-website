@@ -109,7 +109,7 @@ export function CnqpFields() {
       ].map((course) => (
         <Link key={ course.id } aria-label={ course.title } className={ "w-full h-full flex" }
               href={ `/cnqp/${ course.id }` }>
-          <Card className="w-full  hover:shadow-lg transition-shadow duration-300">
+          <Card className="w-full  hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
             <CardContent className="p-6 flex flex-col justify-between">
               <div className={ "flex items-center gap-4" }>
                 <div className={ "overflow-hidden rounded-full p-3 bg-primary text-white aspect-square w-fit" }>

@@ -1,0 +1,30 @@
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: minio-ingress
+    namespace: default
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: HTTP
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+  spec:
+    rules:
+      - host: content.anep.gov.mz
+        http:
+          paths:
+            - path: /(.*)
+              pathType: Prefix
+              backend:
+                service:
+                  name: minio
+                  port:
+                    number: 9000
+      - host: admin.content.anep.gov.mz
+        http:
+          paths:
+            - path: /(.*)
+              pathType: Prefix
+              backend:
+                service:
+                  name: minio-admin
+                  port:
+                    number: 9001
