@@ -13,7 +13,7 @@ export function FieldSubfields({ code }: { code: string }) {
 
   return (
     <header className="py-8">
-      <div className={ 'max-w-7xl px-4 mx-auto grid grid-cols-3 gap-4' }>
+      <div className={ 'max-w-7xl px-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4' }>
         {
           field.subfields.map(subfield => (
             <Link key={ subfield.code } href={ `/cnqp/${ field.code }/${ subfield.code }` }>
