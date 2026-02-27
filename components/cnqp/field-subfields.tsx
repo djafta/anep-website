@@ -17,8 +17,9 @@ export function FieldSubfields({ code }: { code: string }) {
         {
           field.subfields.map(subfield => (
             <Link key={ subfield.code } href={ `/cnqp/${ field.code }/${ subfield.code }` }>
-              <div className="p-4 rounded-md bg-white border hover:bg-muted cursor-pointer transition-all duration-300">
+              <div className="relative p-4 rounded-md bg-white border hover:bg-muted cursor-pointer transition-all duration-300">
                 <h2 className="text-lg font-semibold">{ subfield.name }</h2>
+                <p className="absolute right-0 top-0 p-3 text-xs text-muted-foreground">{ subfield.qualifications.length } Qualificações</p>
                 <Badge className={ 'rounded-full' }>{ subfield.code.toUpperCase() }</Badge>
               </div>
             </Link>
