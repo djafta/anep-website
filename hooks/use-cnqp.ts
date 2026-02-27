@@ -28,7 +28,7 @@ export function useCnqp() {
       subfields: field.subfields.map((subfield) => ({
         name: subfield.name,
         code: subfield.code,
-        qualifications: 'qualifications' in subfield ? subfield.qualifications.map((qualification) => ({
+        qualifications: 'qualifications' in subfield && Array.isArray(subfield.qualifications) ? subfield.qualifications.map((qualification) => ({
           name: qualification.name,
           code: qualification.code,
           title: qualification.title,
