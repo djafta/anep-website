@@ -28,13 +28,12 @@ export function useCnqp() {
       subfields: field.subfields.map((subfield) => ({
         name: subfield.name,
         code: subfield.code,
-        qualifications:
-          subfield.qualifications?.map((qualification) => ({
-            name: qualification.name,
-            code: qualification.code,
-            title: qualification.title,
-            level: qualification.level,
-          })) || [],
+        qualifications: 'qualifications' in subfield ? subfield.qualifications.map((qualification) => ({
+          name: qualification.name,
+          code: qualification.code,
+          title: qualification.title,
+          level: qualification.level,
+        })) : [],
       })),
     }));
   }, []);
