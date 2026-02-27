@@ -97,7 +97,7 @@ export default function QualificationPage({ params }: { params: Promise<{ qualif
             </div>
 
             <p className="text-zinc-600 leading-relaxed">
-              O Certificado Vocacional de Nível III em Gestão prepara o formando
+              O { qualification.title } prepara o formando
               para desempenhar funções de { subfield.name }, desenvolvendo competências
               relacionadas à { field.name }.
             </p>
