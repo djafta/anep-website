@@ -304,7 +304,27 @@
 			},
 			{
 				"name": "Hidrocarbonetos",
-				"code": "02"
+				"code": "02",
+				"qualifications": [
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional III – Operador de Planta de Processamento de Gás Natural",
+						"code": "QIE0131171",
+						"level": "3"
+					},
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional IV – Operador de Planta de Processamento de Gás Natural",
+						"code": "QRN07141191",
+						"level": "4"
+					},
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional V – Operador de Planta de Processamento de Gás Natural",
+						"code": "QIE07151191",
+						"level": "5"
+					}
+				]
 			}
 		]
 	},
