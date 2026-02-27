@@ -65,19 +65,81 @@
 			},
 			{
 				"name": "Contabilidade",
-				"code": "02"
+				"code": "02",
+				"qualifications": [
+					{
+						"name": "Contabilidade",
+						"title": "Certificado Vocacional de Contabilidade Nível IV",
+						"code": "QADG024001191",
+						"level": "4"
+					},
+					{
+						"name": "Contabilidade",
+						"title": "Certificado Vocacional de Contabilidade Nível V",
+						"code": "QADG02500191",
+						"level": "5"
+					}
+				]
 			},
 			{
 				"name": "Secretariado",
-				"code": "03"
+				"code": "03",
+				"qualifications": [
+					{
+						"name": "Secretariado",
+						"title": "Certificado Vocacional Nível 3 de Secretariado",
+						"code": "QAG033091",
+						"level": "3"
+					}
+				]
 			},
 			{
 				"name": "Administração",
-				"code": "04"
+				"code": "04",
+				"qualifications": [
+					{
+						"name": "Administração do Trabalho",
+						"title": "Certificado Vocacional (3) em Administração do Trabalho",
+						"code": "QAG06301161",
+						"level": "3"
+					},
+					{
+						"name": "Administração do Trabalho",
+						"title": "Certificado Vocacional (4) em Administração do Trabalho",
+						"code": "QAG06401161",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Fabril",
+						"title": "Certificado Vocacional (5) em Gestão Fabril",
+						"code": "QAG065001",
+						"level": "5"
+					},
+					{
+						"name": "Relações Laborais",
+						"title": "Certificado Vocacional (5) em Relações Laborais",
+						"code": "QAG065002",
+						"level": "5"
+					}
+				]
 			},
 			{
 				"name": "Estatística",
-				"code": "05"
+				"code": "05",
+				"qualifications": [
+					{
+						"name": "Estatísticas Oficiais",
+						"title": "Certificado Vocacional (4) em Estatísticas Oficiais",
+						"code": "QAG104001",
+						"level": "4"
+					},
+					{
+						"name": "Estatísticas Oficiais",
+						"title": "Certificado Vocacional (5) em Estatísticas Oficiais",
+						"code": "QAG0150010",
+						"level": "5"
+					}
+				]
 			}
 		]
 	},
