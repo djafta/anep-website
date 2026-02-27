@@ -2,10 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
-import { MissionModal } from "@/app/(standard)/about/mission-modal";
 import { TeamSection } from "@/components/team-section";
-import { PartnersSection } from "@/components/partners-section";
+import { FileText } from "lucide-react";
 
 export default function SobrePage() {
   const timelineEvents = [
@@ -44,24 +42,54 @@ export default function SobrePage() {
   return (
     <div className="min-h-screen bg-white">
       <main className="overflow-hidden">
-        <section
-          className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#003B71] to-[#0056a4]">
-          <motion.div
-            animate={ { opacity: 1, y: 0 } }
-            className="text-center text-white z-10"
-            initial={ { opacity: 0, y: 50 } }
-            transition={ { duration: 1 } }
-          >
+        <section className="relative h-screen grid grid-cols-2">
+          <div
+            className="col-span-2 xl:col-start-2 xl:col-span-1 text-white z-10 mr-0 h-full flex justify-center flex-col text-right px-4 bg-gradient-to-r from-transparent to-primary">
             <h1 className="text-6xl font-bold mb-6">Moldando o Futuro da Educação Profissional</h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 mx-auto">
               A ANEP está na vanguarda da inovação educacional, preparando profissionais para os desafios do amanhã.
             </p>
-            <MissionModal/>
-          </motion.div>
+          </div>
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute inset-0 bg-[url('/about-hero.png')] bg-cover bg-center opacity-20"/>
+            <div className="absolute inset-0 bg-[url('/about-hero.png')] bg-cover bg-center"/>
           </div>
         </section>
+        <article className="py-24 px-4 mx-auto max-w-7xl prose text-justify">
+          <h1>Quem Somos</h1>
+          <p>
+            A Autoridade Nacional de Educação Profissional, abreviadamente designada por ANEP, é o órgão Regulador e de
+            Garantia de Qualidade de Educação Profissional em Moçambique. A ANEP foi criada através da Lei nº. 23/2014
+            de
+            23 de Setembro alterada e republicada pela Lei nº. 6/2016 de 16 de Junho, ambas revogadas pela Lei nº
+            26/2022
+            de 29 de Dezembro.
+          </p>
+          <p>
+            A criação da ANEP é resultado de um amplo processo de consulta nacional que envolveu diversos segmentos da
+            sociedade, nomeadamente governos locais, instituições provedoras de educação profissional, sector
+            empresarial,
+            sindicatos, organizações da sociedade civil, pais e encarregados de educação entre outros.
+          </p>
+          <p>
+            Ao criar e estabelecer a ANEP, o Governo de Moçambique visa, por um lado, dotar o sistema de educação
+            profissional de um novo quadro de governação que promove a participação activa do sector privado e de outros
+            parceiros sociais na gestão e nos processos de tomada de decisão sobre a educação profissional e, por outro,
+            garantir a qualidade do subsistema de educação profissional que integra o Ensino Técnico Profissional e a
+            Formação Profissional.
+          </p>
+          <p>
+            Como órgão regulador, compete a ANEP a gestão do Quadro Nacional de Qualificações Profissionais, incluindo a
+            aprovação de Qualificações Profissionais e seu registo no respectivo Catálogo Nacional. Na sua actuação como
+            órgão de garantia de Qualidade cabe a ANEP a Acreditação dos Provedores de Formação e a Certificação dos
+            Formadores, dos Avaliadores e dos Formandos da Educação Profissional.
+          </p>
+          <p>
+            É, ainda, competência da ANEP gerir o Fundo Nacional de Educação Profissional (FNEP) que é um novo mecanismo
+            de financiamento da educação profissional que conta com a comparticipação do Sector Produtivo, através de
+            uma
+            contribuição mensal de 0.65%, calculada com base na folha de salário de cada empresa contribuinte do fundo.
+          </p>
+        </article>
         <section className="py-24 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div animate={ { opacity: 1, y: 0 } } initial={ { opacity: 0, y: 50 } }
@@ -96,7 +124,7 @@ export default function SobrePage() {
                   <p className="text-gray-600">Comprometidos com os mais altos padrões em educação profissional.</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-6 inline-block p-4 bg-[#003B71] rounded-full">
+                  <div className="mb-6 inline-block p-4 bg-primary rounded-full">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -116,7 +144,7 @@ export default function SobrePage() {
                   <p className="text-gray-600">Pioneiros em métodos de ensino e tecnologias educacionais avançadas.</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-6 inline-block p-4 bg-[#003B71] rounded-full">
+                  <div className="mb-6 inline-block p-4 bg-primary rounded-full">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
@@ -139,7 +167,7 @@ export default function SobrePage() {
             </motion.div>
           </div>
         </section>
-        <section className="py-24 px-4 bg-[#003B71] text-white">
+        <section className="py-24 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
               animate={ { opacity: 1, y: 0 } }
@@ -148,16 +176,49 @@ export default function SobrePage() {
               transition={ { duration: 0.8 } }
             >
               <h2 className="text-4xl font-bold mb-8">Nossa Missão</h2>
-              <p className="text-md mb-12 mx-auto italic">
+              <p className="italic text-center text-gray-800 max-w-3xl mx-auto">
                 {
                   '"Regular a educação profissional, com a participação dos parceiros sociais, para o desenvolvimento de um capital humano competitivo."'
                 }
               </p>
             </motion.div>
           </div>
+          <div className="grid md:grid-cols-3 gap-12 py-16 max-w-7xl mx-auto">
+            <div className="text-center">
+              <div className="mb-6 inline-block p-4 bg-[#003B71] rounded-full">
+                <FileText className={ 'text-white' }/>
+              </div>
+              <a
+                href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o Regulmaento de Operacionalizacao do QNQ.pdf` }
+                className="text-gray-600 block hover:underline">
+                Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o
+                Regulmaento de Operacionalizacao do QNQ
+              </a>
+            </div>
+            <div className="text-center">
+              <div className="mb-6 inline-block p-4 bg-primary rounded-full">
+                <FileText className={ 'text-white' }/>
+              </div>
+              <a
+                href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ.pdf` }
+                className="text-gray-600 block hover:underline">
+                Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ
+              </a>
+            </div>
+            <div className="text-center">
+              <div className="mb-6 inline-block p-4 bg-primary rounded-full">
+                <FileText className={ 'text-white' }/>
+              </div>
+              <a
+                href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional.pdf` }
+                className="text-gray-600 block hover:underline">
+                Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional
+              </a>
+            </div>
+          </div>
         </section>
         <TeamSection/>
-        <section className="py-24 px-4 bg-gray-50">
+        <section className="py-24 px-4 bg-gray-50 hidden">
           <div className="max-w-7xl mx-auto">
             <motion.div animate={ { opacity: 1, y: 0 } } initial={ { opacity: 0, y: 50 } }
                         transition={ { duration: 0.8 } }>
@@ -188,7 +249,7 @@ export default function SobrePage() {
             </motion.div>
           </div>
         </section>
-        <section className="py-24 px-4">
+        <section className="py-24 px-4 bg-primary text-white">
           <div className="max-w-7xl mx-auto">
             <motion.div
               animate={ { opacity: 1, y: 0 } }
@@ -197,32 +258,31 @@ export default function SobrePage() {
               transition={ { duration: 0.8 } }
             >
               <h2 className="text-4xl font-bold mb-8">Nosso Impacto</h2>
-              <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+              <p className="text-xl text-white mb-12 max-w-3xl mx-auto">
                 A ANEP tem transformado vidas e impulsionado o desenvolvimento econômico através da educação
                 profissional de excelência.
               </p>
               <div className="grid md:grid-cols-4 gap-8">
                 <div>
-                  <h3 className="text-4xl font-bold text-[#003B71] mb-2">500+</h3>
-                  <p className="text-gray-600">Qualificações Desenvolvidas</p>
+                  <h3 className="text-4xl font-bold text-secondary mb-2">500+</h3>
+                  <p className="text-white">Qualificações Desenvolvidas</p>
                 </div>
                 <div>
-                  <h3 className="text-4xl font-bold text-[#003B71] mb-2">1000+</h3>
-                  <p className="text-gray-600">Instituições Parceiras</p>
+                  <h3 className="text-4xl font-bold text-secondary mb-2">1000+</h3>
+                  <p className="text-white">Instituições Parceiras</p>
                 </div>
                 <div>
-                  <h3 className="text-4xl font-bold text-[#003B71] mb-2">5000+</h3>
-                  <p className="text-gray-600">Empregadores Colaboradores</p>
+                  <h3 className="text-4xl font-bold text-secondary mb-2">5000+</h3>
+                  <p className="text-white">Empregadores Colaboradores</p>
                 </div>
                 <div>
-                  <h3 className="text-4xl font-bold text-[#003B71] mb-2">1M+</h3>
-                  <p className="text-gray-600">Estudantes Beneficiados</p>
+                  <h3 className="text-4xl font-bold text-secondary mb-2">1M+</h3>
+                  <p className="text-white">Estudantes Beneficiados</p>
                 </div>
               </div>
             </motion.div>
           </div>
         </section>
-        <PartnersSection/>
       </main>
     </div>
   );

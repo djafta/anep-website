@@ -1,1820 +1,308 @@
 [
 	{
-		"fullName": "CV3 em Contabilidade",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Contabilidade",
-		"fieldCode": "ADG",
-		"code": "QVADG301"
-	},
-	{
-		"fullName": "CV4 em Contabilidade",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Contabilidade",
-		"fieldCode": "ADG",
-		"code": "QVADG401"
-	},
-	{
-		"fullName": "CV5 em Contabilidade",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Contabilidade",
-		"fieldCode": "ADG",
-		"code": "QVADG501"
-	},
-	{
-		"fullName": "CV3 em Secretariado ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Secretariado ",
-		"fieldCode": "ADG",
-		"code": "QVADG302"
-	},
-	{
-		"fullName": "CV4 em Secretariado ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Secretariado ",
-		"fieldCode": "ADG",
-		"code": "QVADG402"
-	},
-	{
-		"fullName": "CV5 em Secretariado ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Secretariado ",
-		"fieldCode": "ADG",
-		"code": "QVADG502"
-	},
-	{
-		"fullName": "CV3 em Gestão",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Gestão",
-		"fieldCode": "ADG",
-		"code": "QVADG303"
-	},
-	{
-		"fullName": "CV4 em Gestão",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão",
-		"fieldCode": "ADG",
-		"code": "QVADG403"
-	},
-	{
-		"fullName": "CV5 em Gestão",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão",
-		"fieldCode": "ADG",
-		"code": "QVADG503"
-	},
-	{
-		"fullName": "CV4 em Gestão Autárquica ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão Autárquica ",
-		"fieldCode": "ADG",
-		"code": "QVADG404"
-	},
-	{
-		"fullName": "CV5 em Gestão Autárquica  ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão Autárquica  ",
-		"fieldCode": "ADG",
-		"code": "QVADG504"
-	},
-	{
-		"fullName": "CV4 em Gestão Financeira e Patrimonial  ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão Financeira e Patrimonial  ",
-		"fieldCode": "ADG",
-		"code": "QVADG405"
-	},
-	{
-		"fullName": "CV5 em Gestão Financeira e Patrimonial   ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão Financeira e Patrimonial   ",
-		"fieldCode": "ADG",
-		"code": "QVADG505"
-	},
-	{
-		"fullName": "CV4 em Gestão de Recursos Humanos  ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão de Recursos Humanos  ",
-		"fieldCode": "ADG",
-		"code": "QVADG406"
-	},
-	{
-		"fullName": "CV5 em Gestão de Recursos Humanos",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão de Recursos Humanos",
-		"fieldCode": "ADG",
-		"code": "QVADG506"
-	},
-	{
-		"fullName": "CV3 em Gestão de Recursos Territoriais e Ambientais ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Gestão de Recursos Territoriais e Ambientais ",
-		"fieldCode": "ADG",
-		"code": "QVADG304"
-	},
-	{
-		"fullName": "CV4 em Gestão de Recursos Territoriais e Ambientais ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão de Recursos Territoriais e Ambientais ",
-		"fieldCode": "ADG",
-		"code": "QVADG407"
-	},
-	{
-		"fullName": "CV5 em Gestão de Recursos Territoriais e Ambientais  ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão de Recursos Territoriais e Ambientais  ",
-		"fieldCode": "ADG",
-		"code": "QVADG507"
-	},
-	{
-		"fullName": "CV3 em Gestão de Resíduos Sólidos Urbanos",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Gestão de Resíduos Sólidos Urbanos",
-		"fieldCode": "ADG",
-		"code": "QVADG307"
-	},
-	{
-		"fullName": "CV3 em Administração do Trabalho ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Administração do Trabalho ",
-		"fieldCode": "ADG",
-		"code": "QVADG305"
-	},
-	{
-		"fullName": "CV4 em Administração do Trabalho ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Administração do Trabalho ",
-		"fieldCode": "ADG",
-		"code": "QVADG408"
-	},
-	{
-		"fullName": "CV5 em Relações Laborais ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Relações Laborais ",
-		"fieldCode": "ADG",
-		"code": "QVADG508"
-	},
-	{
-		"fullName": "CV5 em Gestão Fabril ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão Fabril ",
-		"fieldCode": "ADG",
-		"code": "QVADG509"
-	},
-	{
-		"fullName": "CV3 em Técnicas Aduaneiras ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Técnicas Aduaneiras ",
-		"fieldCode": "ADG",
-		"code": "QVADG306"
-	},
-	{
-		"fullName": "CV4 em Técnicas Aduaneiras ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Técnicas Aduaneiras ",
-		"fieldCode": "ADG",
-		"code": "QVADG409"
-	},
-	{
-		"fullName": "CV5 em Técnicas Aduaneiras ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Técnicas Aduaneiras ",
-		"fieldCode": "ADG",
-		"code": "QVADG510"
-	},
-	{
-		"fullName": "CV3 em Biblioteconomia ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Biblioteconomia ",
-		"fieldCode": "ADG",
-		"code": "QVADG311"
-	},
-	{
-		"fullName": "CV4 em Arquivística ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Arquivística ",
-		"fieldCode": "ADG",
-		"code": "QVADG412"
-	},
-	{
-		"fullName": "CV5 em Ciências Documentais",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Ciências Documentais",
-		"fieldCode": "ADG",
-		"code": "QVADG512"
-	},
-	{
-		"fullName": "CV4 em Estatísticas Oficiais",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Estatísticas Oficiais",
-		"fieldCode": "ADG",
-		"code": "QVADG410"
-	},
-	{
-		"fullName": "CV5 em Estatísticas Oficiais",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Estatísticas Oficiais",
-		"fieldCode": "ADG",
-		"code": "QVADG511"
-	},
-	{
-		"fullName": "CO3 em Iniciação à Banca ",
-		"field": "Administração e Gestão  (ADG)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Iniciação à Banca ",
-		"fieldCode": "ADG",
-		"code": "QOADG301"
-	},
-	{
-		"fullName": "CV3 em Agropecuária ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Agropecuária ",
-		"fieldCode": "AGR",
-		"code": "QVAGR301"
-	},
-	{
-		"fullName": "CV4 em Agropecuária ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Agropecuária ",
-		"fieldCode": "AGR",
-		"code": "QVAGR401"
-	},
-	{
-		"fullName": "CV5 em Agricultura ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Agricultura ",
-		"fieldCode": "AGR",
-		"code": "QVAGR501"
-	},
-	{
-		"fullName": "CV5 em Pecuária ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Pecuária ",
-		"fieldCode": "AGR",
-		"code": "QVAGR502"
-	},
-	{
-		"fullName": "CV5 em Extensão e Fomento Agrário ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Extensão e Fomento Agrário ",
-		"fieldCode": "AGR",
-		"code": "QVAGR503"
-	},
-	{
-		"fullName": "CV5 em Cadastro e Administração de Terras ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Cadastro e Administração de Terras ",
-		"fieldCode": "AGR",
-		"code": "QVAGR504"
-	},
-	{
-		"fullName": "CV3 em Florestas e Fauna Bravia ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Florestas e Fauna Bravia ",
-		"fieldCode": "AGR",
-		"code": "QVAGR302"
-	},
-	{
-		"fullName": "CV4 em Florestas e Fauna Bravia  ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Florestas e Fauna Bravia  ",
-		"fieldCode": "AGR",
-		"code": "QVAGR403"
-	},
-	{
-		"fullName": "CV5 em Fauna Bravia ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Fauna Bravia ",
-		"fieldCode": "AGR",
-		"code": "QVAGR505"
-	},
-	{
-		"fullName": "CV5 em Exploração de Florestas e Processamento de Madeiras",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Exploração de Florestas e Processamento de Madeiras",
-		"fieldCode": "AGR",
-		"code": "QVAGR506"
-	},
-	{
-		"fullName": "CV5 em Silvicultura e Maneio Florestal ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Silvicultura e Maneio Florestal ",
-		"fieldCode": "AGR",
-		"code": "QVAGR507"
-	},
-	{
-		"fullName": "CV4 em Operação de Máquinas Agrícolas",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Operação de Máquinas Agrícolas",
-		"fieldCode": "AGR",
-		"code": "QVAGR402"
-	},
-	{
-		"fullName": "CV5 em Gestão de Máquinas Agrícolas",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão de Máquinas Agrícolas",
-		"fieldCode": "AGR",
-		"code": "QVAGR508"
-	},
-	{
-		"fullName": "CV5 em Fiscalização de Produtos Florestais e Faunísticos ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Fiscalização de Produtos Florestais e Faunísticos ",
-		"fieldCode": "AGR",
-		"code": "QVAGR509"
-	},
-	{
-		"fullName": "CO2 em Jardinagem ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Jardinagem ",
-		"fieldCode": "AGR",
-		"code": "QOAGR201"
-	},
-	{
-		"fullName": "CO2 em Mecanização Agrária ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Mecanização Agrária ",
-		"fieldCode": "AGR",
-		"code": "QOAGR202"
-	},
-	{
-		"fullName": "CO2 em Suinicultura ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Suinicultura ",
-		"fieldCode": "AGR",
-		"code": "QOAGR203"
-	},
-	{
-		"fullName": "CO2 em Tratamento de Animais de Estimação ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Tratamento de Animais de Estimação ",
-		"fieldCode": "AGR",
-		"code": "QOAGR204"
-	},
-	{
-		"fullName": "CO2 em Avicultura ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Avicultura ",
-		"fieldCode": "AGR",
-		"code": "QOAGR205"
-	},
-	{
-		"fullName": "CO2 em Fruticultura ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Fruticultura ",
-		"fieldCode": "AGR",
-		"code": "QOAGR206"
-	},
-	{
-		"fullName": "CO3 em Processamento de Alimentos ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Processamento de Alimentos ",
-		"fieldCode": "AGR",
-		"code": "QOAGR301"
-	},
-	{
-		"fullName": "CO2 em Apicultura ",
-		"field": "Agricultura e Conservação da Natureza (AGR)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Apicultura ",
-		"fieldCode": "AGR",
-		"code": "QOAGR207"
-	},
-	{
-		"fullName": "CV3 em Aquacultura",
-		"field": "Aquacultura e Pescas (AQP)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Aquacultura",
-		"fieldCode": "AQP",
-		"code": "QVAQP301"
-	},
-	{
-		"fullName": "CV4 em Aquacultura – Carcinicultura ",
-		"field": "Aquacultura e Pescas (AQP)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Aquacultura – Carcinicultura ",
-		"fieldCode": "AQP",
-		"code": "QVAQP401"
-	},
-	{
-		"fullName": "CV5 em Aquacultura – Malacocultura e Algicultura ",
-		"field": "Aquacultura e Pescas (AQP)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Aquacultura – Malacocultura e Algicultura ",
-		"fieldCode": "AQP",
-		"code": "QVAQP501"
-	},
-	{
-		"fullName": "CV3 em Publicidade",
-		"field": "Comunicação (COM)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Publicidade",
-		"fieldCode": "COM",
-		"code": "QVCOM301"
-	},
-	{
-		"fullName": "CV3 em Relações Públicas",
-		"field": "Comunicação (COM)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Relações Públicas",
-		"fieldCode": "COM",
-		"code": "QVCOM302"
-	},
-	{
-		"fullName": "CV3 em Jornalismo",
-		"field": "Comunicação (COM)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Jornalismo",
-		"fieldCode": "COM",
-		"code": "QVCOM303"
-	},
-	{
-		"fullName": "CV3 em Pedreiro ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Pedreiro ",
-		"fieldCode": "CCA",
-		"code": "QVCCA301"
-	},
-	{
-		"fullName": "CV2 em Canalização",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Canalização",
-		"fieldCode": "CCA",
-		"code": "QVCCA201"
-	},
-	{
-		"fullName": "CV3 em Canalização",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Canalização",
-		"fieldCode": "CCA",
-		"code": "QVCCA302"
-	},
-	{
-		"fullName": "CV4 em Canalização ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Canalização ",
-		"fieldCode": "CCA",
-		"code": "QVCCA401"
-	},
-	{
-		"fullName": "CV4 em Hidromecânico",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Hidromecânico",
-		"fieldCode": "CCA",
-		"code": "QVCCA402"
-	},
-	{
-		"fullName": "CV4 em Hidráulica - Operador Polivalente",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Hidráulica - Operador Polivalente",
-		"fieldCode": "CCA",
-		"code": "QVCCA403"
-	},
-	{
-		"fullName": "CV3 em Construção Civil",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Construção Civil",
-		"fieldCode": "CCA",
-		"code": "QVCCA303"
-	},
-	{
-		"fullName": "CV4 em Construção Civil",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Construção Civil",
-		"fieldCode": "CCA",
-		"code": "QVCCA404"
-	},
-	{
-		"fullName": "CV5 em Construção Civil",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Construção Civil",
-		"fieldCode": "CCA",
-		"code": "QVCCA501"
-	},
-	{
-		"fullName": "CO2 em Canalização",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Canalização",
-		"fieldCode": "CCA",
-		"code": "QOCCA201"
-	},
-	{
-		"fullName": "CO3 em Canalização",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Canalização",
-		"fieldCode": "CCA",
-		"code": "QOCCA301"
-	},
-	{
-		"fullName": "CO2 em Pedreiro",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Pedreiro",
-		"fieldCode": "CCA",
-		"code": "QOCCA202"
-	},
-	{
-		"fullName": "CO3 em Pedreiro",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Pedreiro",
-		"fieldCode": "CCA",
-		"code": "QOCCA302"
-	},
-	{
-		"fullName": "CO2 em  Carpinteiro de Obras ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "2",
-		"certificate": "O",
-		"name": " Carpinteiro de Obras ",
-		"fieldCode": "CCA",
-		"code": "QOCCA203"
-	},
-	{
-		"fullName": "CO3 em  Carpinteiro de Obras ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "O",
-		"name": " Carpinteiro de Obras ",
-		"fieldCode": "CCA",
-		"code": "QOCCA303"
-	},
-	{
-		"fullName": "CO2 em Operador de Equipamentos Ligeiros de Construção Civil ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Operador de Equipamentos Ligeiros de Construção Civil ",
-		"fieldCode": "CCA",
-		"code": "QOCCA204"
-	},
-	{
-		"fullName": "CO3 em Operador de Equipamentos Pesados de Construção Civil ",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Operador de Equipamentos Pesados de Construção Civil ",
-		"fieldCode": "CCA",
-		"code": "QOCCA304"
-	},
-	{
-		"fullName": "CV3 em Abastecimento de Água",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Abastecimento de Água",
-		"fieldCode": "CCA",
-		"code": "QVCCA304"
-	},
-	{
-		"fullName": "CV3 em Carpinteiro de Obras de Construção Civil",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Carpinteiro de Obras de Construção Civil",
-		"fieldCode": "CCA",
-		"code": "QVCCA305"
-	},
-	{
-		"fullName": "CV4 em Marceneiro de Móveis e Esquadrias",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Marceneiro de Móveis e Esquadrias",
-		"fieldCode": "CCA",
-		"code": "QVCCA405"
-	},
-	{
-		"fullName": "CV5 em Design de Móveis",
-		"field": "Construção Civil e Arquitectura (CCA)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Design de Móveis",
-		"fieldCode": "CCA",
-		"code": "QVCCA501"
-	},
-	{
-		"fullName": "CV3 em Dança",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Dança",
-		"fieldCode": "CAD",
-		"code": "QVCAD301"
-	},
-	{
-		"fullName": "CV4 em Dança",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Dança",
-		"fieldCode": "CAD",
-		"code": "QVCAD401"
-	},
-	{
-		"fullName": "CV5 em Dança - Instrutor",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Dança - Instrutor",
-		"fieldCode": "CAD",
-		"code": "QVCAD501"
-	},
-	{
-		"fullName": "CV3 em Bateria",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Bateria",
-		"fieldCode": "CAD",
-		"code": "QVCAD302"
-	},
-	{
-		"fullName": "CV3 em Canto a Solo",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Canto a Solo",
-		"fieldCode": "CAD",
-		"code": "QVCAD303"
-	},
-	{
-		"fullName": "CV3 em Clarinete",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Clarinete",
-		"fieldCode": "CAD",
-		"code": "QVCAD304"
-	},
-	{
-		"fullName": "CV3  em Flauta",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": " Flauta",
-		"fieldCode": "CAD",
-		"code": "QVCAD305"
-	},
-	{
-		"fullName": "CV3 em Guitarra",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Guitarra",
-		"fieldCode": "CAD",
-		"code": "QVCAD306"
-	},
-	{
-		"fullName": "CV3 em Mbila",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Mbila",
-		"fieldCode": "CAD",
-		"code": "QVCAD307"
-	},
-	{
-		"fullName": "CV3 em Piano",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Piano",
-		"fieldCode": "CAD",
-		"code": "QVCAD308"
-	},
-	{
-		"fullName": "CV3 em Saxofone",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Saxofone",
-		"fieldCode": "CAD",
-		"code": "QVCAD309"
-	},
-	{
-		"fullName": "CV3 em Violino",
-		"field": "Cultura, Artes e Desporto (CAD)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Violino",
-		"fieldCode": "CAD",
-		"code": "QVCAD310"
-	},
-	{
-		"fullName": "Certificado B em Educação Profissional - Formador da EP para níveis III, IV e V",
-		"field": "Educação  (EDU)",
-		"level": "r",
-		"certificate": "e",
-		"name": "cado B em Educação Profissional - Formador da EP para níveis III, IV e V",
-		"fieldCode": "EDU",
-		"code": ""
-	},
-	{
-		"fullName": "Certificado A em Educação Profissional - Gestor da EP",
-		"field": "Educação  (EDU)",
-		"level": "r",
-		"certificate": "e",
-		"name": "cado A em Educação Profissional - Gestor da EP",
-		"fieldCode": "EDU",
-		"code": ""
-	},
-	{
-		"fullName": "Certificado C em Educação Profissional - Formador da EP  para níveis I e II ",
-		"field": "Educação  (EDU)",
-		"level": "r",
-		"certificate": "e",
-		"name": "cado C em Educação Profissional - Formador da EP  para níveis I e II ",
-		"fieldCode": "EDU",
-		"code": ""
-	},
-	{
-		"fullName": "CV 2 em Educação da Infância",
-		"field": "Educação  (EDU)",
-		"level": "",
-		"certificate": "V",
-		"name": " Educação da Infância",
-		"fieldCode": "EDU",
-		"code": ""
-	},
-	{
-		"fullName": "CV3 em Educação da Infância",
-		"field": "Educação  (EDU)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Educação da Infância",
-		"fieldCode": "EDU",
-		"code": "QVEDU301"
-	},
-	{
-		"fullName": "CV4 em Educação da Infância",
-		"field": "Educação  (EDU)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Educação da Infância",
-		"fieldCode": "EDU",
-		"code": "QVEDU401"
-	},
-	{
-		"fullName": "CV5 em Educação da Infância ",
-		"field": "Educação  (EDU)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Educação da Infância ",
-		"fieldCode": "EDU",
-		"code": "QVEDU501"
-	},
-	{
-		"fullName": "CV3 em Técnicas de Laboratório",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Técnicas de Laboratório",
-		"fieldCode": "EPI",
-		"code": "QVEPI305"
-	},
-	{
-		"fullName": "CV4 em Técnicas de Laboratório",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Técnicas de Laboratório",
-		"fieldCode": "EPI",
-		"code": "QVEPI408"
-	},
-	{
-		"fullName": "CV5 em Técnicas de Laboratório - Água e Alimentos ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Técnicas de Laboratório - Água e Alimentos ",
-		"fieldCode": "EPI",
-		"code": "QVEPI509"
-	},
-	{
-		"fullName": "CV3 em Electricidade Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Electricidade Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI301"
-	},
-	{
-		"fullName": "CV4 em Electricidade e Electrónica Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Electricidade e Electrónica Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI401"
-	},
-	{
-		"fullName": "CV5 em Electricidade e Electrónica Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Electricidade e Electrónica Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI501"
-	},
-	{
-		"fullName": "CV5 em Electricidade e Electrónica de Edifícios ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Electricidade e Electrónica de Edifícios ",
-		"fieldCode": "EPI",
-		"code": "QVEPI502"
-	},
-	{
-		"fullName": "CV3 em Mecânica Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Mecânica Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI302"
-	},
-	{
-		"fullName": "CV4 em Mecânica de Construções Metálicas ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Mecânica de Construções Metálicas ",
-		"fieldCode": "EPI",
-		"code": "QVEPI402"
-	},
-	{
-		"fullName": "CV4 em Mecânica Geral ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Mecânica Geral ",
-		"fieldCode": "EPI",
-		"code": "QVEPI403"
-	},
-	{
-		"fullName": "CV5 em Mecânica de Construções Metálicas ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Mecânica de Construções Metálicas ",
-		"fieldCode": "EPI",
-		"code": "QVEPI510"
-	},
-	{
-		"fullName": "CV3 em Mecânica de Manutenção Industrial",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Mecânica de Manutenção Industrial",
-		"fieldCode": "EPI",
-		"code": "QVEPI303"
-	},
-	{
-		"fullName": "CV4 em Mecânica de Manutenção Industrial",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Mecânica de Manutenção Industrial",
-		"fieldCode": "EPI",
-		"code": "QVEPI404"
-	},
-	{
-		"fullName": "CV5 em Mecânica de Manutenção Industrial",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Mecânica de Manutenção Industrial",
-		"fieldCode": "EPI",
-		"code": "QVEPI503"
-	},
-	{
-		"fullName": "CV5 em Mecânica de Maquinagem ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Mecânica de Maquinagem ",
-		"fieldCode": "EPI",
-		"code": "QVEPI504"
-	},
-	{
-		"fullName": "CV3 em Electricidade de Manutenção Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Electricidade de Manutenção Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI304"
-	},
-	{
-		"fullName": "CV4 em Electricidade de Manutenção Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Electricidade de Manutenção Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI405"
-	},
-	{
-		"fullName": "CV5 em Electricidade de Manutenção Industrial ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Electricidade de Manutenção Industrial ",
-		"fieldCode": "EPI",
-		"code": "QVEPI505"
-	},
-	{
-		"fullName": "CV4 em Electricidade e Electrónica das TIC's ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Electricidade e Electrónica das TIC's ",
-		"fieldCode": "EPI",
-		"code": "QVEPI406"
-	},
-	{
-		"fullName": "CV5 em Energias Renováveis ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Energias Renováveis ",
-		"fieldCode": "EPI",
-		"code": "QVEPI506"
-	},
-	{
-		"fullName": "CV3 em Mecânica-Auto",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Mecânica-Auto",
-		"fieldCode": "EPI",
-		"code": "QVEPI307"
-	},
-	{
-		"fullName": "CV4 em Mecânica-Auto",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Mecânica-Auto",
-		"fieldCode": "EPI",
-		"code": "QVEPI407"
-	},
-	{
-		"fullName": "CV5 em Mecânica-Auto",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Mecânica-Auto",
-		"fieldCode": "EPI",
-		"code": "QVEPI507"
-	},
-	{
-		"fullName": "CV3 em Mecânica de Máquinas de Elevação e Transporte",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Mecânica de Máquinas de Elevação e Transporte",
-		"fieldCode": "EPI",
-		"code": "QVEPI308"
-	},
-	{
-		"fullName": "CV5 em Instrumentação e Automatização",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Instrumentação e Automatização",
-		"fieldCode": "EPI",
-		"code": "QVEPI508"
-	},
-	{
-		"fullName": "CV2 em Serralharia Civil ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Serralharia Civil ",
-		"fieldCode": "EPI",
-		"code": "QVEPI203"
-	},
-	{
-		"fullName": "CV2 em Electricidade de Instalação ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Electricidade de Instalação ",
-		"fieldCode": "EPI",
-		"code": "QVEPI204"
-	},
-	{
-		"fullName": "CO3 em Electricidade Instaladora",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Electricidade Instaladora",
-		"fieldCode": "EPI",
-		"code": "QOEPI302"
-	},
-	{
-		"fullName": "Certficado Vocacional2 em Electricidade Fotovoltaica ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "r",
-		"certificate": "e",
-		"name": "ado Vocacional2 em Electricidade Fotovoltaica ",
-		"fieldCode": "EPI",
-		"code": ""
-	},
-	{
-		"fullName": "CV2 em Mecânica de Manutenção de Veículos Automóveis",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Mecânica de Manutenção de Veículos Automóveis",
-		"fieldCode": "EPI",
-		"code": "QVEPI205"
-	},
-	{
-		"fullName": "CV2 em Mecânica de Manutenção de Motores Diesel ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Mecânica de Manutenção de Motores Diesel ",
-		"fieldCode": "EPI",
-		"code": "QVEPI206"
-	},
-	{
-		"fullName": "CV3 em Soldadura",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Soldadura",
-		"fieldCode": "EPI",
-		"code": "QVEPI309"
-	},
-	{
-		"fullName": "CO3 em Soldadura  ",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Soldadura  ",
-		"fieldCode": "EPI",
-		"code": "QOEPI301"
-	},
-	{
-		"fullName": "CO3 em Instalação e Manutenção de Equipamento de Refrigeração e Climatização",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "O",
-		"name": "Instalação e Manutenção de Equipamento de Refrigeração e Climatização",
-		"fieldCode": "EPI",
-		"code": "QOEPI303"
-	},
-	{
-		"fullName": "CV3 em Refrigeração e Climatização",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Refrigeração e Climatização",
-		"fieldCode": "EPI",
-		"code": "QVEPI310"
-	},
-	{
-		"fullName": "CV4 em Refrigeração e Climatização",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Refrigeração e Climatização",
-		"fieldCode": "EPI",
-		"code": "QVEPI410"
-	},
-	{
-		"fullName": "CV5 em Refrigeração e Climatização",
-		"field": "Engenharia e Produção Industrial (EPI)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Refrigeração e Climatização",
-		"fieldCode": "EPI",
-		"code": "QVEPI512"
-	},
-	{
-		"fullName": "CV3 em Recepção e Andares ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Recepção e Andares ",
-		"fieldCode": "HTR",
-		"code": "QVHTR301"
-	},
-	{
-		"fullName": "CV4 em Recepção e Andares ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Recepção e Andares ",
-		"fieldCode": "HTR",
-		"code": "QVHTR401"
-	},
-	{
-		"fullName": "CV3 em Restaurante e Bar ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Restaurante e Bar ",
-		"fieldCode": "HTR",
-		"code": "QVHTR302"
-	},
-	{
-		"fullName": "CV4 em Restaurante e Bar ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Restaurante e Bar ",
-		"fieldCode": "HTR",
-		"code": "QVHTR402"
-	},
-	{
-		"fullName": "CV5 em Operações Hoteleiras ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Operações Hoteleiras ",
-		"fieldCode": "HTR",
-		"code": "QVHTR501"
-	},
-	{
-		"fullName": "CV3 em Guias de Turismo ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Guias de Turismo ",
-		"fieldCode": "HTR",
-		"code": "QVHTR303"
-	},
-	{
-		"fullName": "CV4 em Guias de Turismo",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Guias de Turismo",
-		"fieldCode": "HTR",
-		"code": "QVHTR403"
-	},
-	{
-		"fullName": "CV5 em Guias de Turismo",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Guias de Turismo",
-		"fieldCode": "HTR",
-		"code": "QVHTR502"
-	},
-	{
-		"fullName": "CV3 em Gastronomia e Artes Culinárias ",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Gastronomia e Artes Culinárias ",
-		"fieldCode": "HTR",
-		"code": "QVHTR304"
-	},
-	{
-		"fullName": "CV4 em Gastronomia e Artes Culinárias",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gastronomia e Artes Culinárias",
-		"fieldCode": "HTR",
-		"code": "QVHTR404"
-	},
-	{
-		"fullName": "CV5 em Gastronomia e Artes Culinárias",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gastronomia e Artes Culinárias",
-		"fieldCode": "HTR",
-		"code": "QVHTR503"
-	},
-	{
-		"fullName": "CV3 em Ecoturismo",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Ecoturismo",
-		"fieldCode": "HTR",
-		"code": "QVHTR305"
-	},
-	{
-		"fullName": "CV4 em Ecoturismo- Desenvolvimento de Produtos Turísticos Duráveis",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Ecoturismo- Desenvolvimento de Produtos Turísticos Duráveis",
-		"fieldCode": "HTR",
-		"code": "QVHTR405"
-	},
-	{
-		"fullName": "CV5 em Ecoturismo- Desenvolvimento de Produtos Turísticos Duráveis",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Ecoturismo- Desenvolvimento de Produtos Turísticos Duráveis",
-		"fieldCode": "HTR",
-		"code": "QVHTR504"
-	},
-	{
-		"fullName": "CV3 em Guia de Ecoturismo",
-		"field": "Hotelaria e Turismo (HTR)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Guia de Ecoturismo",
-		"fieldCode": "HTR",
-		"code": "QVHTR306"
-	},
-	{
-		"fullName": "CV3 em Operador de Processamento de Gás",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Operador de Processamento de Gás",
-		"fieldCode": "EXT",
-		"code": "QVEXT301"
-	},
-	{
-		"fullName": "CV4 em Operador de Planta de Processamento de Gás Natural",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Operador de Planta de Processamento de Gás Natural",
-		"fieldCode": "EXT",
-		"code": "QVEXT401"
-	},
-	{
-		"fullName": "CV5 em Operador de Planta de Processamento de Gás Natural ",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Operador de Planta de Processamento de Gás Natural ",
-		"fieldCode": "EXT",
-		"code": "QVEXT501"
-	},
-	{
-		"fullName": "CV3 em Indústria Extractiva - Mineração ",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Indústria Extractiva - Mineração ",
-		"fieldCode": "EXT",
-		"code": "QVEXT302"
-	},
-	{
-		"fullName": "CV4 em Indústria Extractiva -  Mineração ",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Indústria Extractiva -  Mineração ",
-		"fieldCode": "EXT",
-		"code": "QVEXT402"
-	},
-	{
-		"fullName": "CV5 em Geologia ",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Geologia ",
-		"fieldCode": "EXT",
-		"code": "QVEXT502"
-	},
-	{
-		"fullName": "CV5 em Processamento de Minerais ",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Processamento de Minerais ",
-		"fieldCode": "EXT",
-		"code": "QVEXT503"
-	},
-	{
-		"fullName": "CV5 em Exploração de Minas",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Exploração de Minas",
-		"fieldCode": "EXT",
-		"code": "QVEXT504"
-	},
-	{
-		"fullName": "CV5 em Topografia de Minas",
-		"field": "Indústria Extractiva (EXT)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Topografia de Minas",
-		"fieldCode": "EXT",
-		"code": "QVEXT505"
-	},
-	{
-		"fullName": "CV3 em Topografia ",
-		"field": "Planeamento Físico e Ambiente (PFA)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Topografia ",
-		"fieldCode": "PFA",
-		"code": "QVPFA301"
-	},
-	{
-		"fullName": "CV4 em Topografia ",
-		"field": "Planeamento Físico e Ambiente (PFA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Topografia ",
-		"fieldCode": "PFA",
-		"code": "QVPFA401"
-	},
-	{
-		"fullName": "CV5 em Topografia ",
-		"field": "Planeamento Físico e Ambiente (PFA)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Topografia ",
-		"fieldCode": "PFA",
-		"code": "QVPFA501"
-	},
-	{
-		"fullName": "CV4 em Cartografia e Informação Geográfica ",
-		"field": "Planeamento Físico e Ambiente (PFA)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Cartografia e Informação Geográfica ",
-		"fieldCode": "PFA",
-		"code": "QVPFA402"
-	},
-	{
-		"fullName": "CV5 em Cartografia e Informação Geográfica ",
-		"field": "Planeamento Físico e Ambiente (PFA)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Cartografia e Informação Geográfica ",
-		"fieldCode": "PFA",
-		"code": "QVPFA502"
-	},
-	{
-		"fullName": "CV2 em Acção Social ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "2",
-		"certificate": "V",
-		"name": "Acção Social ",
-		"fieldCode": "SSS",
-		"code": "QVSSS201"
-	},
-	{
-		"fullName": "CV3 em Acção Social ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Acção Social ",
-		"fieldCode": "SSS",
-		"code": "QVSSS301"
-	},
-	{
-		"fullName": "CV4 em Acção Social ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Acção Social ",
-		"fieldCode": "SSS",
-		"code": "QVSSS401"
-	},
-	{
-		"fullName": "CV5 em Acção Social ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Acção Social ",
-		"fieldCode": "SSS",
-		"code": "QVSSS501"
-	},
-	{
-		"fullName": "CV5 em Oftalmologia  ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Oftalmologia  ",
-		"fieldCode": "SSS",
-		"code": "QVSSS502"
-	},
-	{
-		"fullName": "CV5 em Nutrição  ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Nutrição  ",
-		"fieldCode": "SSS",
-		"code": "QVSSS503"
-	},
-	{
-		"fullName": "CV5 em Análises Clínicas  Laboratoriais",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Análises Clínicas  Laboratoriais",
-		"fieldCode": "SSS",
-		"code": "QVSSS504"
-	},
-	{
-		"fullName": "CV5 em Fisioterapia  ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Fisioterapia  ",
-		"fieldCode": "SSS",
-		"code": "QVSSS505"
-	},
-	{
-		"fullName": "CV5 em Ortoprotesia",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Ortoprotesia",
-		"fieldCode": "SSS",
-		"code": "QVSSS506"
-	},
-	{
-		"fullName": "CV5 em Prótese Dentária ",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Prótese Dentária ",
-		"fieldCode": "SSS",
-		"code": "QVSSS507"
-	},
-	{
-		"fullName": "CO5 em Anestesiologia",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "O",
-		"name": "Anestesiologia",
-		"fieldCode": "SSS",
-		"code": "QOSSS501"
-	},
-	{
-		"fullName": "CO5 em Enfermagem de Cuidados Intensivos",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "O",
-		"name": "Enfermagem de Cuidados Intensivos",
-		"fieldCode": "SSS",
-		"code": "QOSSS502"
-	},
-	{
-		"fullName": "CO5 em Instrumentação",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "O",
-		"name": "Instrumentação",
-		"fieldCode": "SSS",
-		"code": "QOSSS503"
-	},
-	{
-		"fullName": "CV5 em Enfermagem de Saúde Materno Infantil",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Enfermagem de Saúde Materno Infantil",
-		"fieldCode": "SSS",
-		"code": "QVSSS508"
-	},
-	{
-		"fullName": "CV5 em Enfermagem Geral - Técnico",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Enfermagem Geral - Técnico",
-		"fieldCode": "SSS",
-		"code": "QVSSS509"
-	},
-	{
-		"fullName": "CO5 em Enfermagem Neonatal",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "O",
-		"name": "Enfermagem Neonatal",
-		"fieldCode": "SSS",
-		"code": "QOSSS504"
-	},
-	{
-		"fullName": "CO2 em Agente Polivalente de Saúde",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "2",
-		"certificate": "O",
-		"name": "Agente Polivalente de Saúde",
-		"fieldCode": "SSS",
-		"code": "QO SSS201"
-	},
-	{
-		"fullName": "CV5 em Medicina Geral – Técnico (TMG)",
-		"field": "Saúde e Serviços Sociais (SSS)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Medicina Geral – Técnico (TMG)",
-		"fieldCode": "SSS",
-		"code": "QVSSS510"
-	},
-	{
-		"fullName": "CV4 em Suporte Informático  ",
-		"field": "TICs (TIC)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Suporte Informático  ",
-		"fieldCode": "TIC",
-		"code": "QVTIC401"
-	},
-	{
-		"fullName": "CV5 em Administração de Sistemas e Redes Informáticas",
-		"field": "TICs (TIC)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Administração de Sistemas e Redes Informáticas",
-		"fieldCode": "TIC",
-		"code": "QVTIC501"
-	},
-	{
-		"fullName": "CV5 em Programação WEB ",
-		"field": "TICs (TIC)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Programação WEB ",
-		"fieldCode": "TIC",
-		"code": "QVTIC502"
-	},
-	{
-		"fullName": "CV3 em Gestão de Logística",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Gestão de Logística",
-		"fieldCode": "TNL",
-		"code": "QVTNL301"
-	},
-	{
-		"fullName": "CV4 em Gestão de Logística",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Gestão de Logística",
-		"fieldCode": "TNL",
-		"code": "QVTNL401"
-	},
-	{
-		"fullName": "CV5 em Gestão de Logística",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Gestão de Logística",
-		"fieldCode": "TNL",
-		"code": "QVTNL501"
-	},
-	{
-		"fullName": "CV3 em Operações Portuárias ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Operações Portuárias ",
-		"fieldCode": "TNL",
-		"code": "QVTNL302"
-	},
-	{
-		"fullName": "CV4 em Operações Portuárias",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Operações Portuárias",
-		"fieldCode": "TNL",
-		"code": "QVTNL402"
-	},
-	{
-		"fullName": "CV5 em Operações Portuárias",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Operações Portuárias",
-		"fieldCode": "TNL",
-		"code": "QVTNL502"
-	},
-	{
-		"fullName": "CV3 em Agenciamento de Navios e Cargas ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Agenciamento de Navios e Cargas ",
-		"fieldCode": "TNL",
-		"code": "QVTNL303"
-	},
-	{
-		"fullName": "CV4 em Agenciamento de Navios e Cargas",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Agenciamento de Navios e Cargas",
-		"fieldCode": "TNL",
-		"code": "QVTNL403"
-	},
-	{
-		"fullName": "CV5 em Agenciamento de Navios e Cargas",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Agenciamento de Navios e Cargas",
-		"fieldCode": "TNL",
-		"code": "QVTNL503"
-	},
-	{
-		"fullName": "CV3 em Navegação - Contramestre",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Navegação - Contramestre",
-		"fieldCode": "TNL",
-		"code": "QVTNL304"
-	},
-	{
-		"fullName": "CV3 em Máquinas Marítimas - Motorista de 3ª ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "3",
-		"certificate": "V",
-		"name": "Máquinas Marítimas - Motorista de 3ª ",
-		"fieldCode": "TNL",
-		"code": "QVTNL305"
-	},
-	{
-		"fullName": "CV4 em Máquinas Marítimas – Motorista de 2ª ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Máquinas Marítimas – Motorista de 2ª ",
-		"fieldCode": "TNL",
-		"code": "QVTNL404"
-	},
-	{
-		"fullName": "CV4 em Navegação e Pescas – Mestre Costeiro ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "4",
-		"certificate": "V",
-		"name": "Navegação e Pescas – Mestre Costeiro ",
-		"fieldCode": "TNL",
-		"code": "QVTNL405"
-	},
-	{
-		"fullName": "CV5 em Navegação e Pescas – Mestre do Alto Pescador ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Navegação e Pescas – Mestre do Alto Pescador ",
-		"fieldCode": "TNL",
-		"code": "QVTNL504"
-	},
-	{
-		"fullName": "CV5 em Máquinas Marítimas – Motorista de 1ª ",
-		"field": "Transporte, Navegação e Logística (TNL)",
-		"level": "5",
-		"certificate": "V",
-		"name": "Máquinas Marítimas – Motorista de 1ª ",
-		"fieldCode": "TNL",
-		"code": "QVTNL505"
+		"name": "Administração e Gestão",
+		"code": "adg",
+		"subfields": [
+			{
+				"name": "Gestão",
+				"code": "01",
+				"qualifications": [
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível III em Gestão",
+						"code": "QADG0130191",
+						"level": "3"
+					},
+					{
+						"name": "Gestão Autárquica",
+						"title": "Certificado Vocacional Nível 4 de Gestão Autárquica",
+						"code": "QAG044181",
+						"level": "4"
+					},
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível 4 em Gestão",
+						"code": "QADG01400191",
+						"level": "4"
+					},
+					{
+						"name": "Gestão de Recursos Humanos",
+						"title": "Certificado Vocacional de Nível 4 em Gestão de Recursos Humanos",
+						"code": "QAD08401",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Financeira e Patrimonial",
+						"title": "Certificado Vocacional Nível 4 de Gestão Financeira e Patrimonial",
+						"code": "QAG0740111",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Autárquica",
+						"title": "Certificado Vocacional de Gestão Autárquica Nível V",
+						"code": "QAG04501",
+						"level": "5"
+					},
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível V em Gestão",
+						"code": "QADG015001191",
+						"level": "5"
+					},
+					{
+						"name": "Recursos Humanos",
+						"title": "Certificado Vocacional de Nível 5 de Recursos Humanos",
+						"code": "QAG08501111",
+						"level": "5"
+					},
+					{
+						"name": "Gestão Financeira e Patrimonial",
+						"title": "Certificado Vocacional de Nível 5 Gestão Financeira e Patrimonial",
+						"code": "QAG07501111",
+						"level": "5"
+					}
+				]
+			},
+			{
+				"name": "Contabilidade",
+				"code": "02"
+			},
+			{
+				"name": "Secretariado",
+				"code": "03"
+			},
+			{
+				"name": "Administração",
+				"code": "04"
+			},
+			{
+				"name": "Estatística",
+				"code": "05"
+			}
+		]
+	},
+	{
+		"name": "Agricultura e Conservação da Natureza",
+		"code": "agr",
+		"subfields": [
+			{
+				"name": "Agro-pecuária",
+				"code": "01"
+			},
+			{
+				"name": "Extensão e Fomento Agrário",
+				"code": "04"
+			},
+			{
+				"name": "Florestas e Fauna Bravia",
+				"code": "06"
+			},
+			{
+				"name": "Planeamento Físico e Ambiente",
+				"code": "09"
+			},
+			{
+				"name": "Agroprocessamento",
+				"code": "11"
+			}
+		]
+	},
+	{
+		"name": "Aquacultura e Pescas",
+		"code": "aqp",
+		"subfields": [
+			{
+				"name": "Aquacultura",
+				"code": "01"
+			},
+			{
+				"name": "Pescas",
+				"code": "02"
+			}
+		]
+	},
+	{
+		"name": "Comunicação (COM)",
+		"code": "com",
+		"subfields": []
+	},
+	{
+		"name": "Construção Civil e Arquitectura",
+		"code": "cca",
+		"subfields": [
+			{
+				"name": "Edificações",
+				"code": "01"
+			},
+			{
+				"name": "Infraestruturas",
+				"code": "02"
+			},
+			{
+				"name": "Tecnologia de Construção",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "Cultura, Artes e Desporto",
+		"code": "cad",
+		"subfields": [
+			{
+				"name": "Artes Visuais",
+				"code": "01"
+			},
+			{
+				"name": "Música",
+				"code": "02"
+			},
+			{
+				"name": "Teatro e Dança",
+				"code": "03"
+			},
+			{
+				"name": "Design",
+				"code": "04"
+			},
+			{
+				"name": "Desporto",
+				"code": "05"
+			},
+			{
+				"name": "Televisão e Vídeo",
+				"code": "06"
+			}
+		]
+	},
+	{
+		"name": "Educação",
+		"code": "edu",
+		"subfields": [
+			{
+				"name": "Educação de Infância",
+				"code": "01"
+			},
+			{
+				"name": "Formação de Formadores",
+				"code": "02"
+			}
+		]
+	},
+	{
+		"name": "Engenharia e Produção Industrial",
+		"code": "epi",
+		"subfields": [
+			{
+				"name": "Mecânica",
+				"code": "01"
+			},
+			{
+				"name": "Eletricidade, Eletrónica e Energias",
+				"code": "02"
+			},
+			{
+				"name": "Manufactura",
+				"code": "03"
+			},
+			{
+				"name": "Química",
+				"code": "04"
+			},
+			{
+				"name": "Automação",
+				"code": "05"
+			}
+		]
+	},
+	{
+		"name": "Hotelaria e Turismo",
+		"code": "htr",
+		"subfields": [
+			{
+				"name": "Hotelaria",
+				"code": "01"
+			},
+			{
+				"name": "Restauração",
+				"code": "02"
+			},
+			{
+				"name": "Turismo",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "Indústria Extractiva",
+		"code": "ext",
+		"subfields": [
+			{
+				"name": "Mineração",
+				"code": "01"
+			},
+			{
+				"name": "Hidrocarbonetos",
+				"code": "02"
+			}
+		]
+	},
+	{
+		"name": "Planeamento Físico e Ambiente",
+		"code": "pfa",
+		"subfields": []
+	},
+	{
+		"name": "Saúde e Serviços Sociais",
+		"code": "sss",
+		"subfields": [
+			{
+				"name": "Ação Social",
+				"code": "01"
+			},
+			{
+				"name": "Saúde e Bem Estar",
+				"code": "02"
+			},
+			{
+				"name": "Administração Hospitalar",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "TICs",
+		"code": "tic",
+		"subfields": [
+			{
+				"name": "Programação",
+				"code": "01"
+			},
+			{
+				"name": "Administração",
+				"code": "02"
+			},
+			{
+				"name": "Hardware",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "Transporte, Navegação e Logística",
+		"code": "tnl",
+		"subfields": [
+			{
+				"name": "Transporte",
+				"code": "01"
+			},
+			{
+				"name": "Navegação",
+				"code": "02"
+			},
+			{
+				"name": "Logística",
+				"code": "03"
+			}
+		]
 	}
 ]

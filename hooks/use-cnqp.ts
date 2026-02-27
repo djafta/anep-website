@@ -1,31 +1,72 @@
+import { useMemo } from "react";
 import cnqp from "@/cnqp.json";
 
+type Qualification = {
+  name: string;
+  code: string;
+  title: string;
+  level: string;
+}
+
+type Subfield = {
+  name: string;
+  code: string;
+  qualifications: Qualification[];
+}
+
+type Field = {
+  name: string;
+  code: string;
+  subfields: Subfield[];
+}
+
 export function useCnqp() {
-  const fieldsNames = Array.from(new Set(cnqp.map((o) => o.field))).sort();
+  const fields = useMemo(() => {
+    return cnqp.map((field) => ({
+      name: field.name,
+      code: field.code,
+      subfields: field.subfields.map((subfield) => ({
+        name: subfield.name,
+        code: subfield.code,
+        qualifications:
+          subfield.qualifications?.map((qualification) => ({
+            name: qualification.name,
+            code: qualification.code,
+            title: qualification.title,
+            level: qualification.level,
+          })) || [],
+      })),
+    }));
+  }, []);
 
-  const fields = fieldsNames.map((name) => {
-    const qualification = cnqp.find((o) => o.field === name);
+  const qualificationIndex = useMemo(() => {
+    const map: Map<string, {
+      field: Field;
+      subfield: Subfield;
+      qualification: Qualification;
+    }> = new Map();
 
-    return {
-      name,
-      code: qualification!.fieldCode.toLowerCase(),
-    };
-  });
+    for (const field of fields) {
+      for (const subfield of field.subfields) {
+        for (const qualification of subfield.qualifications) {
+          map.set(qualification.code, {
+            field,
+            subfield,
+            qualification,
+          });
+        }
+      }
+    }
 
-  const qualifications = cnqp.map((o, i) => {
-    return {
-      id: i,
-      name: o.name,
-      field: o.field,
-      level: Number(o.level),
-      fieldCode: o.fieldCode.toLowerCase(),
-      certificate: o.certificate,
-      code: o.code
-    };
-  });
+    return map;
+  }, [fields]);
+
+  function getQualificationByCode(code: string) {
+    return qualificationIndex.get(code) || null;
+  }
 
   return {
     fields,
-    qualifications,
+    getQualificationByCode,
   };
 }

@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/navbar";
+import { Header } from "@/components/header";
 
 export default async function DefaultHeader() {
-  return <Navbar/>
+  return <Header/>
 }

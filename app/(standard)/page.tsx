@@ -7,7 +7,6 @@ import { BriefcaseBusiness, Building2, LucideStar, ShieldCheck } from "lucide-re
 import { CnqpFields } from "@/components/cnqp-fields";
 import { StatsCard } from "@/components/stats-card";
 import Link from "next/link";
-import Image from "next/image";
 import { AboutSection } from "@/components/about/about-section";
 
 const generalStats = [
@@ -19,7 +18,7 @@ const generalStats = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen w-screen">
+    <div>
       <div className={ 'absolute left-0 top-0 w-screen h-screen home-bg -z-10' }/>
       <div className={ 'z-30 backdrop-blur-xs' }>
         <section className="py-32 ">
@@ -68,16 +67,6 @@ export default function HomePage() {
         </section>
       </div>
       <AboutSection/>
-      <div className={ 'w-full flex items-center hidden' }>
-        <Image
-          className={'mx-auto'}
-          src={ '/mission-illustration.png' }
-          alt={ '' }
-          width={ 2000 }
-          height={ 1000 }
-        />
-      </div>
-      {/* Qualifications Section */ }
       <section className="py-32 bg-gray-50" id="qualifications">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-left mb-16">
@@ -93,16 +82,16 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */ }
-      <section className="py-32 bg-gray-50" id="contato">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto">
+      <section className="py-32 px-4 bg-gray-50" id="contato">
+        <div className="max-w-7xl mx-auto px-4 py-10 rounded-2xl shadow-xl bg-white">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Entre em Contato</h2>
             <p className="text-gray-600 mb-8">
               Nossa equipe está disponível para ajudar com suas dúvidas sobre educação profissional, certificações e
               processos de acreditação.
             </p>
             <Button
-              className="bg-[#003B71] text-white font-medium hover:bg-[#003B71]/90 px-8 h-12"
+              className="bg-primary text-white font-medium px-8 h-12 rounded-full"
               size="lg"
               asChild
             >

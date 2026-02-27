@@ -59,68 +59,94 @@ const departments = [
 
 export const TeamSection = () => {
   return (
-    <section className="bg-background py-16 md:py-24">
-      <div className="mx-auto max-w-container px-4 md:px-8">
-        <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <span className="text-4xl font-bold mb-8">Conselho de Direcção</span>
-          <h2 className="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Conheça a nossa
-            direção</h2>
-          <p className="mt-4 text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Nossa equipe é composta por profissionais dedicados e experientes, comprometidos em oferecer soluções
-            inovadoras e de alta qualidade para nossos clientes. Cada membro traz uma riqueza de conhecimento e paixão
-            pelo que faz, garantindo que juntos possamos alcançar resultados excepcionais.
+    <section className="relative py-24 bg-gradient-to-b from-background via-background to-muted/30">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary">
+            Conselho de Direcção
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Profissionais comprometidos com excelência, inovação e qualidade institucional.
           </p>
         </div>
 
-        <div>
-          <div className="flex flex-col items-center gap-4 md:gap-5">
-            <Avatar className={ 'size-20 md:size-28' }>
-              <AvatarImage src={ '/images/directors/principal.png' }
-                           alt={ 'Uilson Timane Avatar' } className="size-20 md:size-28"/>
-              <AvatarFallback/>
+        {/* Director Geral - destaque */}
+        <div className="flex justify-center mb-20">
+          <div className="group relative flex flex-col items-center bg-card/70 backdrop-blur-xl border rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500">
+            <Avatar className="size-32 ring-4 ring-primary/20 group-hover:ring-primary/40 transition">
+              <AvatarImage src="/images/directors/principal.png" />
+              <AvatarFallback />
             </Avatar>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold text-primary">{ 'Uilson Timane' }</h3>
-              <p className="text-md text-secondary font-semibold">{ 'Director Geral' }</p>
-            </div>
+
+            <h3 className="mt-6 text-2xl font-bold text-primary">
+              Uilson Timane
+            </h3>
+            <p className="text-primary/70 font-semibold">
+              Director Geral
+            </p>
+
+            <div className="absolute -z-10 w-60 h-60 bg-primary/10 blur-3xl rounded-full"></div>
           </div>
         </div>
-        <div className="mt-12 md:mt-16">
-          <ul
-            className="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-            { directors.map((item) => (
-              <li key={ item.title + item.area }
-                  className="w-full flex flex-col items-center gap-4 md:gap-5 shadow-lg rounded-2xl py-10 px-4 border hover:shadow-secondary transition-all duration-300">
-                <Avatar className={ 'size-20 md:size-28' }>
-                  <AvatarImage src={ item.avatarUrl } alt={ item.name } className="size-20 md:size-28"/>
-                  <AvatarFallback/>
-                </Avatar>
-                <div className="text-center w-full">
-                  <h3 className="text-lg font-semibold">{ item.name }</h3>
-                  <p className="text-sm text-secondary font-semibold my-2">{ item.title }</p>
-                  <Separator className={ 'w-full my-3' }/>
-                  <p className="text-sm text-primary font-semibold">{ item.area }</p>
-                </div>
-              </li>
-            )) }
-          </ul>
+
+        {/* Diretores */}
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 mb-24">
+          {directors.map((item) => (
+            <div
+              key={item.title + item.area}
+              className="group relative bg-card/70 backdrop-blur-lg border rounded-2xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <Avatar className="mx-auto size-24 ring-2 ring-muted group-hover:ring-primary/40 transition">
+                <AvatarImage src={item.avatarUrl} alt={item.name} />
+                <AvatarFallback />
+              </Avatar>
+
+              <h3 className="mt-6 font-semibold text-lg h-16">
+                {item.name}
+              </h3>
+
+              <p className="text-sm text-primary font-medium mt-2 h-8">
+                {item.title}
+              </p>
+
+              <Separator className="my-4 opacity-40" />
+
+              <p className="text-sm text-muted-foreground">
+                {item.area}
+              </p>
+
+              <div className="absolute -z-10 inset-0 rounded-2xl bg-primary/5 opacity-0 group-hover:opacity-100 transition"></div>
+            </div>
+          ))}
         </div>
+
+        {/* Departamentos */}
         <div>
-          <h2 className="mt-12 text-display-sm font-semibold text-primary md:text-display-md mb-5">Departamentos</h2>
-          <ul
-            className="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-            { departments.map((item) => (
-              <li key={ item.code }
-                  className="relative overflow-hidden w-full h-full flex flex-col gap-4 md:gap-5 shadow-md rounded-full py-10 px-4 border hover:shadow-primary transition-all duration-300 group">
-                <div className={ 'left-0 top-0 absolute w-full h-full bg-background p-3 flex' }>
-                  <span className={'my-auto text-sm text-primary'}>
-                  { item.name }
-                  </span>
-                </div>
-              </li>
-            )) }
-          </ul>
+          <h2 className="text-3xl font-bold text-primary mb-10 text-center">
+            Departamentos
+          </h2>
+
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+            {departments.map((item) => (
+              <div
+                key={item.code}
+                className="group relative border rounded-2xl p-8 bg-card hover:bg-primary/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <span className="inline-block text-xs font-bold tracking-wider bg-primary text-white px-3 py-1 rounded-full mb-4">
+                  {item.code}
+                </span>
+
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.name}
+                </p>
+
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/20 transition"></div>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

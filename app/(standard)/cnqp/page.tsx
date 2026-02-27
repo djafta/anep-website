@@ -1,78 +1,78 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 
 import { CnqpFields } from "@/components/cnqp-fields";
-import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
-const featuredQualifications = [
-  {
-    id: 1,
-    name: "Técnico em Inteligência Artificial",
-    category: "Tecnologia da Informação",
-    image: "/placeholder.svg",
-    description: "Qualificação do Mês: Explore o futuro da tecnologia com nossa nova formação em IA.",
-  },
-  {
-    id: 2,
-    name: "Especialista em Energias Renováveis",
-    category: "Engenharia",
-    image: "/placeholder.svg",
-    description: "Nova Qualificação: Contribua para um futuro sustentável com esta formação inovadora.",
-  },
-  {
-    id: 3,
-    name: "Técnico em Saúde Digital",
-    category: "Saúde",
-    image: "/placeholder.svg",
-    description: "Mais Procurada: Combine cuidados de saúde com tecnologia nesta qualificação em alta demanda.",
-  },
-];
-
-export default function QualificationsPage() {
-  const [carouselIndex, setCarouselIndex] = useState(0);
-  const nextCarousel = () => {
-    setCarouselIndex((prevIndex) => (prevIndex + 1) % featuredQualifications.length);
-  };
-
-  const prevCarousel = () => {
-    setCarouselIndex((prevIndex) => (prevIndex - 1 + featuredQualifications.length) % featuredQualifications.length);
-  };
-
+export default function CnqpPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <main className="pb-0">
-        <section
-          className="relative h-screen flex items-center justify-center bg-gradient-to-r from-[#003B71] to-[#0056a4]">
-          <motion.div
-            animate={ { opacity: 1, y: 0 } }
-            className="text-center text-white z-10"
-            initial={ { opacity: 0, y: 50 } }
-            transition={ { duration: 1 } }
-          >
-            <h1 className="text-6xl font-bold mb-6">Catálogo Nacional das Qualificações Profissionais</h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+    <div className="pt-12 flex-1 bg-white">
+      <section className="pb-0 bg-neutral-100">
+        <header className="relative max-w-7xl px-4 mx-auto grid md:grid-cols-2 md:py-10 items-center justify-center">
+          <div>
+            <h1 className="text-6xl font-bold mb-6 text-primary">Catálogo Nacional das Qualificações Profissionais</h1>
+            <p className="text-xl mb-8 max-w-2xl text-gray-600">
               O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
               profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
               país, no Subsistema de Educação Profissional.
             </p>
-          </motion.div>
-        </section>
-        <div>
-          <section className="py-32 bg-gray-50" id="qualifications">
+          </div>
+          <div className="flex justify-center items-center py-16 bg-neutral-100">
+            <div className="group [perspective:2000px]">
+              <div className="
+                relative
+                transition-all duration-500 ease-out
+                transform-gpu
+                [transform-style:preserve-3d]
+                rotate-y-[-25deg]
+                group-hover:rotate-y-[-12deg]
+              ">
+                {/* Capa */ }
+                <Image
+                  src="/cnqp-brochure.png"
+                  alt="CNQP Brochure"
+                  width={ 520 }
+                  height={ 500 }
+                  className="
+                  rounded-md
+                  shadow-[40px_40px_60px_rgba(0,0,0,0.35)]
+                  transition-all duration-500
+                  "
+                />
+
+                {/* Sombra interna simulando páginas */ }
+                <div className="
+                  pointer-events-none
+                  absolute inset-0
+                  rounded-md
+                  bg-gradient-to-r
+                  from-black/25 via-transparent to-transparent
+                "/>
+
+              </div>
+            </div>
+          </div>
+        </header>
+        <main>
+          <div className="py-32 bg-gray-50" id="qualifications">
             <div className="max-w-7xl mx-auto px-4">
               <div className={ 'flex items-center justify-between' }>
                 <div className="mb-16">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Campos de Qualificações</h2>
-                  <p className="text-gray-600 max-w-2xl">[Descrição dos campos]</p>
+                  <h2 className="text-3xl font-bold text-primary mb-4">Campos de Qualificações</h2>
+                  <p className="text-gray-600 max-w-2xl text-justify">
+                    Os campos do CNQP representam grandes áreas profissionais que organizam as qualificações de acordo
+                    com sectores de actividade e competências específicas. Cada campo reúne cursos e formações
+                    relacionadas a um mesmo domínio, facilitando a identificação do percurso formativo mais adequado aos
+                    interesses, talentos e objectivos profissionais do formando.
+                  </p>
                 </div>
               </div>
               <CnqpFields/>
             </div>
-          </section>
-        </div>
-      </main>
+          </div>
+        </main>
+      </section>
     </div>
   );
 }
