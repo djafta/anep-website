@@ -4,21 +4,31 @@ import React from "react";
 
 import { CnqpFields } from "@/components/cnqp-fields";
 import Image from "next/image";
+import { StatsCard } from "@/components/stats-card";
+import { BriefcaseBusiness, Component, Star } from "lucide-react";
+
+const generalStats = [
+  { number: "14", label: "Campos", icon: Star },
+  { number: "+200", label: "Qualificações Registradas", icon: BriefcaseBusiness },
+  { number: "22", label: "Módulos Independentes", icon: Component },
+];
+
 
 export default function CnqpPage() {
   return (
     <div className="pt-12 flex-1 bg-white">
       <section className="pb-0 bg-neutral-100">
-        <header className="relative max-w-7xl px-4 mx-auto grid md:grid-cols-2 md:py-10 items-center justify-center">
+        <header
+          className="relative min-h-screen max-w-7xl px-4 mx-auto grid md:grid-cols-2 md:py-10 items-center justify-center">
           <div>
-            <h1 className="text-6xl font-bold mb-6 text-primary">Catálogo Nacional das Qualificações Profissionais</h1>
-            <p className="text-xl mb-8 max-w-2xl text-gray-600">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-primary pt-10">Catálogo Nacional das Qualificações Profissionais</h1>
+            <p className="text-md mb-8 max-w-2xl text-gray-600 text-justify">
               O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
               profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
               país, no Subsistema de Educação Profissional.
             </p>
           </div>
-          <div className="flex justify-center items-center py-16 bg-neutral-100">
+          <div className="flex justify-end items-center py-16 my-auto bg-neutral-100">
             <div className="group [perspective:2000px]">
               <div className="
                 relative
@@ -32,7 +42,7 @@ export default function CnqpPage() {
                 <Image
                   src="/cnqp-brochure.png"
                   alt="CNQP Brochure"
-                  width={ 520 }
+                  width={ 420 }
                   height={ 500 }
                   className="
                   rounded-md
@@ -50,6 +60,15 @@ export default function CnqpPage() {
                   from-black/25 via-transparent to-transparent
                 "/>
 
+              </div>
+            </div>
+          </div>
+          <div className="py-20 xl:absolute bottom-0">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                { generalStats.map((stat, index) => (
+                  <StatsCard key={ index } description={ stat.label } icon={ stat.icon } number={ stat.number }/>
+                )) }
               </div>
             </div>
           </div>
