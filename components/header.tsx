@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useCnqp } from "@/hooks/use-cnqp";
 import { Separator } from "@/components/ui/separator";
-import { ChevronDown, ChevronRight, Menu } from "lucide-react";
+import { ChevronDown, ChevronRight, ExternalLink, Menu } from "lucide-react";
 import Link, { LinkProps } from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -192,7 +192,16 @@ export function Header({ theme = "dark" }: HeaderProps) {
         </nav>
 
         {/* Espaço reservado à direita (pode ser usado depois) */ }
-        <div className={ 'hidden lg:flex' }/>
+        <div className={ 'flex items-center py-3' }>
+          <Link
+            className={ cn('hidden lg:block py-1 px-3 rounded-2xl text-sm', {
+              'bg-primary text-white': theme === 'light',
+              'bg-white text-primary': theme === 'dark'
+            }) }
+            href={ 'https://validar.anep.gov.mz' }>
+            Validar documentos <ExternalLink className={ 'inline size-3' }/>
+          </Link>
+        </div>
 
         <Drawer>
           <DrawerTrigger className={ 'lg:hidden' }>
@@ -230,7 +239,7 @@ export function Header({ theme = "dark" }: HeaderProps) {
                     <a href={ '/cnqp' } className={ 'w-fit' }>CNQP</a>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className={'grid grid-cols-1'}>
+                    <div className={ 'grid grid-cols-1' }>
                       {
                         fields.map((field: Field) => (
                           <a
@@ -255,6 +264,16 @@ export function Header({ theme = "dark" }: HeaderProps) {
                 </AccordionItem>
 
               </Accordion>
+            </div>
+            <div>
+              <div className={ 'flex items-center gap-2 p-3 py-6' }>
+                <a
+                  className={ 'text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl' }
+                  href={ 'https://validar.anep.gov.mz' }
+                >
+                  Validar documentos <ExternalLink className={ 'inline mx-2 size-3' }/>
+                </a>
+              </div>
             </div>
           </DrawerContent>
         </Drawer>
