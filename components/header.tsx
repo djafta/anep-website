@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useCnqp } from "@/hooks/use-cnqp";
 import { Separator } from "@/components/ui/separator";
 import { ChevronDown, ChevronRight, ExternalLink, Menu } from "lucide-react";
 import Link, { LinkProps } from "next/link";
@@ -7,11 +6,8 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Field } from "@/lib/types";
 
-interface Field {
-  code: string;
-  name: string;
-}
 
 interface InstitutionLink {
   href: string;
@@ -75,8 +71,10 @@ export type HeaderProps = {
   theme?: "light" | "dark";
 }
 
-export function Header({ theme = "dark" }: HeaderProps) {
-  const { fields } = useCnqp();
+export async function Header({ theme = "dark" }: HeaderProps) {
+  const fields: Field[] = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields`, {
+    next: { revalidate: 60 },
+  }).then(response => response.json());
 
   return (
     <header
@@ -139,11 +137,11 @@ export function Header({ theme = "dark" }: HeaderProps) {
                   </h2>
 
                   <div className="grid grid-cols-4">
-                    { fields.map((field: Field) => (
+                    { fields.map((field) => (
                       <a
                         key={ field.code }
                         className="w-fit text-sm p-3 hover:bg-muted transition-all duration-300 rounded-xl"
-                        href={ `/cnqp/${ field.code }` }
+                        href={ `/cnqp/${ field.publicId }` }
                       >
                         { field.name }
                       </a>

@@ -1,17 +1,13 @@
 'use client';
 
-import { useCnqp } from "@/hooks/use-cnqp";
+import { Field, Subfield } from "@/lib/types";
 
-export function SubfieldHeader({ fieldCode, subfieldCode }: { fieldCode: string, subfieldCode: string }) {
-  const { fields } = useCnqp();
+export type SubfieldHeaderProps = {
+  field: Field
+  subfield: Subfield
+}
 
-  const field = fields.find(f => f.code === fieldCode);
-
-  if (!field) return null;
-
-  const subfield = field.subfields.find(s => s.code === subfieldCode);
-
-  if (!subfield) return null;
+export function SubfieldHeader({ field, subfield }: SubfieldHeaderProps) {
 
   return (
     <header className="py-8 bg-muted">

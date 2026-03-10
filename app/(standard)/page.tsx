@@ -1,4 +1,4 @@
-"use client";
+'use server';
 
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ const generalStats = [
   { number: "15+", label: "Anos de Excelência", icon: LucideStar },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div>
       <div className={ 'absolute left-0 top-0 w-screen h-screen home-bg -z-10' }/>

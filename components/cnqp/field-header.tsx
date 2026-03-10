@@ -1,21 +1,20 @@
 'use client';
 
-import { useCnqp } from "@/hooks/use-cnqp";
 import { Badge } from "@/components/ui/badge";
+import { Field } from "@/lib/types";
 
-export function FieldHeader({ code }: { code: string }) {
-  const { fields } = useCnqp();
+export type FieldHeaderProps = {
+  field: Field
+}
 
-  const field = fields.find(f => f.code === code);
-
-  if (!field) return null;
+export function FieldHeader({ field }: FieldHeaderProps) {
 
   return (
     <header className="py-8 bg-muted">
       <div className={ 'max-w-7xl px-4 mx-auto' }>
         <h1 className="text-2xl font-bold">{ field.name }</h1>
-        <p className={ 'text-sm text-muted-foreground' }>Subcampos: { field.subfields.length }</p>
-        <Badge className={'rounded-full'}>{ field.code.toUpperCase() }</Badge>
+        <p className={ 'text-sm text-muted-foreground' }>Sub campos: { field.subfields }</p>
+        <Badge className={ 'rounded-full' }>{ field.code.toUpperCase() }</Badge>
       </div>
     </header>
   );

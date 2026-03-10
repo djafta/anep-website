@@ -1,54 +1,79 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
   output   = "../app/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Qualification {
-  id          Int                   @id @default(autoincrement())
-  publicId    String                @unique @default(uuid(7)) @map("public_id")
-  name        String                @unique
-  description String?
-  createdAt   DateTime              @default(now()) @map("created_at")
-  updatedAt   DateTime              @updatedAt @map("updated_at")
-  categoryId  Int                   @map("category_id")
-  category    QualificationCategory @relation(fields: [categoryId], references: [id])
-  levelId     Int                   @map("level_id")
-  level       QualificationLevel    @relation(fields: [levelId], references: [id])
+  id          Int     @id @default(autoincrement())
+  publicId    String? @unique(map: "qualifications_public_id_unique") @default(uuid(7)) @map("public_id") @db.VarChar(36)
+  subfieldId  Int     @map("subfield_id")
+  name        String? @unique(map: "qualifications_name_unique") @db.VarChar(255)
+  code        String? @unique(map: "qualifications_code_unique") @db.VarChar(30)
+  description String? @db.VarChar(255)
+  sortOrder   Int?    @map("sort_order")
+  specUrl     String? @map("spec_url") @db.VarChar(255)
+  level       Int?
+  certificate String?
+
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt DateTime? @map("deleted_at") @db.Timestamp(6)
+  userId    Int       @map("user_id")
+  user      User?     @relation(fields: [userId], references: [id])
+
+  subfield Subfield @relation(fields: [subfieldId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "qualifications_subfield_id_subfields_id_fk")
 
   @@map("qualifications")
 }
 
-model QualificationCategory {
-  id             Int             @id @default(autoincrement())
-  publicId       String          @unique @default(uuid(7)) @map("public_id")
-  name           String          @unique
-  description    String?
-  createdAt      DateTime        @default(now()) @map("created_at")
-  updatedAt      DateTime        @updatedAt @map("updated_at")
-  qualifications Qualification[]
+model Field {
+  id          Int     @id @default(autoincrement())
+  publicId    String  @unique(map: "fields_public_id_unique") @map("public_id") @db.VarChar(36)
+  name        String  @unique(map: "fields_name_unique") @db.VarChar(255)
+  code        String  @unique(map: "fields_code_unique") @db.VarChar(5)
+  description String? @db.VarChar(255)
+  sortOrder   Int?    @map("sort_order")
+  icon        String? @db.VarChar(255)
 
-  @@map("qualification_categories")
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt DateTime? @map("deleted_at") @db.Timestamp(6)
+
+  subfields Subfield[]
+
+  @@map("fields")
 }
 
-model QualificationLevel {
+model Subfield {
+  id          Int     @id @default(autoincrement())
+  publicId    String? @unique(map: "subfields_public_id_unique") @map("public_id") @db.VarChar(36)
+  name        String? @unique(map: "subfields_name_unique") @db.VarChar(255)
+  code        String? @unique(map: "subfields_code_unique") @db.VarChar(5)
+  description String? @db.VarChar(255)
+  sortOrder   Int?    @map("sort_order")
+
+  fieldId Int @map("field_id")
+
+  createdAt DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt DateTime? @map("updated_at") @db.Timestamp(6)
+  deletedAt DateTime? @map("deleted_at") @db.Timestamp(6)
+
+  qualifications Qualification[]
+  field          Field           @relation(fields: [fieldId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "subfields_field_id_fields_id_fk")
+
+  @@map("subfields")
+}
+
+model User {
   id             Int             @id @default(autoincrement())
-  publicId       String          @unique @default(uuid(7)) @map("public_id")
-  name           String          @unique
-  description    String?
-  createdAt      DateTime        @default(now()) @map("created_at")
-  updatedAt      DateTime        @updatedAt @map("updated_at")
+  publicId       String?         @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
+  email          String          @unique(map: "user_email_unique")
+  password       String
   qualifications Qualification[]
 
-  @@map("qualification_levels")
+  @@map("users")
 }
