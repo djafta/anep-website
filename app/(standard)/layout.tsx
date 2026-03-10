@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-
-import "@/app/globals.css";
 import { Footer } from "@/components/footer";
 
 export const viewport: Viewport = {
@@ -23,12 +21,10 @@ export type StandardLayoutProps = {
 
 export default function StandardLayout({ children, header }: StandardLayoutProps) {
   return (
-    <html lang="en" className={ "flex min-h-full" }>
-    <body className={ `min-h-0 flex-1 flex flex-col` }>
-    { header }
-    { children }
-    <Footer/>
-    </body>
-    </html>
+    <>
+      { header }
+      { children }
+      <Footer/>
+    </>
   );
 }
