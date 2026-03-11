@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Field } from "@/lib/types";
 
 export type FieldsSelectProps = {
-  onSelect: (fieldPublicId: string) => void;
+  onSelect?: (fieldPublicId: string) => void;
 }
 
 export function FieldsSelect({ onSelect }: FieldsSelectProps) {
@@ -17,9 +17,9 @@ export function FieldsSelect({ onSelect }: FieldsSelectProps) {
   }, []);
 
   return (
-    <Select onValueChange={ onSelect } name={ 'fieldPublicId' }>
+    <Select onValueChange={ onSelect ?? onSelect } name={ 'fieldPublicId' }>
       <SelectTrigger>
-        <SelectValue placeholder={'Selecionar Campo'} />
+        <SelectValue placeholder={ 'Selecionar Campo' }/>
       </SelectTrigger>
       <SelectContent>
         {

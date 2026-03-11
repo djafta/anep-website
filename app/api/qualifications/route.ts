@@ -18,11 +18,12 @@ export async function POST(request: NextRequest) {
   const body = {
     name: formData.get("name"),
     code: formData.get("code"),
+    title: formData.get("title"),
+    level: formData.get("level") ? Number(formData.get("level")) : undefined,
+    certificate: formData.get("certificate") ?? undefined,
     description: formData.get("description") ?? undefined,
     subfieldPublicId: formData.get("subfieldPublicId"),
-    sortOrder: formData.get("sortOrder")
-      ? Number(formData.get("sortOrder"))
-      : undefined,
+    sortOrder: formData.get("sortOrder") ? Number(formData.get("sortOrder")) : undefined,
   };
 
   const result = validate(createQualificationSchema, body);

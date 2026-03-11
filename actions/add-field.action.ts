@@ -34,4 +34,9 @@ export async function addFieldAction(state: unknown, formData: FormData) {
       payload: await response.json()
     }
   }
+
+  return {
+    success: true,
+    payload: await response.json()
+  }
 }

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -22,7 +21,6 @@ export type StandardLayoutProps = {
 export default function AdminLayout({ children }: StandardLayoutProps) {
   return (
     < >
-      <Header theme={ 'light' }/>
       { children }
       <Footer/>
     </>

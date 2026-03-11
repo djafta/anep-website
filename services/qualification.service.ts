@@ -2,11 +2,14 @@ import { z } from "zod";
 import { v7 as uuid } from "uuid";
 import { prisma } from "@/lib/prisma";
 import { minioClient } from '@/lib/minio';
+import { getAuthUser } from "@/lib/auth-user";
 
 export const createQualificationSchema = z.object({
   publicId: z.string().optional().default(() => uuid()),
   name: z.string({ message: "INVALID_NAME" }),
   code: z.string({ message: "INVALID_CODE" }),
+  level: z.number({ message: "INVALID_LEVEL" }),
+  certificate: z.string({ message: "INVALID_CERTIFICATE" }),
   description: z.string().optional(),
   subfieldPublicId: z.string({ message: "INVALID_FIELD_ID" }),
   sortOrder: z.number().optional().default(0),
@@ -42,6 +45,12 @@ export async function createQualification(
     },
   });
 
+  const user = await getAuthUser();
+
+  if (!user) {
+    throw new Error("UNAUTHORIZED");
+  }
+
   return prisma.qualification.create({
     data: {
       publicId: data.publicId,
@@ -49,8 +58,11 @@ export async function createQualification(
       code: data.code,
       description: data.description,
       sortOrder: data.sortOrder,
+      level: data.level,
+      certificate: data.certificate,
       specUrl,
       subfieldId,
+      userId: user.id,
     },
   });
 }

@@ -29,7 +29,7 @@ export default async function CnqpSubfieldPage({ params }: {
           { qualifications.map(qualification => (
             <Link
               key={ qualification.publicId }
-              href={ `/cnqp/${ field_id }/${ subfield_id }/${ qualification.publicId }` }>
+              href={ `/app/cnqp/${ field_id }/${ subfield_id }/${ qualification.publicId }` }>
               <QualificationCard
                 name={ qualification.name }
                 title={ qualification.code }

@@ -28,7 +28,7 @@ export default async function QualificationPage({ params }: {
 
           {/* Breadcrumb */ }
           <div className="text-sm text-zinc-500 mb-4">
-            <Link href="/" className="hover:text-primary">Início</Link> /{ " " }
+            <Link href="/public" className="hover:text-primary">Início</Link> /{ " " }
             <Link href={ `/campos/${ field.code }` } className="hover:text-primary">
               { field.name }
             </Link>{ " " }

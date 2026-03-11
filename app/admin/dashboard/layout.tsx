@@ -1,9 +1,15 @@
 import { SecondaryNav } from "@/components/secondary-nav";
 import { redirect } from "next/navigation";
-import React from "react";
+import React, { type ReactNode } from "react";
 import { cookies } from "next/headers";
 
-export default async function AdminDashboardLayout({ children }: { children: React.ReactNode }) {
+
+export type DashboardLayoutProps = {
+  children: ReactNode;
+  header?: ReactNode;
+}
+
+export default async function AdminDashboardLayout({ children, header }: DashboardLayoutProps) {
   const cookieStore = await cookies();
 
   const user = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/users/me`, {
@@ -23,19 +29,14 @@ export default async function AdminDashboardLayout({ children }: { children: Rea
 
   return (
     <div className={ 'flex flex-col flex-1 w-full mt-12' }>
-      <div className={ 'py-10 ' }>
-        <div className={ 'mx-auto w-full max-w-7xl px-4 text-primary' }>
-          <h1 className={ 'font-semibold text-3xl' }>Website Admin</h1>
-          <p className={ 'text-sm' }>Gestão do conteúdo do website</p>
-          <span className={ 'text-xs' }>{ user?.email }</span>
-        </div>
-      </div>
+      { header }
       <div className={ 'grid md:grid-cols-[20rem_1fr] flex-1 w-full max-w-7xl mx-auto px-4 gap-4' }>
         <SecondaryNav
           links={ [
             { label: 'Dashboard', href: '/admin/dashboard' },
             { label: 'Campos', href: '/admin/dashboard/fields' },
             { label: 'Sub-campos', href: '/admin/dashboard/subfields' },
+            { label: 'Qualificações', href: '/admin/dashboard/qualifications' },
           ] }
         />
         <div className={ 'flex-1 flex' }>

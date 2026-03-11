@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card"
 import { Field, FieldGroup, FieldLabel, } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
-import { loginAction } from "@/action/login.action";
+import { loginAction } from "@/actions/login.action";
 import { Spinner } from "@/components/ui/spinner";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -28,7 +28,7 @@ export function AdminLoginForm({ className, ...props }: React.ComponentProps<"di
   }, [state]);
 
   return (
-    <div className={ cn("flex flex-col gap-6 max-w-sm", className) } { ...props }>
+    <div className={ cn("flex flex-col gap-6 w-full max-w-sm", className) } { ...props }>
       <Card>
         <CardHeader>
           <CardTitle>Entrar na sua conta</CardTitle>

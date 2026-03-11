@@ -16,9 +16,9 @@ export async function CnqpFields() {
       {
         fields.map((field) => (
           <Link key={ field.publicId } className={ "w-full h-full flex" }
-                href={ `/cnqp/${ field.publicId }` }>
+                href={ `/app/cnqp/${ field.publicId }` }>
             <Card className="w-full  hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
-              <CardContent className="p-6 flex flex-col justify-between">
+              <CardContent className="flex flex-col justify-between">
                 <div className={ "flex items-center gap-4" }>
                   <div className={ "overflow-hidden rounded-full p-3 bg-primary text-white aspect-square w-fit" }>
                     <DynamicIcon name={ field.icon as IconName || 'circle-question-mark' } className="w-6 h-6"/>

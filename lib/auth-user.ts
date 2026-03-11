@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { verifyToken } from "./auth";
 
 export type User = {
+  id: number;
   publicId: string;
   email: string;
   name: string;

@@ -11,7 +11,8 @@ model Qualification {
   id          Int     @id @default(autoincrement())
   publicId    String? @unique(map: "qualifications_public_id_unique") @default(uuid(7)) @map("public_id") @db.VarChar(36)
   subfieldId  Int     @map("subfield_id")
-  name        String? @unique(map: "qualifications_name_unique") @db.VarChar(255)
+  title       String? @db.VarChar(255)
+  name        String? @db.VarChar(255)
   code        String? @unique(map: "qualifications_code_unique") @db.VarChar(30)
   description String? @db.VarChar(255)
   sortOrder   Int?    @map("sort_order")
@@ -52,7 +53,7 @@ model Subfield {
   id          Int     @id @default(autoincrement())
   publicId    String? @unique(map: "subfields_public_id_unique") @map("public_id") @db.VarChar(36)
   name        String? @unique(map: "subfields_name_unique") @db.VarChar(255)
-  code        String? @unique(map: "subfields_code_unique") @db.VarChar(5)
+  code        String?
   description String? @db.VarChar(255)
   sortOrder   Int?    @map("sort_order")
 
@@ -66,6 +67,7 @@ model Subfield {
   field          Field           @relation(fields: [fieldId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "subfields_field_id_fields_id_fk")
 
   @@map("subfields")
+  @@unique([code, fieldId], map: "subfields_code_field_id_unique")
 }
 
 model User {

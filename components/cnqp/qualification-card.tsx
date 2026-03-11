@@ -9,7 +9,7 @@ type QualificationCardProps = {
 
 export function QualificationCard({ name, title, code, level }: QualificationCardProps) {
   return (
-    <div className="group relative w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+    <div className="group relative w-full h-full max-w-md rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
 
       {/* Nível */}
       <div className="absolute top-4 right-4">
