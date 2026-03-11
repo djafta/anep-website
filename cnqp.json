@@ -1,0 +1,588 @@
+[
+	{
+		"name": "Administração e Gestão",
+		"code": "adg",
+		"subfields": [
+			{
+				"name": "Gestão",
+				"code": "01",
+				"qualifications": [
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível III em Gestão",
+						"code": "QADG0130191",
+						"level": "3"
+					},
+					{
+						"name": "Gestão Autárquica",
+						"title": "Certificado Vocacional Nível 4 de Gestão Autárquica",
+						"code": "QAG044181",
+						"level": "4"
+					},
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível 4 em Gestão",
+						"code": "QADG01400191",
+						"level": "4"
+					},
+					{
+						"name": "Gestão de Recursos Humanos",
+						"title": "Certificado Vocacional de Nível 4 em Gestão de Recursos Humanos",
+						"code": "QAD08401",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Financeira e Patrimonial",
+						"title": "Certificado Vocacional Nível 4 de Gestão Financeira e Patrimonial",
+						"code": "QAG0740111",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Autárquica",
+						"title": "Certificado Vocacional de Gestão Autárquica Nível V",
+						"code": "QAG04501",
+						"level": "5"
+					},
+					{
+						"name": "Gestão",
+						"title": "Certificado Vocacional de Nível V em Gestão",
+						"code": "QADG015001191",
+						"level": "5"
+					},
+					{
+						"name": "Recursos Humanos",
+						"title": "Certificado Vocacional de Nível 5 de Recursos Humanos",
+						"code": "QAG08501111",
+						"level": "5"
+					},
+					{
+						"name": "Gestão Financeira e Patrimonial",
+						"title": "Certificado Vocacional de Nível 5 Gestão Financeira e Patrimonial",
+						"code": "QAG07501111",
+						"level": "5"
+					}
+				]
+			},
+			{
+				"name": "Contabilidade",
+				"code": "02",
+				"qualifications": [
+					{
+						"name": "Contabilidade",
+						"title": "Certificado Vocacional de Contabilidade Nível IV",
+						"code": "QADG024001191",
+						"level": "4"
+					},
+					{
+						"name": "Contabilidade",
+						"title": "Certificado Vocacional de Contabilidade Nível V",
+						"code": "QADG02500191",
+						"level": "5"
+					}
+				]
+			},
+			{
+				"name": "Secretariado",
+				"code": "03",
+				"qualifications": [
+					{
+						"name": "Secretariado",
+						"title": "Certificado Vocacional Nível 3 de Secretariado",
+						"code": "QAG033091",
+						"level": "3"
+					}
+				]
+			},
+			{
+				"name": "Administração",
+				"code": "04",
+				"qualifications": [
+					{
+						"name": "Administração do Trabalho",
+						"title": "Certificado Vocacional (3) em Administração do Trabalho",
+						"code": "QAG06301161",
+						"level": "3"
+					},
+					{
+						"name": "Administração do Trabalho",
+						"title": "Certificado Vocacional (4) em Administração do Trabalho",
+						"code": "QAG06401161",
+						"level": "4"
+					},
+					{
+						"name": "Gestão Fabril",
+						"title": "Certificado Vocacional (5) em Gestão Fabril",
+						"code": "QAG065001",
+						"level": "5"
+					},
+					{
+						"name": "Relações Laborais",
+						"title": "Certificado Vocacional (5) em Relações Laborais",
+						"code": "QAG065002",
+						"level": "5"
+					}
+				]
+			},
+			{
+				"name": "Estatística",
+				"code": "05",
+				"qualifications": [
+					{
+						"name": "Estatísticas Oficiais",
+						"title": "Certificado Vocacional (4) em Estatísticas Oficiais",
+						"code": "QAG104001",
+						"level": "4"
+					},
+					{
+						"name": "Estatísticas Oficiais",
+						"title": "Certificado Vocacional (5) em Estatísticas Oficiais",
+						"code": "QAG0150010",
+						"level": "5"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Agricultura e Conservação da Natureza",
+		"code": "agr",
+		"subfields": [
+			{
+				"name": "Agro-pecuária",
+				"code": "01"
+			},
+			{
+				"name": "Extensão e Fomento Agrário",
+				"code": "04"
+			},
+			{
+				"name": "Florestas e Fauna Bravia",
+				"code": "06"
+			},
+			{
+				"name": "Planeamento Físico e Ambiente",
+				"code": "09"
+			},
+			{
+				"name": "Agroprocessamento",
+				"code": "11"
+			}
+		]
+	},
+	{
+		"name": "Aquacultura e Pescas",
+		"code": "aqp",
+		"subfields": [
+			{
+				"name": "Aquacultura",
+				"code": "01"
+			},
+			{
+				"name": "Pescas",
+				"code": "02"
+			}
+		]
+	},
+	{
+		"name": "Comunicação (COM)",
+		"code": "com",
+		"subfields": []
+	},
+	{
+		"name": "Construção Civil e Arquitectura",
+		"code": "cca",
+		"subfields": [
+			{
+				"name": "Edificações",
+				"code": "01"
+			},
+			{
+				"name": "Infraestruturas",
+				"code": "02"
+			},
+			{
+				"name": "Tecnologia de Construção",
+				"code": "03"
+			}
+		],
+		"modules": [
+			{
+				"code": "UCCCA0120113221",
+				"level": "3",
+				"title": "Produzir Blocos de Solo-cimento e telhas em Micro-betão",
+				"description": "Esta Unidade de Competência irá proporcionar aos formandos o desenvolvimento de capacidades técnicas visando produzir blocos de solo-cimento e telhas de micro-betão, conforme requisitos técnicos, de qualidade, de higiene e segurança e do meio ambiente."
+			}
+		]
+	},
+	{
+		"name": "Cultura, Artes e Desporto",
+		"code": "cad",
+		"subfields": [
+			{
+				"name": "Artes Visuais",
+				"code": "01"
+			},
+			{
+				"name": "Música",
+				"code": "02"
+			},
+			{
+				"name": "Teatro e Dança",
+				"code": "03"
+			},
+			{
+				"name": "Design",
+				"code": "04"
+			},
+			{
+				"name": "Desporto",
+				"code": "05"
+			},
+			{
+				"name": "Televisão e Vídeo",
+				"code": "06"
+			}
+		]
+	},
+	{
+		"name": "Educação",
+		"code": "edu",
+		"subfields": [
+			{
+				"name": "Educação de Infância",
+				"code": "01"
+			},
+			{
+				"name": "Formação de Formadores",
+				"code": "02"
+			}
+		]
+	},
+	{
+		"name": "Engenharia e Produção Industrial",
+		"code": "epi",
+		"subfields": [
+			{
+				"name": "Mecânica",
+				"code": "01",
+				"qualifications": [
+					{
+						"name": "Soldador",
+						"title": "Certificado Ocupacional de Nível III em Soldador",
+						"code": "QOEPI04311211",
+						"level": "3"
+					},
+					{
+						"name": "Mecânica de Construções Metálicas",
+						"title": "Certificado Vocacional (4) em Mecânica de Construções Metálicas",
+						"code": "MNQ0501",
+						"level": "4"
+					},
+					{
+						"name": "Mecânica de Maquinas de Transporte e Elevação",
+						"title": "Certificado Profissional Nível 3 – Mecânica de Maquinas de Transporte e Elevação",
+						"code": "QEPI083141",
+						"level": "3"
+					},
+					{
+						"name": "Mecânica de Manutenção Industrial",
+						"title": "Certificado Vocacional 3 em Mecânica de Manutenção Industrial",
+						"code": "QEPI0431018",
+						"level": "3"
+					},
+					{
+						"name": "Mecânica de Manutenção Industrial",
+						"title": "Certificado Vocacional IV em Mecânica de Manutenção Industrial",
+						"code": "QEPI0441018",
+						"level": "4"
+					},
+					{
+						"name": "Mecânica Auto",
+						"title": "Certificado Vocacional (5) em Mecânica Auto",
+						"code": "QEPI0451319",
+						"level": "5"
+					},
+					{
+						"name": "Mecânica de Manutenção Industrial",
+						"title": "Certificado Vocacional 5 em Mecânica de Manutenção Industrial",
+						"code": "QEPI0451219",
+						"level": "5"
+					},
+					{
+						"name": "Serralharia Civil",
+						"title": "Certificado Vocacional de Nível II em Serralharia Civil",
+						"code": "QEPI01201201",
+						"level": "2"
+					},
+					{
+						"name": "Manutenção Preventiva e Motores Diesel",
+						"title": "Certificado Vocacional de Nível II em Manutenção Preventiva e Motores Diesel",
+						"code": "QEPI01202211",
+						"level": "2"
+					},
+					{
+						"name": "Manutenção Preventiva de Veículos Automóveis",
+						"title": "Certificado Vocacional de Nível II em Manutenção Preventiva de Veículos Automóveis",
+						"code": "QEPI01203231",
+						"level": "2"
+					},
+					{
+						"name": "Mecânica Industrial",
+						"title": "Certificado Vocacional de Nível III em Mecânica Industrial",
+						"code": "QEPI01301212",
+						"level": "3"
+					},
+					{
+						"name": "Mecânica Geral",
+						"title": "Certificado Vocacional IV em Mecânica Geral",
+						"code": "QEPI01401212",
+						"level": "4"
+					},
+					{
+						"name": "Mecânica de Construções Metálicas",
+						"title": "Certificado Vocacional 5 em Mecânica de Construções Metálicas",
+						"code": "QEPI01503221",
+						"level": "5"
+					},
+					{
+						"name": "Mecânica de Maquinagem",
+						"title": "Certificado Vocacional de Nível 5 - Mecânica de Maquinagem",
+						"code": "QEPI01504221",
+						"level": "5"
+					},
+					{
+						"name": "Mecânica Auto",
+						"title": "Certificado Profissional (3) em Mecânica Auto",
+						"code": "QEPI05303181",
+						"level": "3"
+					}
+				]
+			},
+			{
+				"name": "Eletricidade, Eletrónica e Energias",
+				"code": "02",
+				"qualifications": [
+					{
+						"name": "Energias renováveis",
+						"title": "Certificado Vocacional V – Energias renováveis",
+						"code": "QEPI0551319",
+						"level": "5"
+					},
+					{
+						"name": "Instalação e Manutenção de Equipamentos de Refrigeração e Climatização",
+						"title": "Certificado Ocupacional III em Instalação e Manutenção de Equipamentos de Refrigeração e Climatização",
+						"code": "QEPI01301312",
+						"level": "3"
+					},
+					{
+						"name": "Refrigeração Industrial",
+						"title": "Certificado Profissional (5) em Refrigeração Industrial",
+						"code": "QEPI01504251",
+						"level": "5"
+					},
+					{
+						"name": "Electricidade Fotovoltaica",
+						"title": "Certificado Vocacional de Nível II em Electricidade Fotovoltaica",
+						"code": "QEPI02202201",
+						"level": "2"
+					},
+					{
+						"name": "Refrigeração e Climatização",
+						"title": "Certificado Vocacional IV em Refrigeração e Climatização",
+						"code": "QEPI02403251",
+						"level": "4"
+					},
+					{
+						"name": "Refrigeração e Climatização",
+						"title": "Certificado Vocacional 3 em Refrigeração e Climatização",
+						"code": "QEPI04313251",
+						"level": "3"
+					}
+				]
+			},
+			{
+				"name": "Manufactura",
+				"code": "03"
+			},
+			{
+				"name": "Química",
+				"code": "04",
+				"qualifications": [
+					{
+						"name": "Competências de Laboratório",
+						"title": "Certificado Vocacional (3) em Competências de Laboratório",
+						"code": "QEPI073141",
+						"level": "3"
+					},
+					{
+						"name": "Técnicas de Laboratório",
+						"title": "Certificado Vocacional IV em Técnicas de Laboratório",
+						"code": "QEPI074001",
+						"level": "4"
+					}
+				]
+			},
+			{
+				"name": "Automação",
+				"code": "05",
+				"qualifications": [
+					{
+						"name": "Competências de Laboratório",
+						"title": "Certificado Vocacional 5 em Instrumentação e Automação",
+						"code": "QEPI0551118",
+						"level": "5"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Hotelaria e Turismo",
+		"code": "htr",
+		"subfields": [
+			{
+				"name": "Hotelaria",
+				"code": "01"
+			},
+			{
+				"name": "Restauração",
+				"code": "02"
+			},
+			{
+				"name": "Turismo",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "Indústria Extractiva",
+		"code": "ext",
+		"subfields": [
+			{
+				"name": "Mineração",
+				"code": "01",
+				"qualifications": [
+					{
+						"name": "Recursos Naturais - Mineração",
+						"title": "Certificado Profissional III em Recursos Naturais - Mineração",
+						"code": "QMIN0131171",
+						"level": "3"
+					},
+					{
+						"name": "Mineração",
+						"title": "Certificado Vocacional de Nível IV em Mineração",
+						"code": "QMIN0141171",
+						"level": "4"
+					},
+					{
+						"name": "Exploração de Minas",
+						"title": "Certificado Vocacional de Nível V- Técnico em Exploração de Minas",
+						"code": "QMIN0152191",
+						"level": "5"
+					},
+					{
+						"name": "Topografia de minas",
+						"title": "Certificado Vocacional V em Topografia de minas",
+						"code": "QMIN0451191",
+						"level": "5"
+					},
+					{
+						"name": "Geologia",
+						"title": "Certificado Vocacional V em Geologia",
+						"code": "QMIN0151191",
+						"level": "5"
+					},
+					{
+						"name": "Processamento de Minerais",
+						"title": "Certificado Vocacional de Nível V - Técnico em Processamento de Minerais",
+						"code": "QMIN0351191",
+						"level": "5"
+					}
+				]
+			},
+			{
+				"name": "Hidrocarbonetos",
+				"code": "02",
+				"qualifications": [
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional III – Operador de Planta de Processamento de Gás Natural",
+						"code": "QIE0131171",
+						"level": "3"
+					},
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional IV – Operador de Planta de Processamento de Gás Natural",
+						"code": "QRN07141191",
+						"level": "4"
+					},
+					{
+						"name": "Operador de Planta de Processamento de Gás Natural",
+						"title": "Certificado Vocacional V – Operador de Planta de Processamento de Gás Natural",
+						"code": "QIE07151191",
+						"level": "5"
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "Planeamento Físico e Ambiente",
+		"code": "pfa",
+		"subfields": []
+	},
+	{
+		"name": "Saúde e Serviços Sociais",
+		"code": "sss",
+		"subfields": [
+			{
+				"name": "Ação Social",
+				"code": "01"
+			},
+			{
+				"name": "Saúde e Bem Estar",
+				"code": "02"
+			},
+			{
+				"name": "Administração Hospitalar",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "TICs",
+		"code": "tic",
+		"subfields": [
+			{
+				"name": "Programação",
+				"code": "01"
+			},
+			{
+				"name": "Administração",
+				"code": "02"
+			},
+			{
+				"name": "Hardware",
+				"code": "03"
+			}
+		]
+	},
+	{
+		"name": "Transporte, Navegação e Logística",
+		"code": "tnl",
+		"subfields": [
+			{
+				"name": "Transporte",
+				"code": "01"
+			},
+			{
+				"name": "Navegação",
+				"code": "02"
+			},
+			{
+				"name": "Logística",
+				"code": "03"
+			}
+		]
+	}
+]

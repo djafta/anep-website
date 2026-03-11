@@ -1,0 +1,29 @@
+import { NextRequest, NextResponse } from "next/server";
+import { signToken } from "@/lib/auth";
+import { findUserByEmail } from "@/services/user.service";
+
+export async function POST(request: NextRequest) {
+  const { email, password } = await request.json();
+  try {
+    const user = await findUserByEmail(email)
+
+    if (password !== user.password) {
+      return NextResponse.json({ error: "INVALID_CREDENTIALS" }, { status: 401 });
+    }
+
+    const token = signToken(user);
+
+    const response = NextResponse.json({ success: true });
+
+    response.cookies.set("access_token", token, {
+      httpOnly: false,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+    });
+
+    return response;
+  } catch (err: any) {
+    return NextResponse.json({ error: "INVALID_CREDENTIALS" }, { status: 401 });
+  }
+}
