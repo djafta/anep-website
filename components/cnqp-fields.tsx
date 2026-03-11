@@ -16,7 +16,7 @@ export async function CnqpFields() {
       {
         fields.map((field) => (
           <Link key={ field.publicId } className={ "w-full h-full flex" }
-                href={ `/app/cnqp/${ field.publicId }` }>
+                href={ `/cnqp/${ field.publicId }` }>
             <Card className="w-full  hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
               <CardContent className="flex flex-col justify-between">
                 <div className={ "flex items-center gap-4" }>
