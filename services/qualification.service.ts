@@ -83,6 +83,7 @@ export async function listQualifications(subfieldPublicId?: string) {
     where,
     select: {
       publicId: true,
+      title: true,
       name: true,
       code: true,
       description: true,

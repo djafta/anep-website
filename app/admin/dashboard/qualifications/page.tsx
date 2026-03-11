@@ -13,7 +13,7 @@ export default async function AdminQualificationsPage() {
     <div className={ 'w-full py-4' }>
       {
         fields.map(async (field) => {
-          const subfields: Subfield[] = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/subfields?fieldPublicId=${ field.publicId }`, {
+          const subfields: Subfield[] = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields/${ field.publicId }/subfields`, {
             cache: "no-store",
           }).then(response => response.json());
 
@@ -41,9 +41,9 @@ export default async function AdminQualificationsPage() {
                           <div className="space-y-4 my-5 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             { qualifications.map(qualification => (
                               <Link
-                                className={'h-full'}
+                                className={ 'h-full' }
                                 key={ qualification.publicId }
-                                href={ `${ qualification.publicId }` }>
+                                href={ `/admin/dashboard/qualifications/${ qualification.publicId }` }>
                                 <QualificationCard
                                   name={ qualification.name }
                                   title={ qualification.code }
