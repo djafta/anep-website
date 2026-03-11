@@ -28,8 +28,9 @@ export default async function CnqpSubfieldPage({ params }: {
         <div className="space-y-4 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           { qualifications.map(qualification => (
             <Link
+              className={ 'h-full' }
               key={ qualification.publicId }
-              href={ `/app/cnqp/${ field_id }/${ subfield_id }/${ qualification.publicId }` }>
+              href={ `/cnqp/${ field_id }/${ subfield_id }/${ qualification.publicId }` }>
               <QualificationCard
                 name={ qualification.name }
                 title={ qualification.code }
