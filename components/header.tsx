@@ -73,7 +73,7 @@ export type HeaderProps = {
 
 export async function Header({ theme = "dark" }: HeaderProps) {
   const fields: Field[] = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields`, {
-    next: { revalidate: 60 },
+    cache: "no-store"
   }).then(response => response.json());
 
   return (
