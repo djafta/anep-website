@@ -30,6 +30,7 @@ export type Qualification = {
   code: string
   level: string;
   specUrl: string
+  description?: string;
 }
 
 export type Stats = {

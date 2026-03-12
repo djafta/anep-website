@@ -95,10 +95,8 @@ export default async function QualificationPage({ params }: {
               </h2>
             </div>
 
-            <p className="text-zinc-600 leading-relaxed">
-              O { qualification.name } prepara o formando
-              para desempenhar funções de { subfield.name }, desenvolvendo competências
-              relacionadas à { field.name }.
+            <p className="text-zinc-600 leading-relaxed text-justify">
+              {qualification.description}
             </p>
           </div>
 
