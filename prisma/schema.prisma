@@ -9,14 +9,14 @@ datasource db {
 
 model Qualification {
   id          Int     @id @default(autoincrement())
-  publicId    String? @unique(map: "qualifications_public_id_unique") @default(uuid(7)) @map("public_id") @db.VarChar(36)
+  publicId    String  @unique(map: "qualifications_public_id_unique") @default(uuid(7)) @map("public_id") @db.VarChar(36)
   subfieldId  Int     @map("subfield_id")
   title       String? @db.VarChar(255)
   name        String? @db.VarChar(255)
   code        String? @unique(map: "qualifications_code_unique") @db.VarChar(30)
-  description String? @db.VarChar(255)
+  description String? @db.Text
   sortOrder   Int?    @map("sort_order")
-  specUrl     String? @map("spec_url") @db.VarChar(255)
+  specUrl     String  @map("spec_url") @db.VarChar(255)
   level       Int?
   certificate String?
 
@@ -72,10 +72,20 @@ model Subfield {
 
 model User {
   id             Int             @id @default(autoincrement())
+  name           String?         @db.VarChar(255)
   publicId       String?         @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
   email          String          @unique(map: "user_email_unique")
-  password       String
+  passwordHash   String          @map("password_hash") @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @db.VarChar(255)
   qualifications Qualification[]
+  role           UserRole        @default(MANAGER)
+  createdAt      DateTime?       @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt      DateTime?       @map("updated_at") @db.Timestamp(6)
+  deletedAt      DateTime?       @map("deleted_at") @db.Timestamp(6)
 
   @@map("users")
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
 }

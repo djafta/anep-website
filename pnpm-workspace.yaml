@@ -3,6 +3,7 @@ onlyBuiltDependencies:
   - "@prisma/client"
   - "@prisma/engines"
   - "@tailwindcss/oxide"
+  - argon2
   - msw
   - prisma
   - sharp

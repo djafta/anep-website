@@ -31,3 +31,9 @@ export type Qualification = {
   level: string;
   specUrl: string
 }
+
+export type Stats = {
+  fields: number;
+  subfields: number;
+  qualifications: number;
+}

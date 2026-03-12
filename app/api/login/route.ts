@@ -1,13 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { signToken } from "@/lib/auth";
 import { findUserByEmail } from "@/services/user.service";
+import { verifyPassword } from "@/services/password.service";
 
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
   try {
     const user = await findUserByEmail(email)
 
-    if (password !== user.password) {
+    if (!await verifyPassword(user.passwordHash, password)) {
       return NextResponse.json({ error: "INVALID_CREDENTIALS" }, { status: 401 });
     }
 

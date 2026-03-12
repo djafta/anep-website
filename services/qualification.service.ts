@@ -9,6 +9,7 @@ export const createQualificationSchema = z.object({
   name: z.string({ message: "INVALID_NAME" }),
   code: z.string({ message: "INVALID_CODE" }),
   level: z.number({ message: "INVALID_LEVEL" }),
+  title: z.string({ message: "INVALID_TITLE" }),
   certificate: z.string({ message: "INVALID_CERTIFICATE" }),
   description: z.string().optional(),
   subfieldPublicId: z.string({ message: "INVALID_FIELD_ID" }),
@@ -31,6 +32,13 @@ async function uploadQualificationSpec(file: File) {
   );
 
   return `${ process.env.MINIO_PUBLIC_URL }/${ process.env.MINIO_BUCKET }/${ objectName }`;
+}
+
+async function deleteQualificationSpec(specUrl: string) {
+  const objectName = specUrl.split('/').pop();
+  if (objectName) {
+    await minioClient.removeObject(process.env.MINIO_BUCKET!, objectName);
+  }
 }
 
 export async function createQualification(
@@ -60,6 +68,7 @@ export async function createQualification(
       sortOrder: data.sortOrder,
       level: data.level,
       certificate: data.certificate,
+      title: data.title,
       specUrl,
       subfieldId,
       userId: user.id,
@@ -98,4 +107,12 @@ export async function listQualifications(subfieldPublicId?: string) {
 
 export async function findQualification(publicId: string) {
   return prisma.qualification.findUniqueOrThrow({ where: { publicId } })
+}
+
+export async function removeQualification(publicId: string) {
+  const qualification = await findQualification(publicId);
+  if (qualification) {
+    await deleteQualificationSpec(qualification.specUrl);
+    await prisma.qualification.delete({ where: { publicId } })
+  }
 }

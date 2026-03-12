@@ -8,8 +8,9 @@ export function middleware(request: NextRequest) {
   const isAdminRoute = pathname.startsWith("/admin");
   const isApiWrite = pathname.startsWith("/api") && request.method !== "GET";
   const isApiLogin = pathname.startsWith("/api/login");
+  const hashApiKey = process.env.API_KEY === request.headers.get('authorization')?.substring(7);
 
-  if (!isAdminRoute && !isApiWrite || isApiLogin) {
+  if (!isAdminRoute && !isApiWrite || isApiLogin || hashApiKey) {
     return NextResponse.next();
   }
 

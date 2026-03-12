@@ -15,6 +15,7 @@ import Link from "next/link";
 
 export type User = {
   email: string
+  name: string
 }
 
 interface UserMenuProps {
@@ -32,7 +33,7 @@ export function UserMenu({ user }: UserMenuProps) {
           className="flex items-center gap-3 p-0 h-auto rounded-full shadow-md border"
         >
           <Avatar className="h-9 w-9 rounded-full">
-            <AvatarFallback className={'bg-primary text-white'}>
+            <AvatarFallback className={ 'bg-primary text-white' }>
               { initials }
             </AvatarFallback>
           </Avatar>
@@ -44,7 +45,10 @@ export function UserMenu({ user }: UserMenuProps) {
         className="w-72 rounded-2xl shadow-xl p-2"
       >
         <DropdownMenuLabel className="space-y-1">
-          <p className="font-semibold">
+          <p className="text-sm">
+            { user.name }
+          </p>
+          <p className="font-semibold text-xs">
             { user.email }
           </p>
         </DropdownMenuLabel>
@@ -52,7 +56,7 @@ export function UserMenu({ user }: UserMenuProps) {
         <DropdownMenuSeparator/>
 
         <DropdownMenuItem asChild className="text-red-600">
-          <Link href={ "/logout" }>
+          <Link href={ "/sign-out" }>
             Terminar Sessão
           </Link>
         </DropdownMenuItem>
