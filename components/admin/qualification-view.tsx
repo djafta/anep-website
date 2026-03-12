@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Pencil, Trash2 } from "lucide-react";
+import { ExternalLink, Pencil } from "lucide-react";
+import { DeleteQualificationDialog } from "@/components/admin/delete-qualification-dialog";
 
 export type Qualification = {
   publicId: string;
@@ -18,8 +19,6 @@ export type Qualification = {
 
 interface Props {
   qualification: Qualification;
-  onEdit?: (id: string) => void;
-  onDelete?: (id: string) => void;
 }
 
 function Field({
@@ -37,11 +36,7 @@ function Field({
   );
 }
 
-export function QualificationView({
-                                    qualification,
-                                    onEdit,
-                                    onDelete,
-                                  }: Props) {
+export function QualificationView({ qualification }: Props) {
   return (
     <div className="w-full space-y-8">
       {/* Header */ }
@@ -54,18 +49,11 @@ export function QualificationView({
           <Button
             size="icon"
             variant="ghost"
-            onClick={ () => onEdit?.(qualification.publicId) }
           >
             <Pencil className="text-primary h-4 w-4"/>
           </Button>
 
-          <Button
-            size="icon"
-            variant="ghost"
-            onClick={ () => onDelete?.(qualification.publicId) }
-          >
-            <Trash2 className="h-4 w-4 text-red-500"/>
-          </Button>
+          <DeleteQualificationDialog qualificationPublicId={ qualification.publicId }/>
         </div>
       </div>
 
@@ -106,9 +94,9 @@ export function QualificationView({
       <Field label="Nome">{ qualification.name }</Field>
 
       {/* Description */ }
-      <div className="max-w-2xl space-y-1">
+      <div className="max-w-4xl space-y-1">
         <div className="text-xs text-muted-foreground">Descrição</div>
-        <div className="text-sm">
+        <div className="text-sm text-muted-foreground text-justify">
           { qualification.description || "—" }
         </div>
       </div>
