@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { v7 as uuid } from "uuid";
 import { z } from "zod";
 import { validate } from "@/lib/validate";
-import { createField, listFields } from "@/services/field.service";
+import { createField, findFieldBySubfield, listFields } from "@/services/field.service";
 
 const schema = z.object({
   publicId: z.string().optional().default(() => uuid()),
@@ -27,6 +27,16 @@ export async function POST(request: NextRequest) {
   return Response.json(field);
 }
 
-export async function GET() {
-  return NextResponse.json(await listFields());
+export async function GET(request: NextRequest) {
+  try {
+    const searchParams = request.nextUrl.searchParams;
+    const subfieldPublicId = searchParams.get('subfieldPublicId') as string | undefined;
+    if (subfieldPublicId) {
+      return NextResponse.json(await findFieldBySubfield(subfieldPublicId));
+    }
+    return NextResponse.json(await listFields());
+  } catch (error) {
+    return NextResponse.json({ error: "FIELD_NOT_FOUND" }, { status: 404 });
+  }
+
 }

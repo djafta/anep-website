@@ -6,9 +6,10 @@ import { Field } from "@/lib/types";
 
 export type SubfieldsSelectProps = {
   fieldPublicId?: string | null;
+  defaultValue?: string;
 }
 
-export function SubfieldsSelect({ fieldPublicId }: SubfieldsSelectProps) {
+export function SubfieldsSelect({ fieldPublicId, defaultValue }: SubfieldsSelectProps) {
   const [subfields, setSubfields] = useState<Field[]>([]);
 
   useEffect(() => {
@@ -19,9 +20,9 @@ export function SubfieldsSelect({ fieldPublicId }: SubfieldsSelectProps) {
   }, [fieldPublicId]);
 
   return (
-    <Select name={ 'subfieldPublicId' }>
+    <Select defaultValue={ defaultValue } name={ 'subfieldPublicId' }>
       <SelectTrigger>
-        <SelectValue placeholder={'Selecionar Subcampo'} />
+        <SelectValue placeholder={ 'Selecionar Subcampo' }/>
       </SelectTrigger>
       <SelectContent>
         {

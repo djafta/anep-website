@@ -31,6 +31,10 @@ export type Qualification = {
   level: string;
   specUrl: string
   description?: string;
+  title: string;
+  sortOrder: number;
+  subfieldPublicId: string;
+  certificate: string
 }
 
 export type Stats = {

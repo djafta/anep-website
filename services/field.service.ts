@@ -77,3 +77,14 @@ export async function findField(publicId: string) {
     subfields: field._count.subfields
   };
 }
+
+export async function findFieldBySubfield(subfieldPublicId: string) {
+  return (await prisma.subfield.findUniqueOrThrow({
+    where: {
+      publicId: subfieldPublicId
+    },
+    include: {
+      field: true
+    }
+  })).field;
+}

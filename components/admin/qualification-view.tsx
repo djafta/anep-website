@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Pencil } from "lucide-react";
 import { DeleteQualificationDialog } from "@/components/admin/delete-qualification-dialog";
+import Link from "next/link";
 
 export type Qualification = {
   publicId: string;
@@ -46,12 +47,14 @@ export function QualificationView({ qualification }: Props) {
         </div>
 
         <div className="flex gap-2">
-          <Button
-            size="icon"
-            variant="ghost"
-          >
-            <Pencil className="text-primary h-4 w-4"/>
-          </Button>
+          <Link href={ `/admin/dashboard/qualifications/${ qualification.publicId }/edit` }>
+            <Button
+              size="icon"
+              variant="ghost"
+            >
+              <Pencil className="text-primary h-4 w-4"/>
+            </Button>
+          </Link>
 
           <DeleteQualificationDialog qualificationPublicId={ qualification.publicId }/>
         </div>
