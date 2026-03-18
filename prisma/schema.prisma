@@ -65,8 +65,8 @@ model Subfield {
   qualifications Qualification[]
   field          Field           @relation(fields: [fieldId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "subfields_field_id_fields_id_fk")
 
-  @@map("subfields")
   @@unique([code, fieldId], map: "subfields_code_field_id_unique")
+  @@map("subfields")
 }
 
 model User {

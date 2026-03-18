@@ -8,7 +8,6 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Field } from "@/lib/types";
 
-
 interface InstitutionLink {
   href: string;
   title: string;
