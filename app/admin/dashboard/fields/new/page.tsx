@@ -3,12 +3,12 @@
 import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSeparator, FieldSet } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Spinner } from "@/components/ui/spinner";
 import * as React from "react";
 import { addFieldAction } from "@/actions/add-field.action";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function AddFieldPage() {
   const [state, dispatch, isPending] = React.useActionState(addFieldAction, null);
@@ -66,6 +66,10 @@ export default function AddFieldPage() {
         <Field>
           <FieldLabel>Ícone</FieldLabel>
           <Input name="icon" placeholder="Ex: file-text"/>
+          <FieldDescription>
+            Os ícones usados são da biblioteca <a target={ '_blank' } href={ 'https://lucide.dev/icons' }>Lucide</a>.
+            Insira o nome do ícone desejado.
+          </FieldDescription>
         </Field>
       </FieldSet>
 
