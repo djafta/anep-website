@@ -18,6 +18,10 @@ export default async function AdminHeader() {
       return redirect('/admin')
     });
 
+  if (!user) {
+    return null;
+  }
+
   return (
     <header
       className={ cn(
