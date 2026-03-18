@@ -1,4 +1,4 @@
-import { EditFieldForm } from "@/components/edit-field-form";
+import { FieldView } from "@/components/admin/field-view";
 
 export default async function FieldPage({ params }: { params: Promise<{ field_id: string }>; }) {
   const { field_id } = await params;
@@ -13,7 +13,7 @@ export default async function FieldPage({ params }: { params: Promise<{ field_id
 
   return (
     <section className={ 'flex flex-col w-full flex-1' }>
-      <EditFieldForm field={ field }/>
+      <FieldView field={ field }/>
     </section>
   );
 }
