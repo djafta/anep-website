@@ -265,7 +265,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   <div>
                     <h2 className={ 'text-lg font-semibold text-primary p-3' }>Fundo Nacional de Educação
                       Profissional</h2>
-                    <p className={'px-3 text-sm text-muted-foreground'}>
+                    <p className={ 'px-3 text-sm text-muted-foreground' }>
                       O FNEP é o Instrumento público de financiamento do Subsistema de Educação Profissional, gerido
                       pela ANEP. Visa assegurar recursos financeiros para a formação profissional orientada ao mercado
                       de trabalho, no âmbito da Lei n.º 26/2022 (Lei de Educação Profissional)
@@ -391,6 +391,13 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                         }
                       </div>
                     </section>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value={ 'FNEP' }>
+                  <AccordionTrigger>
+                    <a href={ '/fnep' } className={ 'w-fit' }>FNEP</a>
+                  </AccordionTrigger>
+                  <AccordionContent>
                   </AccordionContent>
                 </AccordionItem>
 
