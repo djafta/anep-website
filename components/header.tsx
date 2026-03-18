@@ -221,6 +221,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       )) }
                     </ul>
                   </div>
+                  <Separator/>
                   <div>
                     <h2 className={ 'text-lg font-semibold text-primary p-3' }>Instituições de Ensino Superior</h2>
                     <p className={ 'text-sm text-muted-foreground px-3' }>
@@ -242,6 +243,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       )) }
                     </ul>
                   </div>
+                  <Separator/>
                   <div className="flex items-center gap-2 p-3 py-6">
                     <a
                       className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"
