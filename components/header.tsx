@@ -257,7 +257,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
               </DropdownContent>
             </NavItem>
             <NavItem>
-              <DropdownTrigger href="/institutions">
+              <DropdownTrigger href="/fnep">
                 FNEP
                 <ChevronDown className="inline-block size-3 ml-2"/>
               </DropdownTrigger>
