@@ -57,3 +57,26 @@ export async function listUsers() {
     }
   })
 }
+
+export const updateUserSchema = z.object({
+  publicId: z.string().optional().default(() => uuid()),
+  name: z.string().min(1, { message: "INVALID_NAME" }).optional(),
+  email: z.email({ message: "INVALID_EMAIL" }).optional(),
+  password: z.string().min(6, { message: "INVALID_PASSWORD" }).optional(),
+});
+
+export async function updateUser(data: z.infer<typeof updateUserSchema>) {
+  const user = await prisma.user.findUniqueOrThrow({ where: { publicId: data.publicId } });
+
+  const passwordHash = data.password ? await hashPassword(data.password) : user.passwordHash
+  return prisma.user.update({
+    where: { publicId: data.publicId },
+    data: {
+      name: data.name || user.name,
+      email: data.email || user.email,
+      passwordHash: passwordHash,
+    },
+  });
+}
+
+export async function findUser(publicId: string) { return prisma.user.findUniqueOrThrow({ where: { publicId } }) }

@@ -5,6 +5,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { cookies } from "next/headers";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 export default async function UsersPage() {
   const cookieStore = await cookies();
@@ -26,22 +27,22 @@ export default async function UsersPage() {
           <div>
             Email
           </div>
-          <div>
+          <div className={'flex items-center gap-2 justify-end'}>
             Função
           </div>
         </div>
         {
           users.map((user) => (
-            <div key={ user.publicId }
-                 className={ 'grid grid-cols-3 hover:bg-accent p-2 rounded-md text-sm text-muted-foreground' }>
+            <Link href={ `/admin/users/${ user.publicId }` } key={ user.publicId }
+                  className={ 'grid grid-cols-3 hover:bg-accent p-2 rounded-md text-sm text-muted-foreground' }>
               <div>{ user.name }</div>
               <div>{ user.email }</div>
-              <div>
+              <div className={'flex items-center gap-2 justify-end'}>
                 <Badge>
                   { user.role }
                 </Badge>
               </div>
-            </div>
+            </Link>
           ))
         }
         <Separator/>

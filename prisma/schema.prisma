@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -66,8 +65,8 @@ model Subfield {
   qualifications Qualification[]
   field          Field           @relation(fields: [fieldId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "subfields_field_id_fields_id_fk")
 
-  @@map("subfields")
   @@unique([code, fieldId], map: "subfields_code_field_id_unique")
+  @@map("subfields")
 }
 
 model User {
@@ -75,11 +74,11 @@ model User {
   name           String?         @db.VarChar(255)
   publicId       String?         @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
   email          String          @unique(map: "user_email_unique")
-  passwordHash   String          @map("password_hash") @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @db.VarChar(255)
+  passwordHash   String          @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @map("password_hash") @db.VarChar(255)
   qualifications Qualification[]
   role           UserRole        @default(MANAGER)
   createdAt      DateTime?       @default(now()) @map("created_at") @db.Timestamp(6)
-  updatedAt      DateTime?       @map("updated_at") @db.Timestamp(6)
+  updatedAt      DateTime?       @updatedAt @map("updated_at") @db.Timestamp(6)
   deletedAt      DateTime?       @map("deleted_at") @db.Timestamp(6)
 
   @@map("users")
