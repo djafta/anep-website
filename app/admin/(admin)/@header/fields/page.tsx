@@ -10,7 +10,7 @@ export default async function DashboardHeader() {
       description="Gerencie os campos personalizados para as qualificações, permitindo que você adicione, edite ou remova campos conforme necessário.">
       <div>
         <Button asChild>
-          <Link href={ "/admin/dashboard/fields/new" }>
+          <Link href={ "/admin/fields/new" }>
             <Plus className={ "w-5 h-5" }/> Adicionar campo
           </Link>
         </Button>

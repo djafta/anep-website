@@ -1,10 +1,4 @@
-// app/fnep/page.tsx
-// Next.js 14+ · Tailwind CSS · sem shadcn/ui components — design editorial fluido
-// npm install lucide-react
-
 import { Banknote, Building2, Globe, GraduationCap, Landmark, ShieldCheck, TrendingUp, Users, } from "lucide-react"
-
-// ─── HERO ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
   return (

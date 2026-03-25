@@ -10,7 +10,7 @@ export default async function SubfieldsDashboardHeader() {
       description="Gerencie os sub-campos personalizados para as qualificações, permitindo que você adicione, edite ou remova sub-campos conforme necessário.">
       <div>
         <Button asChild>
-          <Link href={ "/admin/dashboard/subfields/new" }>
+          <Link href={ "/admin/subfields/new" }>
             <Plus className={ "w-5 h-5" }/> Adicionar sub-campo
           </Link>
         </Button>

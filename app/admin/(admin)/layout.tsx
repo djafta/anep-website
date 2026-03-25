@@ -27,17 +27,26 @@ export default async function AdminDashboardLayout({ children, header }: Dashboa
     return redirect('/admin')
   }
 
+  const managerRoles = [
+    { label: 'Dashboard', href: '/admin/dashboard' },
+    { label: 'Campos', href: '/admin/fields' },
+    { label: 'Sub-campos', href: '/admin/subfields' },
+    { label: 'Qualificações', href: '/admin/qualifications' },
+  ];
+
+  const adminRoles = [
+    ...managerRoles,
+    { label: 'Utilizadores', href: '/admin/users' }
+  ]
+
   return (
     <div className={ 'flex flex-col flex-1 w-full mt-12 bg-gray-50' }>
       { header }
       <div className={ 'grid md:grid-cols-[20rem_1fr] flex-1 w-full max-w-7xl mx-auto px-4 gap-4' }>
         <SecondaryNav
-          links={ [
-            { label: 'Dashboard', href: '/admin/dashboard' },
-            { label: 'Campos', href: '/admin/dashboard/fields' },
-            { label: 'Sub-campos', href: '/admin/dashboard/subfields' },
-            { label: 'Qualificações', href: '/admin/dashboard/qualifications' },
-          ] }
+          links={
+            user.role === 'ADMIN' ? adminRoles : managerRoles
+          }
         />
         <div className={ 'flex-1 flex' }>
           { children }

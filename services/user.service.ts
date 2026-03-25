@@ -8,6 +8,7 @@ export async function findUserByEmail(email: string) {
   return prisma.user.findUniqueOrThrow({
     where: { email },
     select: {
+      publicId: true,
       id: true,
       name: true,
       email: true,
@@ -43,4 +44,16 @@ export async function createUser(data: z.infer<typeof createUserSchema>) {
     }
   })
 
+}
+
+export async function listUsers() {
+  return prisma.user.findMany({
+    select: {
+      publicId: true,
+      id: true,
+      name: true,
+      email: true,
+      role: true
+    }
+  })
 }

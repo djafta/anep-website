@@ -43,4 +43,4 @@ bun.lockb
 # IDEs
 .idea/
 .vscode/
-/app/generated/prisma
+/generated/prisma

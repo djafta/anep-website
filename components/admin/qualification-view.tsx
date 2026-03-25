@@ -47,7 +47,7 @@ export function QualificationView({ qualification }: Props) {
         </div>
 
         <div className="flex gap-2">
-          <Link href={ `/admin/dashboard/qualifications/${ qualification.publicId }/edit` }>
+          <Link href={ `/admin/qualifications/${ qualification.publicId }/edit` }>
             <Button
               size="icon"
               variant="ghost"

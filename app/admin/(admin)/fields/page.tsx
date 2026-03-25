@@ -21,7 +21,7 @@ export default async function FieldsPage() {
           {
             fields.map((field) => (
               <Link key={ field.publicId } className={ "w-full h-full flex" }
-                    href={ `/admin/dashboard/fields/${ field.publicId }` }>
+                    href={ `/admin/fields/${ field.publicId }` }>
                 <Card className="w-full hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
                   <CardContent className="flex flex-col justify-between">
                     <div className={ "flex items-center gap-4" }>
@@ -34,7 +34,7 @@ export default async function FieldsPage() {
                 </Card>
               </Link>
             )) }
-          <Link className={ "w-full h-full flex" } href={ `/admin/dashboard/fields/new` }>
+          <Link className={ "w-full h-full flex" } href={ `/admin/fields/new` }>
             <Card className="w-full hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
               <CardContent className="flex flex-col justify-between">
                 <div className={ "flex items-center gap-4" }>

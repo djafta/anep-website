@@ -10,7 +10,7 @@ export default async function QualificationsDashboardHeader() {
       description="Gerencie as qualificações, permitindo que você adicione, edite ou remova qualificações conforme necessário.">
       <div>
         <Button asChild>
-          <Link href={ "/admin/dashboard/qualifications/new" }>
+          <Link href={ "/admin/qualifications/new" }>
             <Plus className={ "w-5 h-5" }/> Adicionar qualificação
           </Link>
         </Button>

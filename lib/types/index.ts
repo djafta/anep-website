@@ -42,3 +42,10 @@ export type Stats = {
   subfields: number;
   qualifications: number;
 }
+
+export type User = {
+  publicId: string;
+  email: string;
+  name: string;
+  role: string;
+}

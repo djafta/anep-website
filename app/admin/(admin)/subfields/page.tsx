@@ -31,7 +31,7 @@ export default async function FieldsPage() {
                   {
                     subfields.map((subfield) => (
                       <Link key={ subfield.publicId } className={ "w-full h-full flex" }
-                            href={ `/admin/dashboard/subfields/${ subfield.publicId }` }>
+                            href={ `/admin/subfields/${ subfield.publicId }` }>
                         <Card className="w-full hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
                           <CardContent className="flex flex-col justify-between">
                             <div className={ "flex items-center gap-4" }>
@@ -50,7 +50,7 @@ export default async function FieldsPage() {
             )
           })
         }
-        <Link className={ "w-fit h-fit flex" } href={ `/admin/dashboard/subfields/new` }>
+        <Link className={ "w-fit h-fit flex" } href={ `/admin/subfields/new` }>
           <Card className="w-full hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
             <CardContent className="flex flex-col justify-between">
               <div className={ "flex items-center gap-4" }>

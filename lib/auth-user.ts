@@ -6,6 +6,7 @@ export type User = {
   publicId: string;
   email: string;
   name: string;
+  role: string;
 }
 
 export async function getAuthUser(): Promise<User | null> {

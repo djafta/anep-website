@@ -43,7 +43,7 @@ export default async function AdminQualificationsPage() {
                               <Link
                                 className={ 'h-full' }
                                 key={ qualification.publicId }
-                                href={ `/admin/dashboard/qualifications/${ qualification.publicId }` }>
+                                href={ `/admin/qualifications/${ qualification.publicId }` }>
                                 <QualificationCard
                                   name={ qualification.name }
                                   title={ qualification.code }
