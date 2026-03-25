@@ -15,25 +15,25 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import React, { startTransition } from "react";
-import { removeQualificationAction } from "@/actions/delete-qualification.action";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
+import { removeFieldAction } from "@/actions/fields/remove-field.action";
 
-export type DeleteQualificationDialogProps = {
-  qualificationPublicId: string
+export type DeleteFieldDialog = {
+  fieldPublicId: string
 }
 
-export function DeleteQualificationDialog({ qualificationPublicId }: DeleteQualificationDialogProps) {
-  const [state, dispatch, isPending] = React.useActionState(removeQualificationAction, null);
+export function DeleteFieldDialog({ fieldPublicId }: DeleteFieldDialog) {
+  const [state, dispatch, isPending] = React.useActionState(removeFieldAction, null);
   const router = useRouter();
 
   React.useEffect(() => {
     if (!state) return;
 
     if (state.success) {
-      toast.success("Qualificação apagada com sucesso!")
-      router.push('/admin/qualifications');
+      toast.success("Campo apagado com sucesso!")
+      router.push('/admin/fields');
     } else {
       toast.error(state.payload.error);
     }
@@ -51,9 +51,9 @@ export function DeleteQualificationDialog({ qualificationPublicId }: DeleteQuali
           <AlertDialogMedia>
             <Trash2/>
           </AlertDialogMedia>
-          <AlertDialogTitle>Apagar Qualificação?</AlertDialogTitle>
+          <AlertDialogTitle>Apagar Campo?</AlertDialogTitle>
           <AlertDialogDescription>
-            Esta operação não pode ser desfeita. A qualificação será apagada permanentemente.
+            Esta operação não pode ser desfeita. O campo será apagada permanentemente.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -63,7 +63,7 @@ export function DeleteQualificationDialog({ qualificationPublicId }: DeleteQuali
               event.preventDefault();
               startTransition(() => {
                 const formData = new FormData();
-                formData.append('publicId', qualificationPublicId);
+                formData.append('publicId', fieldPublicId);
                 dispatch(formData);
               })
             }) }

@@ -88,3 +88,5 @@ export async function findFieldBySubfield(subfieldPublicId: string) {
     }
   })).field;
 }
+
+export async function removeField(publicId: string) { await prisma.field.delete({ where: { publicId } }) }

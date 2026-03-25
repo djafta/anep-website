@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { validate } from "@/lib/validate";
-import { findField } from "@/services/field.service";
+import { findField, removeField } from "@/services/field.service";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id: publicId } = await params;
@@ -54,6 +54,24 @@ export async function PATCH(
     });
 
     return NextResponse.json(updatedField);
+  } catch {
+    return NextResponse.json(
+      { error: "FIELD_NOT_FOUND" },
+      { status: 404 },
+    );
+  }
+}
+
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id: publicId } = await params;
+
+  try {
+    await removeField(publicId);
+
+    return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json(
       { error: "FIELD_NOT_FOUND" },
