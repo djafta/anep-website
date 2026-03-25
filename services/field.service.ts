@@ -22,6 +22,9 @@ export async function createField(data: CreateFieldInput,) {
 export async function listFields() {
 
   const fields = await prisma.field.findMany({
+    where: {
+      deletedAt: null
+    },
     select: {
       publicId: true,
       name: true,
@@ -52,7 +55,8 @@ export async function findField(publicId: string) {
 
   const field = await prisma.field.findUniqueOrThrow({
     where: {
-      publicId
+      publicId,
+      deletedAt: null
     },
     select: {
       publicId: true,
@@ -81,7 +85,8 @@ export async function findField(publicId: string) {
 export async function findFieldBySubfield(subfieldPublicId: string) {
   return (await prisma.subfield.findUniqueOrThrow({
     where: {
-      publicId: subfieldPublicId
+      publicId: subfieldPublicId,
+      deletedAt: null
     },
     include: {
       field: true
@@ -89,4 +94,9 @@ export async function findFieldBySubfield(subfieldPublicId: string) {
   })).field;
 }
 
-export async function removeField(publicId: string) { await prisma.field.delete({ where: { publicId } }) }
+export async function removeField(publicId: string) {
+  await prisma.field.update({
+    data: { deletedAt: new Date() },
+    where: { publicId }
+  })
+}

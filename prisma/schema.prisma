@@ -39,7 +39,7 @@ model Qualification {
 model Field {
   id          Int     @id @default(autoincrement())
   publicId    String  @unique(map: "fields_public_id_unique") @map("public_id") @db.VarChar(36)
-  name        String  @unique(map: "fields_name_unique") @db.VarChar(255)
+  name        String  @db.VarChar(255)
   code        String  @unique(map: "fields_code_unique") @db.VarChar(5)
   description String? @db.VarChar(255)
   sortOrder   Int?    @map("sort_order")
@@ -51,6 +51,7 @@ model Field {
 
   subfields Subfield[]
 
+  @@unique([deletedAt, code], map: "fields_deleted_at_code_unique")
   @@map("fields")
 }
 
