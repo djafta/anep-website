@@ -45,7 +45,7 @@ export default function UserAccountPage({ user }: UserAccountPageProps) {
         </h3>
 
         <div className="rounded-xl border border-zinc-200 p-4">
-          <ChangeUserPasswordForm publicId={ user.publicId }/>
+          <ChangeUserPasswordForm/>
         </div>
       </div>
     </div>
