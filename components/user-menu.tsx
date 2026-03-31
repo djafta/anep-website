@@ -43,7 +43,7 @@ export function UserMenu({ user }: UserMenuProps) {
 
       <DropdownMenuContent
         align="end"
-        className="min-w-64 rounded-2xl shadow-xl"
+        className="min-w-64 rounded-lg shadow-xl"
       >
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-3 py-2">
@@ -66,9 +66,11 @@ export function UserMenu({ user }: UserMenuProps) {
         <DropdownMenuSeparator/>
 
         <DropdownMenuItem asChild>
-          <DropdownMenuItem>
-            <BadgeCheck className="mr-2 h-4 w-4"/>
-            Conta
+          <DropdownMenuItem asChild>
+            <Link href={ '/admin/account' }>
+              <BadgeCheck className="mr-2 h-4 w-4"/>
+              Conta
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuItem>
 
