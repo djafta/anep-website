@@ -1,3 +1,5 @@
+import { ChangeUserPasswordForm } from "@/components/admin/users/change-user-password.form";
+
 type User = {
   id: number;
   publicId: string;
@@ -32,12 +34,20 @@ export default function UserAccountPage({ user }: UserAccountPageProps) {
 
       {/* Dados */ }
       <div className="divide-y divide-zinc-200">
-
         <InfoRow label="Nome" value={ user.name }/>
         <InfoRow label="Email" value={ user.email }/>
         <InfoRow label="Função" value={ user.role }/>
       </div>
 
+      <div className="space-y-4">
+        <h3 className="text-xs font-semibold uppercase text-zinc-400 tracking-wide">
+          Segurança
+        </h3>
+
+        <div className="rounded-xl border border-zinc-200 p-4">
+          <ChangeUserPasswordForm publicId={ user.publicId }/>
+        </div>
+      </div>
     </div>
   );
 }
