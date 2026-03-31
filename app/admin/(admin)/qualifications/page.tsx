@@ -1,8 +1,7 @@
 import { Field, Qualification, Subfield } from "@/lib/types";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import Link from "next/link";
-import { QualificationCard } from "@/components/cnqp/qualification-card";
 import { Separator } from "@/components/ui/separator";
+import { QualificationsTable } from "@/components/admin/qualifications-table";
 
 export default async function AdminQualificationsPage() {
   const fields: Field[] = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields`, {
@@ -37,22 +36,8 @@ export default async function AdminQualificationsPage() {
                     return (
                       <AccordionItem key={ subfield.publicId } value={ subfield.publicId }>
                         <AccordionTrigger>{ subfield.name }</AccordionTrigger>
-                        <AccordionContent>
-                          <div className="space-y-4 my-5 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            { qualifications.map(qualification => (
-                              <Link
-                                className={ 'h-full' }
-                                key={ qualification.publicId }
-                                href={ `/admin/qualifications/${ qualification.publicId }` }>
-                                <QualificationCard
-                                  name={ qualification.name }
-                                  title={ qualification.code }
-                                  code={ qualification.code }
-                                  level={ qualification.level }
-                                />
-                              </Link>
-                            )) }
-                          </div>
+                        <AccordionContent className={'grid grid-cols-1 gap-4'}>
+                          <QualificationsTable data={ qualifications }/>
                         </AccordionContent>
                       </AccordionItem>
                     )
