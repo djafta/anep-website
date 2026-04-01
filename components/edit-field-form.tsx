@@ -6,24 +6,24 @@ import { Field, FieldDescription, FieldLabel, FieldLegend, FieldSeparator, Field
 import { Textarea } from "@/components/ui/textarea";
 import * as React from "react";
 import { toast } from "sonner";
-import { addFieldAction } from "@/actions/add-field.action";
 import { useRouter } from "next/navigation";
 import { Spinner } from "@/components/ui/spinner";
 import * as types from "@/lib/types";
+import { updateFieldAction } from "@/actions/update-field.action";
 
 export type EditFieldFormProps = {
   field: types.Field
 }
 
 export function EditFieldForm({ field }: EditFieldFormProps) {
-  const [state, dispatch, isPending] = React.useActionState(addFieldAction, null);
+  const [state, dispatch, isPending] = React.useActionState(updateFieldAction, null);
   const router = useRouter();
 
   React.useEffect(() => {
     if (!state) return;
 
     if (state.success) {
-      toast.success("Campo criado com sucesso!")
+      toast.success("Campo atualizado com sucesso!")
       router.refresh();
     } else {
       toast.error(state.payload.error);
