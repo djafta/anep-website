@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import * as React from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { FieldsSelect } from "@/components/fields-select";
@@ -19,13 +20,14 @@ export type EditSubfieldFormProps = {
 export function EditSubfieldForm({ subfield }: EditSubfieldFormProps) {
   const [state, dispatch, isPending] = React.useActionState(updateSubfieldAction, null);
   const router = useRouter();
+  const [fieldPublicId, setFieldPublicId] = useState('');
 
   React.useEffect(() => {
     if (!state) return;
 
     if (state.success) {
       toast.success("Sub-campo atualizado com sucesso!")
-      router.push('/admin/dashboard/subfields');
+      router.push('/admin/subfields');
     } else {
       toast.error(state.payload.error);
     }
@@ -33,6 +35,8 @@ export function EditSubfieldForm({ subfield }: EditSubfieldFormProps) {
 
   return (
     <form action={ dispatch } className="w-full max-w-2xl space-y-6">
+      <input type={ 'hidden' } name={ 'publicId' } value={ subfield.publicId }/>
+      <input type={ 'hidden' } name={ 'fieldPublicId' } value={ fieldPublicId || subfield.fieldPublicId }/>
       {/* Informação do Campo */ }
       <FieldSet>
         <FieldLegend className="text-lg font-semibold">Informação do sub-campo</FieldLegend>
@@ -43,7 +47,7 @@ export function EditSubfieldForm({ subfield }: EditSubfieldFormProps) {
         </Field>
         <Field>
           <FieldLabel>Campo</FieldLabel>
-          <FieldsSelect value={ subfield.fieldPublicId }/>
+          <FieldsSelect onSelect={ setFieldPublicId } value={ fieldPublicId || subfield.fieldPublicId }/>
         </Field>
         <Field>
           <FieldLabel>Descrição</FieldLabel>

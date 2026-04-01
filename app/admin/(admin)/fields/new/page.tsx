@@ -19,7 +19,7 @@ export default function AddFieldPage() {
 
     if (state.success) {
       toast.success("Campo criado com sucesso!")
-      router.push('/admin/dashboard/fields');
+      router.push('/admin/fields');
     } else {
       toast.error(state.payload.error);
     }

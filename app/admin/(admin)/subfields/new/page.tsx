@@ -20,7 +20,7 @@ export default function AddFieldPage() {
 
     if (state.success) {
       toast.success("Sub-campo criado com sucesso!")
-      router.push('/admin/dashboard/subfields');
+      router.push('/admin/subfields');
     } else {
       toast.error(state.payload.error);
     }

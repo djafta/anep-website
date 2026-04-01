@@ -47,6 +47,10 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     return result.response;
   }
 
+  console.log({
+    body
+  })
+
   try {
     const updatedField = await prisma.subfield.update({
       where: { publicId },
@@ -71,7 +75,8 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     });
 
     return NextResponse.json(updatedField);
-  } catch {
+  } catch (err) {
+    console.log({ err })
     return NextResponse.json(
       { error: "SUBFIELD_NOT_FOUND" },
       { status: 404 },
