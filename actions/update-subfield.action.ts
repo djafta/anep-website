@@ -2,8 +2,9 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
-export async function addSubfieldAction(state: unknown, formData: FormData) {
+export async function updateSubfieldAction(state: unknown, formData: FormData) {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get("access_token")?.value;
 
@@ -11,16 +12,18 @@ export async function addSubfieldAction(state: unknown, formData: FormData) {
     redirect("/admin");
   }
 
+  const publicId = formData.get("publicId") as string;
+
   const payload = {
     name: String(formData.get("name") || "").trim(),
-    description: String(formData.get("description") || "").trim(),
+    description: String(formData.get("description") || "").trim() || undefined,
     code: String(formData.get("code") || "").trim().toUpperCase(),
-    sortOrder: formData.get("sortOrder") ? Number(formData.get("sortOrder")) : 0,
-    fieldPublicId: String(formData.get("subfieldPublicId") || "").trim(),
+    sortOrder: formData.get("sortOrder") ? Number(formData.get("sortOrder")) : undefined,
+    fieldPublicId: String(formData.get("fieldPublicId") || "").trim(),
   };
 
-  const response = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields/${ payload.fieldPublicId }/subfields`, {
-    method: "POST",
+  const response = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/subfields/${ publicId }`, {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       cookie: cookieStore.toString(),
@@ -34,6 +37,8 @@ export async function addSubfieldAction(state: unknown, formData: FormData) {
       payload: await response.json()
     }
   }
+
+  revalidatePath(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/subfields/${ publicId }`)
 
   return {
     success: true,

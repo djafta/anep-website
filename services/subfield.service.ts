@@ -34,12 +34,12 @@ export async function listSubfields(fieldPublicId?: string) {
 
   if (fieldPublicId) {
     const field = await prisma.field.findUnique({
-      where: { publicId: fieldPublicId },
+      where: { publicId: fieldPublicId, deletedAt: null },
     });
     if (!field) {
       throw new Error("FIELD_NOT_FOUND");
     }
-    where = { fieldId: field.id };
+    where = { fieldId: field.id, deletedAt: null };
   }
 
   const subfields = await prisma.subfield.findMany({
@@ -73,7 +73,8 @@ export async function findSubfield(publicId: string) {
 
   const subfield = await prisma.subfield.findUniqueOrThrow({
     where: {
-      publicId
+      publicId,
+      deletedAt: null
     },
     select: {
       publicId: true,
@@ -99,4 +100,11 @@ export async function findSubfield(publicId: string) {
     fieldPublicId: subfield.field.publicId,
     qualifications: subfield._count.qualifications
   };
+}
+
+export async function removeSubfield(publicId: string) {
+  await prisma.subfield.update({
+    data: { deletedAt: new Date() },
+    where: { publicId }
+  })
 }

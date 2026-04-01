@@ -20,7 +20,7 @@ export function FieldsSelect({ onSelect, value }: FieldsSelectProps) {
   }, []);
 
   return (
-    <Select value={ value } onValueChange={ onSelect ?? onSelect } name={ 'fieldPublicId' }>
+    <Select value={ value } onValueChange={ onSelect ?? onSelect } name={ 'subfieldPublicId' }>
       <SelectTrigger>
         <SelectValue placeholder={ 'Selecionar Campo' }/>
       </SelectTrigger>

@@ -1,4 +1,8 @@
 import { Field, Subfield } from "@/lib/types";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Pencil } from "lucide-react";
+import { DeleteSubfieldDialog } from "@/components/admin/subfields/delete-subfield-dialog";
 
 type Props = {
   subfield: Subfield;
@@ -10,7 +14,7 @@ export function SubfieldView({ subfield, field }: Props) {
     <div className="w-full flex flex-col gap-4">
 
       {/* Identity */ }
-      <div className="flex items-center gap-3 pb-4 border-b border-black/[0.07]">
+      <div className="flex items-center justify-between gap-3 pb-4 border-b border-black/[0.07]">
         <div className="min-w-0">
           <h1 className="text-base font-semibold tracking-tight truncate leading-snug">
             { subfield.name }
@@ -18,6 +22,18 @@ export function SubfieldView({ subfield, field }: Props) {
           <p className="text-[0.68rem] uppercase tracking-widest opacity-40 mt-0.5">
             Código: { subfield.code }
           </p>
+        </div>
+        <div className="flex gap-2">
+          <Link href={ `/admin/subfields/${ subfield.publicId }/edit` }>
+            <Button
+              size="icon"
+              variant="ghost"
+            >
+              <Pencil className="text-primary h-4 w-4"/>
+            </Button>
+          </Link>
+
+          <DeleteSubfieldDialog subfieldPublicId={ subfield.publicId }/>
         </div>
       </div>
 
