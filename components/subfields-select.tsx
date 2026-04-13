@@ -2,7 +2,7 @@
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useEffect, useState } from "react";
-import { Field } from "@/lib/types";
+import { Subfield } from "@/lib/types";
 
 export type SubfieldsSelectProps = {
   fieldPublicId?: string | null;
@@ -10,7 +10,7 @@ export type SubfieldsSelectProps = {
 }
 
 export function SubfieldsSelect({ fieldPublicId, defaultValue }: SubfieldsSelectProps) {
-  const [subfields, setSubfields] = useState<Field[]>([]);
+  const [subfields, setSubfields] = useState<Subfield[]>([]);
 
   useEffect(() => {
     if (!fieldPublicId) return;
@@ -22,13 +22,13 @@ export function SubfieldsSelect({ fieldPublicId, defaultValue }: SubfieldsSelect
   return (
     <Select defaultValue={ defaultValue } name={ 'subfieldPublicId' }>
       <SelectTrigger>
-        <SelectValue placeholder={ 'Selecionar Subcampo' }/>
+        <SelectValue placeholder={ 'Selecionar Sub-campo' }/>
       </SelectTrigger>
       <SelectContent>
         {
-          subfields.map(field => (
-            <SelectItem key={ field.publicId } value={ field.publicId }>
-              { field.name }
+          subfields.map(subfield => (
+            <SelectItem key={ subfield.publicId } value={ subfield.publicId }>
+              { subfield.name }
             </SelectItem>
           ))
         }

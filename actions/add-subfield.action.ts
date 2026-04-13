@@ -16,7 +16,7 @@ export async function addSubfieldAction(state: unknown, formData: FormData) {
     description: String(formData.get("description") || "").trim(),
     code: String(formData.get("code") || "").trim().toUpperCase(),
     sortOrder: formData.get("sortOrder") ? Number(formData.get("sortOrder")) : 0,
-    fieldPublicId: String(formData.get("subfieldPublicId") || "").trim(),
+    fieldPublicId: String(formData.get("fieldPublicId") || "").trim(),
   };
 
   const response = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/fields/${ payload.fieldPublicId }/subfields`, {
