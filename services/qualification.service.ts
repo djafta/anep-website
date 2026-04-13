@@ -92,6 +92,8 @@ export async function createQualification(
 ) {
   const specUrl = await uploadQualificationSpec(file);
 
+  console.log({ data, specUrl })
+
   const { id: subfieldId } = await prisma.subfield.findUniqueOrThrow({
     where: {
       publicId: data.subfieldPublicId,
