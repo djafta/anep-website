@@ -134,7 +134,71 @@ export async function Header({ theme = "dark" }: HeaderProps) {
             </NavItem>
 
             <NavItem>
-              <Link href="/about">Sobre</Link>
+              <DropdownTrigger href="/about">
+                Sobre
+                <ChevronDown className="inline-block size-3 ml-2"/>
+              </DropdownTrigger>
+              <DropdownContent>
+                <div className="max-w-7xl mx-auto flex flex-col gap-4 py-6">
+                  <div className="p-3">
+                    <h2 className="pb-4 text-lg font-semibold text-primary">
+                      Autoridade Nacional de Educação Profissional
+                    </h2>
+                    <p className="text-sm text-muted-foreground text-wrap">
+                      A Autoridade Nacional de Educação Profissional, abreviadamente designada por ANEP, é o órgão
+                      Regulador e de Garantia de Qualidade de Educação Profissional em Moçambique.
+                    </p>
+                  </div>
+
+                  <Separator/>
+                  <h3 className="px-3 text-md font-semibold text-primary">
+                    Legislação relevante
+                  </h3>
+                  <div className="grid md:grid-rows-3 gap-2 p-3 max-w-7xl">
+                    <a
+                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o Regulmaento de Operacionalizacao do QNQ.pdf` }
+                      className="text-gray-600 block hover:underline">
+                      Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o
+                      Regulmaento de Operacionalizacao do QNQ
+                    </a>
+                    <a
+                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ.pdf` }
+                      className="text-gray-600 block hover:underline">
+                      Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ
+                    </a>
+                    <a
+                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional.pdf` }
+                      className="text-gray-600 block hover:underline">
+                      Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional
+                    </a>
+                    <a
+                      href={ '/about/organigram' }
+                      className="text-gray-600 block hover:underline">
+                      Organograma da ANEP
+                    </a>
+                  </div>
+
+                  <Separator/>
+                  <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
+                    <a
+                      href={ '/about/organogram' }
+                      className="text-gray-600 block hover:underline">
+                      Organograma da ANEP
+                    </a>
+                  </div>
+                  <Separator/>
+
+                  <div className="flex items-center gap-2 p-3 py-6">
+                    <a
+                      className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"
+                      href="/about"
+                    >
+                      Aprender mais sobre a ANEP
+                      <ChevronRight className="size-3 stroke-1 ml-1"/>
+                    </a>
+                  </div>
+                </div>
+              </DropdownContent>
             </NavItem>
 
             <NavItem>
