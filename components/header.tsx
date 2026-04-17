@@ -171,11 +171,6 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       className="text-gray-600 block hover:underline">
                       Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional
                     </a>
-                    <a
-                      href={ '/about/organigram' }
-                      className="text-gray-600 block hover:underline">
-                      Organograma da ANEP
-                    </a>
                   </div>
 
                   <Separator/>
