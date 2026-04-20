@@ -225,7 +225,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   <div className="grid grid-cols-4">
                     { fields.map((field) => (
                       <a
-                        key={ field.code }
+                        key={ field.publicId }
                         className="w-fit text-sm p-3 hover:bg-muted transition-all duration-300 rounded-xl"
                         href={ `/cnqp/${ field.publicId }` }
                       >
@@ -399,9 +399,9 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       {
                         fields.map((field: Field) => (
                           <a
-                            key={ field.code }
+                            key={ field.publicId }
                             className="w-fit text-sm p-3 text-muted-foreground transition-all duration-300 rounded-xl"
-                            href={ `/cnqp/${ field.code }` }
+                            href={ `/cnqp/${ field.publicId }` }
                           >
                             { field.name }
                           </a>
