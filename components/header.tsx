@@ -344,6 +344,18 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                 </div>
               </DropdownContent>
             </NavItem>
+
+            <NavItem>
+              <DropdownTrigger href="/galery">
+                Galeria
+              </DropdownTrigger>
+            </NavItem>
+
+            <NavItem>
+              <DropdownTrigger href="/news">
+                Notícias
+              </DropdownTrigger>
+            </NavItem>
           </ul>
         </nav>
 
@@ -462,6 +474,21 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   </AccordionContent>
                 </AccordionItem>
 
+                <AccordionItem value={ 'Galery' }>
+                  <AccordionTrigger>
+                    <a href={ '/galery' } className={ 'w-fit' }>Galeria</a>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value={ 'News' }>
+                  <AccordionTrigger>
+                    <a href={ '/news' } className={ 'w-fit' }>Notícias</a>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
             </div>
             <div>
