@@ -1,12 +1,137 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ChevronRight, Filter } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export default function NewsPage() {
+type NewsArticle = {
+  title: string;
+  date: string;
+  link: string;
+  category: string;
+};
+
+type FeaturedArticle = {
+  title: string;
+  date: string;
+  excerpt: string;
+  link: string;
+  image: string;
+};
+
+export default function Page() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Todas");
+  const [newsArticles] = useState<NewsArticle[]>([]);
+  const [featuredArticle] = useState<FeaturedArticle | null>(null);
+  const categories = ["Todas", "Educação", "Tecnologia", "Parcerias", "Eventos"];
+
+  const filteredArticles = newsArticles.filter(
+    (article) =>
+      (selectedCategory === "Todas" || article.category === selectedCategory) &&
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="mt-11 flex-1 bg-white">
+      <main className="mx-auto px-4 py-16 max-w-7xl">
+        <motion.h1
+          animate={ { opacity: 1, y: 0 } }
+          className="text-4xl md:text-5xl font-bold mb-16 text-gray-900"
+          initial={ { opacity: 0, y: -20 } }
+          transition={ { duration: 0.5 } }
+        >
+          Notícias e Atualizações
+        </motion.h1>
 
+        <div className="mb-12 flex flex-col md:flex-row gap-4">
+          <Input
+            className="md:w-2/3"
+            placeholder="Pesquisar notícias..."
+            value={ searchTerm }
+            onChange={ (e) => setSearchTerm(e.target.value) }
+          />
+          <Select onValueChange={ (value) => setSelectedCategory(value) } value={ selectedCategory }>
+            <SelectTrigger className="w-full max-w-48">
+              <Filter className="mr-2 w-4 h-4"/>
+              <SelectValue placeholder="Select a fruit"/>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {
+                  categories.map((category, index) => (
+                    <SelectItem key={ index } value={ category }>{ category }</SelectItem>
+                  ))
+                }
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <section className="mb-24">
+          { featuredArticle && (
+            <motion.div
+              animate={ { opacity: 1, y: 0 } }
+              className="group"
+              initial={ { opacity: 0, y: 20 } }
+              transition={ { duration: 0.5, delay: 0.2 } }
+            >
+              <div className="relative h-[400px] mb-8 overflow-hidden rounded-lg">
+                <Image
+                  alt={ featuredArticle.title }
+                  className="transition-transform duration-300 group-hover:scale-105"
+                  layout="fill"
+                  objectFit="cover"
+                  src={ featuredArticle.image }
+                />
+              </div>
+              <p className="text-sm text-gray-500 mb-2">{ featuredArticle.date }</p>
+              <h2 className="text-3xl font-semibold mb-4 text-gray-900">{ featuredArticle.title }</h2>
+              <p className="text-xl text-gray-600 mb-6">{ featuredArticle.excerpt }</p>
+              <Link
+                className="text-[#003B71] font-semibold inline-flex items-center hover:underline"
+                href={ featuredArticle.link }
+              >
+                Ler mais <ChevronRight className="ml-1 w-5 h-5"/>
+              </Link>
+            </motion.div>
+          ) }
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-8 text-gray-900">Últimas Notícias</h2>
+          { filteredArticles.length > 0 ? (
+            <div className="space-y-8">
+              { filteredArticles.map((article, index) => (
+                <motion.div
+                  key={ index }
+                  animate={ { opacity: 1, y: 0 } }
+                  className="border-b border-gray-200 pb-8 last:border-b-0"
+                  initial={ { opacity: 0, y: 20 } }
+                  transition={ { duration: 0.5, delay: 0.1 * (index + 1) } }
+                >
+                  <p className="text-sm text-gray-500 mb-2">{ article.date }</p>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">{ article.title }</h3>
+                  <Link
+                    className="text-[#003B71] font-semibold inline-flex items-center hover:underline"
+                    href={ article.link }
+                  >
+                    Ler mais <ChevronRight className="ml-1 w-5 h-5"/>
+                  </Link>
+                </motion.div>
+              )) }
+            </div>
+          ) : (
+            <p className="text-center text-gray-600">
+              Nenhuma notícia encontrada para os critérios de busca selecionados.
+            </p>
+          ) }
+        </section>
+      </main>
     </div>
   );
 }
