@@ -332,18 +332,6 @@ export default function GalleryPage() {
           </div>
         </div>
       ) }
-
-      {/* Footer */ }
-      <footer className="border-t border-black/5 bg-white py-12">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-sm font-light text-black/60">
-            © 2024 Autoridade Nacional da Educação Profissional
-          </p>
-          <p className="mt-1 text-xs font-light text-black/50">
-            Promoção da Excelência na Formação Profissional
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

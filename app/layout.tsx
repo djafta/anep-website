@@ -5,6 +5,7 @@ import "@/app/globals.css";
 import { Toaster } from "sonner";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -32,6 +33,7 @@ export default function Layout({ children, header }: StandardLayoutProps) {
     { header }
     { children }
     <Toaster/>
+    <Footer/>
     </body>
     </html>
   );
