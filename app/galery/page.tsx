@@ -131,7 +131,7 @@ export default function GalleryPage() {
           </div>
 
           {/* Filters */ }
-          <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
+          <div className="mt-6 flex gap-2 overflow-x-auto max-w-sm lg:max-w-lg pb-2">
             { categories.map((category) => (
               <button
                 key={ category.id }
