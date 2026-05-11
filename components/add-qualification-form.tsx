@@ -49,27 +49,27 @@ export function AddQualificationForm() {
 
         <Field>
           <FieldLabel>Título</FieldLabel>
-          <Input name="title" placeholder="Certificado vocacional de nível 4 em..." required/>
+          <Input name="title" required/>
         </Field>
 
         <Field>
           <FieldLabel>Nome</FieldLabel>
-          <Input name="name" placeholder="Enfermagem Geral" required/>
+          <Input name="name" required/>
         </Field>
 
         <Field>
           <FieldLabel>Código</FieldLabel>
-          <Input name="code" placeholder="Q CCA03431241"/>
+          <Input required name="code"/>
         </Field>
 
         <Field>
           <FieldLabel>Descrição</FieldLabel>
-          <Textarea name="description" placeholder="Descrição detalhada da qualificação"/>
+          <Textarea name="description"/>
         </Field>
 
         <Field>
           <FieldLabel>Nível</FieldLabel>
-          <Input name="level" type="number" placeholder="3"/>
+          <Input name="level" type="number" required min={ "1" } max={ "5" }/>
         </Field>
 
         <Field>
@@ -95,8 +95,8 @@ export function AddQualificationForm() {
         </Field>
 
         <Field>
-          <FieldLabel>Certificado</FieldLabel>
-          <Input name="certificate" placeholder="Ex: Vocacional"/>
+          <FieldLabel>Tipo de certificado</FieldLabel>
+          <Input defaultValue={"Vocacional"} name="certificate"/>
         </Field>
 
         <Field>

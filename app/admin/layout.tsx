@@ -22,7 +22,6 @@ export default function AdminLayout({ children }: StandardLayoutProps) {
   return (
     < >
       { children }
-      <Footer/>
     </>
   );
 }
