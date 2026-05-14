@@ -48,6 +48,8 @@ model IndependentModule {
   createdAt   DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
   updatedAt   DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
   deletedAt   DateTime? @map("deleted_at") @db.Timestamp(6)
+  userId      Int       @map("user_id")
+  user        User?     @relation(fields: [userId], references: [id])
 
   @@unique([deletedAt, code], map: "independent_modules_deleted_at_code_unique")
   @@map("independent_modules")
@@ -94,16 +96,17 @@ model Subfield {
 }
 
 model User {
-  id             Int             @id @default(autoincrement())
-  name           String?         @db.VarChar(255)
-  publicId       String?         @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
-  email          String          @unique(map: "user_email_unique")
-  passwordHash   String          @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @map("password_hash") @db.VarChar(255)
-  qualifications Qualification[]
-  role           UserRole        @default(MANAGER)
-  createdAt      DateTime?       @default(now()) @map("created_at") @db.Timestamp(6)
-  updatedAt      DateTime?       @updatedAt @map("updated_at") @db.Timestamp(6)
-  deletedAt      DateTime?       @map("deleted_at") @db.Timestamp(6)
+  id                Int                 @id @default(autoincrement())
+  name              String?             @db.VarChar(255)
+  publicId          String?             @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
+  email             String              @unique(map: "user_email_unique")
+  passwordHash      String              @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @map("password_hash") @db.VarChar(255)
+  qualifications    Qualification[]
+  role              UserRole            @default(MANAGER)
+  createdAt         DateTime?           @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt         DateTime?           @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt         DateTime?           @map("deleted_at") @db.Timestamp(6)
+  independentModule IndependentModule[]
 
   @@map("users")
 }
