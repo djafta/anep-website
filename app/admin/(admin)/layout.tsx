@@ -32,6 +32,7 @@ export default async function AdminDashboardLayout({ children, header }: Dashboa
     { label: 'Campos', href: '/admin/fields' },
     { label: 'Sub-campos', href: '/admin/subfields' },
     { label: 'Qualificações', href: '/admin/qualifications' },
+    {label: "Módulos Independentes", href: "/admin/modules/independents" },
   ];
 
   const adminRoles = [

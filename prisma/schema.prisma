@@ -36,6 +36,23 @@ model Qualification {
   @@map("qualifications")
 }
 
+model IndependentModule {
+  id          Int       @id @default(autoincrement())
+  publicId    String    @unique(map: "independent_modules_public_id_unique") @map("public_id") @db.VarChar(36)
+  name        String    @db.VarChar(255)
+  title       String?   @db.VarChar(255)
+  code        String
+  description String?   @db.VarChar(255)
+  specUrl     String    @map("spec_url") @db.VarChar(255)
+  sortOrder   Int?      @map("sort_order")
+  createdAt   DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt   DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt   DateTime? @map("deleted_at") @db.Timestamp(6)
+
+  @@unique([deletedAt, code], map: "independent_modules_deleted_at_code_unique")
+  @@map("independent_modules")
+}
+
 model Field {
   id          Int     @id @default(autoincrement())
   publicId    String  @unique(map: "fields_public_id_unique") @map("public_id") @db.VarChar(36)

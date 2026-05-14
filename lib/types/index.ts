@@ -37,6 +37,16 @@ export type Qualification = {
   certificate: string
 }
 
+export type IndependentModule = {
+  publicId: string;
+  name: string
+  code: string
+  specUrl: string
+  description?: string;
+  title: string;
+  sortOrder: number;
+}
+
 export type Stats = {
   fields: number;
   subfields: number;

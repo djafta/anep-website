@@ -15,19 +15,19 @@ export default async function AdminDashboardPage() {
         <EntryCard
           title={ stats.qualifications.toString() }
           description={ 'Qualificações registadas' }
-          href={ '/admin/dashboard/qualifications' }
+          href={ '/admin/qualifications' }
           icon={ <BadgeCheck/> }
         />
         <EntryCard
           title={ stats.fields.toString() }
           description={ 'Campos disponíveis' }
-          href={ '/admin/dashboard/fields' }
+          href={ '/admin/fields' }
           icon={ <BadgeCheck/> }
         />
         <EntryCard
           title={ stats.subfields.toString() }
           description={ 'Sub-campos disponíveis' }
-          href={ '/admin/dashboard/subfields' }
+          href={ '/admin/subfields' }
           icon={ <BadgeCheck/> }
         />
       </div>
