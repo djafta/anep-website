@@ -233,7 +233,15 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       </a>
                     )) }
                   </div>
-
+                  <div className="flex items-center gap-2 p-3 py-4">
+                    <a
+                      className="text-sm text-foreground flex items-center underline py-2 rounded-3xl"
+                      href="/cnqp#modules"
+                    >
+                      Ver módulos independentes
+                      <ChevronRight className="size-3 stroke-1 ml-1"/>
+                    </a>
+                  </div>
                   <Separator/>
 
                   <div className="flex items-center gap-2 p-3 py-6">
@@ -419,6 +427,15 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                           </a>
                         ))
                       }
+                    </div>
+                    <div className="flex items-center gap-2 p-3 py-4">
+                      <a
+                        className="text-sm text-foreground flex items-center underline py-2 rounded-3xl"
+                        href="/cnqp#modules"
+                      >
+                        Ver módulos independentes
+                        <ChevronRight className="size-3 stroke-1 ml-1"/>
+                      </a>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
