@@ -109,7 +109,7 @@ export function EditQualificationForm({ qualification }: EditQualificationFormPr
         <Field>
           <FieldLabel>Sub-campo</FieldLabel>
           <SubfieldsSelect defaultValue={ qualification.subfieldPublicId }
-                           fieldPublicId={ field?.publicId || fieldPublicId }/>
+                           fieldPublicId={ fieldPublicId || field?.publicId }/>
         </Field>
 
         <Field>
