@@ -58,6 +58,12 @@ export async function updateQualification(data: z.infer<typeof updateQualificati
       subfield: true
     }
   })
+  const subfield = await prisma.subfield.findUniqueOrThrow({
+    where: {
+      publicId: data.subfieldPublicId
+    }
+  })
+
   const specUrl = file ? await updateQualificationSpec(file, qualification.specUrl) : qualification.specUrl;
   const user = await getAuthUser();
 
@@ -73,7 +79,7 @@ export async function updateQualification(data: z.infer<typeof updateQualificati
       certificate: data.certificate,
       title: data.title,
       specUrl,
-      subfieldId: qualification.subfield.id,
+      subfieldId: subfield.id || qualification.subfield.id,
       userId: user!.id,
     },
   })
