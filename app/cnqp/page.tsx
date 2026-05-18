@@ -88,7 +88,7 @@ export default async function CnqpPage() {
               </div>
               <CnqpFields/>
             </div>
-            <div className="py-32 bg-gray-50" id="qualifications">
+            <div className="py-32 bg-gray-50" id="modules">
               <div className="max-w-7xl mx-auto px-4">
                 <div className={ 'flex items-center justify-between' }>
                   <div className="mb-16">
