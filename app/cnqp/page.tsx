@@ -4,6 +4,7 @@ import { CnqpFields } from "@/components/cnqp-fields";
 import Image from "next/image";
 import { StatsCard } from "@/components/stats-card";
 import { BriefcaseBusiness, Component, Star } from "lucide-react";
+import { CnqpModules } from "@/components/cnqp-modules";
 
 const generalStats = [
   { number: "14", label: "Campos", icon: Star },
@@ -86,6 +87,23 @@ export default async function CnqpPage() {
                 </div>
               </div>
               <CnqpFields/>
+            </div>
+            <div className="py-32 bg-gray-50" id="qualifications">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className={ 'flex items-center justify-between' }>
+                  <div className="mb-16">
+                    <h2 className="text-3xl font-bold text-primary mb-4">Módulos Independentes</h2>
+                    <p className="text-gray-600 max-w-2xl text-justify">
+                      Os Módulos Independentes do CNQP são unidades formativas autónomas, que permitem aos formandos
+                      adquirir competências específicas de forma flexível e personalizada. Estes módulos, que podem ser
+                      combinados para formar qualificações completas, oferecem uma abordagem modular à educação
+                      profissional, permitindo que os formandos escolham os conteúdos mais relevantes para os seus
+                      interesses e necessidades de desenvolvimento profissional.
+                    </p>
+                  </div>
+                </div>
+                <CnqpModules/>
+              </div>
             </div>
           </div>
         </main>
