@@ -94,11 +94,11 @@ export default async function CnqpPage() {
                   <div className="mb-16">
                     <h2 className="text-3xl font-bold text-primary mb-4">Módulos Independentes</h2>
                     <p className="text-gray-600 max-w-2xl text-justify">
-                      Os Módulos Independentes do CNQP são unidades formativas autónomas, que permitem aos formandos
-                      adquirir competências específicas de forma flexível e personalizada. Estes módulos, que podem ser
-                      combinados para formar qualificações completas, oferecem uma abordagem modular à educação
-                      profissional, permitindo que os formandos escolham os conteúdos mais relevantes para os seus
-                      interesses e necessidades de desenvolvimento profissional.
+                      <strong>Módulo independente</strong> é um conjunto de resultados de aprendizagem que conferem
+                      competências que
+                      podem ser adquiridas, avaliadas e usadas no mercado de trabalho ou na sociedade para a prestação
+                      de um serviço, produção de um artefacto, melhoria pessoal ou uma combinação dos factores citados.
+                      Diferem dos restantes por não estarem registados e agregados a uma qualificação específica.
                     </p>
                   </div>
                 </div>
