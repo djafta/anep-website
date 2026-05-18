@@ -39,11 +39,11 @@ model Qualification {
 model IndependentModule {
   id          Int       @id @default(autoincrement())
   publicId    String    @unique(map: "independent_modules_public_id_unique") @map("public_id") @db.VarChar(36)
-  name        String    @db.VarChar(255)
-  title       String?   @db.VarChar(255)
+  name        String    @db.Text
+  title       String?   @db.Text
   code        String
-  description String?   @db.VarChar(255)
-  specUrl     String    @map("spec_url") @db.VarChar(255)
+  description String?   @db.Text
+  specUrl     String    @map("spec_url") @db.Text
   sortOrder   Int?      @map("sort_order")
   createdAt   DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
   updatedAt   DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
