@@ -22,7 +22,7 @@ export default async function Page() {
           {
             modules.map((field) => (
               <Link key={ field.publicId } className={ "w-full h-full flex" }
-                    href={ `/admin/modules/${ field.publicId }` }>
+                    href={ `/admin/modules/independents/${ field.publicId }` }>
                 <Card className="w-full hover:shadow-lg hover:ring-1 ring-primary transition-shadow duration-300">
                   <CardContent className="flex flex-col justify-between">
                     <div className={ "flex items-center gap-4" }>
