@@ -36,7 +36,7 @@ export async function listFields() {
         select: { subfields: true },
       }
     },
-    orderBy: { sortOrder: "asc" },
+    orderBy: { name: "asc" },
   })
 
   return fields.map((subfield) => ({
