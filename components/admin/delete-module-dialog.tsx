@@ -15,17 +15,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import React, { startTransition } from "react";
-import { removeQualificationAction } from "@/actions/delete-qualification.action";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
+import { removeModuleAction } from "@/actions/remove-module.action";
 
 export type DeleteModuleDialogProps = {
   moduleId: string
 }
 
 export function DeleteModuleDialog({ moduleId }: DeleteModuleDialogProps) {
-  const [state, dispatch, isPending] = React.useActionState(removeQualificationAction, null);
+  const [state, dispatch, isPending] = React.useActionState(removeModuleAction, null);
   const router = useRouter();
 
   React.useEffect(() => {
