@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-import { updateQualification } from "@/services/qualification.service";
 import { validate } from "@/lib/validate";
-import { findModule, removeModule, updateModuleSchema } from "@/services/module.service";
+import { findModule, removeModule, updateModule, updateModuleSchema } from "@/services/module.service";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ moduleId: string }> }) {
   const { moduleId: publicId } = await params;
@@ -45,7 +44,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ mo
   }
 
   try {
-    const module = await updateQualification(result.data, file);
+    const module = await updateModule(result.data, file);
 
     return NextResponse.json(module, { status: 200 });
   } catch (err: any) {

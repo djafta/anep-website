@@ -46,7 +46,7 @@ export const updateModuleSchema = z.object({
   sortOrder: z.number().optional().default(0).optional(),
 })
 
-export async function updateQualification(data: z.infer<typeof updateModuleSchema>, file: File | null) {
+export async function updateModule(data: z.infer<typeof updateModuleSchema>, file: File | null) {
   const module = await prisma.independentModule.findUniqueOrThrow({
     where: { publicId: data.publicId },
   })
