@@ -118,31 +118,25 @@ export async function listModules() {
 }
 
 export async function findModule(publicId: string) {
-  const qualification = await prisma.qualification.findUniqueOrThrow({
+  const module = await prisma.independentModule.findUniqueOrThrow({
     where: { publicId },
-    include: {
-      subfield: true
-    }
   })
 
   return {
-    publicId: qualification.publicId,
-    title: qualification.title,
-    name: qualification.name,
-    code: qualification.code,
-    description: qualification.description,
-    sortOrder: qualification.sortOrder,
-    specUrl: qualification.specUrl,
-    level: qualification.level,
-    certificate: qualification.certificate,
-    subfieldPublicId: qualification.subfield.publicId
+    publicId: module.publicId,
+    title: module.title,
+    name: module.name,
+    code: module.code,
+    description: module.description,
+    sortOrder: module.sortOrder,
+    specUrl: module.specUrl,
   }
 }
 
 export async function removeModule(publicId: string) {
-  const qualification = await findModule(publicId);
-  if (qualification) {
-    await deleteModuleSpec(qualification.specUrl);
-    await prisma.qualification.delete({ where: { publicId } })
+  const module = await findModule(publicId);
+  if (module) {
+    await deleteModuleSpec(module.specUrl);
+    await prisma.independentModule.delete({ where: { publicId } })
   }
 }
