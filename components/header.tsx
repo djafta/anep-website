@@ -152,7 +152,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
 
                   <Separator/>
                   <h3 className="px-3 text-md font-semibold text-primary">
-                    Legislação relevante
+                    Legislação
                   </h3>
                   <div className="grid md:grid-rows-3 gap-2 p-3 max-w-7xl">
                     <a
@@ -172,6 +172,15 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional
                     </a>
                   </div>
+
+                  <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
+                    <a
+                      href={ '#' }
+                      className="text-gray-600 block hover:underline">
+                      Ver toda a legislação
+                    </a>
+                  </div>
+                  <Separator/>
 
                   <Separator/>
                   <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
