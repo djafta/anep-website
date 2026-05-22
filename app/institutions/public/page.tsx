@@ -43,7 +43,7 @@ export default async function InstitutionsPage({ searchParams }: { searchParams:
             institutions.map(province => (
               <Link
                 key={ province }
-                href={ `/institutions?province=${ province }` }
+                href={ `/institutions/public?province=${ province }` }
                 className={ cn('shadow p-3 rounded-2xl ring-1 bg-primary text-white ring-primary hover:bg-primary/90') }
               >
                 <p className={ 'p-2' }>
