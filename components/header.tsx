@@ -180,7 +180,6 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                       Ver toda a legislação
                     </a>
                   </div>
-                  <Separator/>
 
                   <Separator/>
                   <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
