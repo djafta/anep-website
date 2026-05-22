@@ -331,35 +331,35 @@ export async function Header({ theme = "dark" }: HeaderProps) {
             {/*    </div>*/}
             {/*  </DropdownContent>*/}
             {/*</NavItem>*/}
-            <NavItem>
-              <DropdownTrigger href="/fnep">
-                FNEP
-                <ChevronDown className="inline-block size-3 ml-2"/>
-              </DropdownTrigger>
+            {/*<NavItem>*/}
+            {/*  <DropdownTrigger href="/fnep">*/}
+            {/*    FNEP*/}
+            {/*    <ChevronDown className="inline-block size-3 ml-2"/>*/}
+            {/*  </DropdownTrigger>*/}
 
-              <DropdownContent>
-                <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">
-                  <div>
-                    <h2 className={ 'text-lg font-semibold text-primary p-3' }>Fundo Nacional de Educação
-                      Profissional</h2>
-                    <p className={ 'px-3 text-sm text-muted-foreground' }>
-                      O FNEP é o Instrumento público de financiamento do Subsistema de Educação Profissional, gerido
-                      pela ANEP. Visa assegurar recursos financeiros para a formação profissional orientada ao mercado
-                      de trabalho, no âmbito da Lei n.º 26/2022 (Lei de Educação Profissional)
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 p-3 py-6">
-                    <a
-                      className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"
-                      href="/fnep"
-                    >
-                      Aprender mais sobre o FNEP
-                      <ChevronRight className="size-3 stroke-1 ml-1"/>
-                    </a>
-                  </div>
-                </div>
-              </DropdownContent>
-            </NavItem>
+            {/*  <DropdownContent>*/}
+            {/*    <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">*/}
+            {/*      <div>*/}
+            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Fundo Nacional de Educação*/}
+            {/*          Profissional</h2>*/}
+            {/*        <p className={ 'px-3 text-sm text-muted-foreground' }>*/}
+            {/*          O FNEP é o Instrumento público de financiamento do Subsistema de Educação Profissional, gerido*/}
+            {/*          pela ANEP. Visa assegurar recursos financeiros para a formação profissional orientada ao mercado*/}
+            {/*          de trabalho, no âmbito da Lei n.º 26/2022 (Lei de Educação Profissional)*/}
+            {/*        </p>*/}
+            {/*      </div>*/}
+            {/*      <div className="flex items-center gap-2 p-3 py-6">*/}
+            {/*        <a*/}
+            {/*          className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"*/}
+            {/*          href="/fnep"*/}
+            {/*        >*/}
+            {/*          Aprender mais sobre o FNEP*/}
+            {/*          <ChevronRight className="size-3 stroke-1 ml-1"/>*/}
+            {/*        </a>*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
+            {/*  </DropdownContent>*/}
+            {/*</NavItem>*/}
 
             <NavItem>
               <DropdownTrigger href="/galery">
@@ -491,13 +491,13 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                 {/*    </section>*/}
                 {/*  </AccordionContent>*/}
                 {/*</AccordionItem>*/}
-                <AccordionItem value={ 'FNEP' }>
-                  <AccordionTrigger>
-                    <a href={ '/fnep' } className={ 'w-fit' }>FNEP</a>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                  </AccordionContent>
-                </AccordionItem>
+                {/*<AccordionItem value={ 'FNEP' }>*/}
+                {/*  <AccordionTrigger>*/}
+                {/*    <a href={ '/fnep' } className={ 'w-fit' }>FNEP</a>*/}
+                {/*  </AccordionTrigger>*/}
+                {/*  <AccordionContent>*/}
+                {/*  </AccordionContent>*/}
+                {/*</AccordionItem>*/}
 
                 <AccordionItem value={ 'Galery' }>
                   <AccordionTrigger>
