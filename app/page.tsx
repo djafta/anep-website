@@ -13,7 +13,7 @@ const generalStats = [
   { number: "150+", label: "Instituições Acreditadas", icon: Building2 },
   { number: "50.000+", label: "Profissionais Certificados", icon: ShieldCheck },
   { number: "200+", label: "Qualificações Registradas", icon: BriefcaseBusiness },
-  { number: "15+", label: "Anos de Excelência", icon: LucideStar },
+  { number: "10+", label: "Anos de Excelência", icon: LucideStar },
 ];
 
 export default async function HomePage() {
