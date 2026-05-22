@@ -8,7 +8,7 @@ import { CnqpModules } from "@/components/cnqp-modules";
 
 const generalStats = [
   { number: "14", label: "Campos", icon: Star },
-  { number: "+200", label: "Qualificações Registradas", icon: BriefcaseBusiness },
+  { number: "206", label: "Qualificações Registradas", icon: BriefcaseBusiness },
   { number: "22", label: "Módulos Independentes", icon: Component },
 ];
 
@@ -19,7 +19,7 @@ export default async function CnqpPage() {
         <header
           className="relative min-h-screen max-w-7xl px-4 mx-auto grid md:grid-cols-2 md:py-10 items-center justify-center">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-primary pt-10">Catálogo Nacional das Qualificações
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-primary pt-10">Catálogo Nacional de Qualificações
               Profissionais</h1>
             <p className="text-md mb-8 max-w-2xl text-gray-600 text-justify">
               O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
