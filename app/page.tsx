@@ -11,7 +11,7 @@ import { AboutSection } from "@/components/about/about-section";
 
 const generalStats = [
   { number: "150+", label: "Instituições Acreditadas", icon: Building2 },
-  { number: "75.000+", label: "Profissionais Certificados", icon: ShieldCheck },
+  { number: "78.000+", label: "Profissionais Certificados", icon: ShieldCheck },
   { number: "200+", label: "Qualificações Registradas", icon: BriefcaseBusiness },
   { number: "10+", label: "Anos de Excelência", icon: LucideStar },
 ];
