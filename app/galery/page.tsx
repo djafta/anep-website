@@ -83,8 +83,6 @@ const categories = [
   { id: 'todas', label: 'Todas' },
   { id: 'eventos', label: 'Eventos' },
   { id: 'formacao', label: 'Formação' },
-  { id: 'infraestrutura', label: 'Infraestrutura' },
-  { id: 'graduacao', label: 'Graduação' },
   { id: 'workshops', label: 'Workshops' },
 ];
 
