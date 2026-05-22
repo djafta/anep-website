@@ -181,15 +181,15 @@ export default async function AboutPage() {
             </p>
             <div className="grid md:grid-cols-4 gap-8">
               <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">500+</h3>
+                <h3 className="text-4xl font-bold text-secondary mb-2">200+</h3>
                 <p className="text-white">Qualificações Desenvolvidas</p>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">1000+</h3>
+                <h3 className="text-4xl font-bold text-secondary mb-2">10+</h3>
                 <p className="text-white">Instituições Parceiras</p>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">5000+</h3>
+                <h3 className="text-4xl font-bold text-secondary mb-2">50+</h3>
                 <p className="text-white">Empregadores Colaboradores</p>
               </div>
               <div>
