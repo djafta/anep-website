@@ -125,7 +125,7 @@ type HttpCheck = {
 
 export function HttpInspectorCard({ data }: { data: HttpCheck }) {
   return (
-    <Card className="w-full max-w-2xl">
+    <Card className="w-full max-w-2xl ring-0">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>HTTP Inspection</CardTitle>
