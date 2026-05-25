@@ -1,3 +1,5 @@
+import React from "react";
+
 export type StatsCardProps = {
   readonly number: string;
   readonly description: string;
