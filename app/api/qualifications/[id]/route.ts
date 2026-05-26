@@ -31,7 +31,7 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   const { id: publicId } = await params;
   const formData = await request.formData();
 
-  const file = formData.get("file") as File | null;
+  const file = formData.get("file") as File;
 
   const body = {
     publicId,
@@ -46,7 +46,8 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   };
 
   console.log({
-    body
+    body,
+    file
   })
 
   const result = validate(updateQualificationSchema, body);

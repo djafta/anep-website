@@ -51,7 +51,7 @@ export const updateQualificationSchema = z.object({
   sortOrder: z.number().optional().default(0).optional(),
 })
 
-export async function updateQualification(data: z.infer<typeof updateQualificationSchema>, file: File | null) {
+export async function updateQualification(data: z.infer<typeof updateQualificationSchema>, file: File) {
   const qualification = await prisma.qualification.findUniqueOrThrow({
     where: { publicId: data.publicId },
     include: {
@@ -64,7 +64,7 @@ export async function updateQualification(data: z.infer<typeof updateQualificati
     }
   })
 
-  const specUrl = file ? await updateQualificationSpec(file, qualification.specUrl) : qualification.specUrl;
+  const specUrl = file?.size > 0 ? await updateQualificationSpec(file, qualification.specUrl) : qualification.specUrl;
   const user = await getAuthUser();
 
   return prisma.qualification.update({
