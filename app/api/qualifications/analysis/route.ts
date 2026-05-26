@@ -7,9 +7,19 @@ const roman =
   "(IX|IV|V?I{0,3})";
 
 const titlePattern = new RegExp(
-  `(CV|CO)(${roman}|\\d+)`,
+  "^" +
+  "Certificado\\s+" +
+  "(Vocacional|Ocupacional)" +
+  "\\s+de\\s+Nível\\s+" +
+  `(${ roman })` +
+  "\\s+em\\s+" +
+  ".+" +
+  "$",
   "i",
 );
+
+const forbiddenTitleParts =
+  /\b(vocacional|ocupacional|nível|cv|co)\b/i;
 
 function isWrongName(q: { name: string | null, title: string | null }) {
   const name = q.name?.trim();
@@ -19,9 +29,7 @@ function isWrongName(q: { name: string | null, title: string | null }) {
 
   if (title && name === title) return true;
 
-  if (titlePattern.test(name)) return true;
-
-  return false;
+  return forbiddenTitleParts.test(name);
 }
 
 function isWrongTitle(q: { name: string | null, title: string | null }) {
@@ -29,10 +37,7 @@ function isWrongTitle(q: { name: string | null, title: string | null }) {
 
   if (!title) return true;
 
-  return !new RegExp(
-    `^(CV|CO)(${roman}|\\d+)$`,
-    "i",
-  ).test(title);
+  return !titlePattern.test(title);
 }
 
 export async function GET() {
