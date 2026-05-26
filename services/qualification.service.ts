@@ -34,8 +34,7 @@ async function uploadQualificationSpec(file: File) {
   return `${ process.env.MINIO_PUBLIC_URL }/${ process.env.MINIO_BUCKET }/${ objectName }`;
 }
 
-async function updateQualificationSpec(file: File, currentSpecUrl: string) {
-  await deleteQualificationSpec(currentSpecUrl);
+async function updateQualificationSpec(file: File) {
   return await uploadQualificationSpec(file);
 }
 
@@ -64,7 +63,7 @@ export async function updateQualification(data: z.infer<typeof updateQualificati
     }
   })
 
-  const specUrl = file?.size > 0 ? await updateQualificationSpec(file, qualification.specUrl) : qualification.specUrl;
+  const specUrl = file?.size > 0 ? await updateQualificationSpec(file) : qualification.specUrl;
   const user = await getAuthUser();
 
   return prisma.qualification.update({
