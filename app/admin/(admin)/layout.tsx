@@ -42,7 +42,9 @@ export default async function AdminDashboardLayout({ children, header }: Dashboa
 
   return (
     <div className={ 'flex flex-col flex-1 w-full mt-12 bg-gray-50' }>
-      { header }
+      <div className={"sticky lg:top-4 bg-gray-50"}>
+        { header }
+      </div>
       <div className={ 'grid md:grid-cols-[20rem_1fr] flex-1 w-full max-w-7xl mx-auto px-4 gap-4' }>
         <SecondaryNav
           links={
