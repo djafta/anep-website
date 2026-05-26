@@ -130,6 +130,12 @@ export async function GET() {
     }),
   );
 
+  const unknownCertificates = qualifications.filter(qualification => {
+    const certificate = qualification.certificate?.toLocaleLowerCase().trim();
+    if (!certificate) return true;
+    return !(certificate === 'vocacional' || certificate === 'ocupacional');
+  })
+
   const brokenLinkQualifications = results.filter(
     result => result.isBroken,
   );
@@ -208,6 +214,13 @@ export async function GET() {
   return NextResponse.json({
     stats: {
       totalQualifications: qualifications.length,
+      unknownCertificates: {
+        total: unknownCertificates.length,
+        percentage:
+          (unknownCertificates.length /
+            qualifications.length) *
+          100
+      },
 
       brokenLinks: {
         total: brokenLinkQualifications.length,
@@ -273,19 +286,14 @@ export async function GET() {
 
       domains,
     },
-
     brokenLinkQualifications,
-
     unnamedQualifications,
-
     duplicatedUrls,
-
     duplicatedNames,
     wrongNames,
     wrongTitles,
-
+    unknownCertificates,
     invalidPdfQualifications: pdfContentTypeFailures,
-
     corruptedPdfQualifications,
   });
 }
