@@ -72,6 +72,10 @@ export function EditFieldForm({ field }: EditFieldFormProps) {
         <Field>
           <FieldLabel>Ícone</FieldLabel>
           <Input defaultValue={ field.icon } name="icon" placeholder="Ex: file-text"/>
+          <FieldDescription>
+            Os ícones usados são da biblioteca <a target={ '_blank' } href={ 'https://lucide.dev/icons' }>Lucide</a>.
+            Insira o nome do ícone desejado.
+          </FieldDescription>
         </Field>
       </FieldSet>
 

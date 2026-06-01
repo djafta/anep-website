@@ -53,7 +53,7 @@ export default async function QualificationPage({ params }: {
                 className="inline-flex items-center gap-2 rounded-xl bg-primary px-3 py-2 text-white font-medium shadow-md hover:shadow-lg hover:scale-[1.02] transition"
               >
                 <Download className="h-5 w-5"/>
-                Baixar Especificação (PDF)
+                Baixar Módulo
               </a>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default async function QualificationPage({ params }: {
               className="inline-flex items-center gap-2 rounded-xl bg-primary px-3 py-2 text-white font-medium shadow-md hover:shadow-lg hover:scale-[1.02] transition"
             >
               <Download className="h-5 w-5"/>
-              Baixar Especificação
+              Baixar Módulo
             </a>
           </div>
         </div>
