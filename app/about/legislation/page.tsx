@@ -18,6 +18,11 @@ const getFiles = cache(async () => {
   return files;
 });
 
+const getName = (file: { name: string }) => file.name
+  .replace(/^legislations\//, "")
+  .replace(/\s*\(\d{4}_\d{2}_\d{2}.*?\)/, "")
+  .replace(/\.pdf$/i, "");
+
 export default async function Page() {
   const objects = minioClient.listObjects("public", "", true);
   const files = await getFiles();
@@ -52,7 +57,7 @@ export default async function Page() {
                 <a
                   href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/${ file.name }` }
                   className="text-gray-600 block hover:underline">
-                  { file.name.replace(".pdf", "") }
+                  { getName(file) }
                 </a>
               </div>
             )
