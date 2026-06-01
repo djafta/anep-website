@@ -151,38 +151,12 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   </div>
 
                   <Separator/>
-                  <h3 className="px-3 text-md font-semibold text-primary">
-                    Legislação
-                  </h3>
-                  <div className="grid md:grid-rows-3 gap-2 p-3 max-w-7xl">
+                  <div className="grid md:grid-rows-2 gap-2 p-3 max-w-7xl">
                     <a
-                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o Regulmaento de Operacionalizacao do QNQ.pdf` }
+                      href={ '/legislation' }
                       className="text-gray-600 block hover:underline">
-                      Resolução nr. 72024 aprova o Regulamento Interno da CTQNQ e Resolução nr. 82024 que aprova o
-                      Regulmaento de Operacionalizacao do QNQ
+                      Legislação
                     </a>
-                    <a
-                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ.pdf` }
-                      className="text-gray-600 block hover:underline">
-                      Decreto 61 2022 Cria o Quadro Nacional de Qualificacoes QNQ
-                    </a>
-                    <a
-                      href={ `${ process.env.NEXT_PUBLIC_STORAGE_URL }/laws/Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional.pdf` }
-                      className="text-gray-600 block hover:underline">
-                      Decreto 31 2017 - Regulamento do Fundo Nacional de Educacao Profissional
-                    </a>
-                  </div>
-
-                  <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
-                    <a
-                      href={ '#' }
-                      className="text-gray-600 block hover:underline">
-                      Ver toda a legislação
-                    </a>
-                  </div>
-
-                  <Separator/>
-                  <div className="grid md:grid-rows-1 gap-2 p-3 max-w-7xl">
                     <a
                       href={ '/about/organogram' }
                       className="text-gray-600 block hover:underline">
