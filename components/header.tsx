@@ -153,7 +153,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   <Separator/>
                   <div className="grid md:grid-rows-2 gap-2 p-3 max-w-7xl">
                     <a
-                      href={ '/legislation' }
+                      href={ '/about/legislation' }
                       className="text-gray-600 block hover:underline">
                       Legislação
                     </a>
@@ -389,6 +389,18 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                     <a href={ '/about' } className={ 'w-fit' }>Sobre</a>
                   </AccordionTrigger>
                   <AccordionContent>
+                    <div className="grid md:grid-rows-2 gap-2 p-3 max-w-7xl">
+                      <a
+                        href={ '/about/legislation' }
+                        className="text-gray-600 block hover:underline">
+                        Legislação
+                      </a>
+                      <a
+                        href={ '/about/organogram' }
+                        className="text-gray-600 block hover:underline">
+                        Organograma da ANEP
+                      </a>
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
 
