@@ -140,8 +140,12 @@ export default async function Page() {
         <CardHeader>
           <CardTitle>Qualificações com nomes inválidos</CardTitle>
           <CardDescription>
-            Estas qualificações podem ter títulos no lugar de nomes. "Certificado Vocacional de nível V em Mecânica
+            Estas qualificações podem ter títulos no lugar de nomes. "Certificado Vocacional de Nível V em Mecânica
             Auto" é o título. O nome seria "Mecânica Auto".
+
+            <div className={"mt-2"}>
+              Os problemas mais comuns estão destacados a <span className={"bg-destructive text-white p-1 rounded-full"}>vermelho</span>.
+            </div>
           </CardDescription>
         </CardHeader>
 
@@ -185,8 +189,12 @@ export default async function Page() {
         <CardHeader>
           <CardTitle>Qualificações com títulos inválidos</CardTitle>
           <CardDescription>
-            Estas qualificações podem ter nomes no lugar de títulos. "Certificado Vocacional de nível V em Mecânica
+            Estas qualificações podem ter nomes no lugar de títulos. "Certificado Vocacional de Nível V em Mecânica
             Auto" é o título. O nome seria "Mecânica Auto".
+
+            <div className={"mt-2"}>
+              Os problemas mais comuns estão destacados a <span className={"bg-destructive text-white p-1 rounded-full"}>vermelho</span>.
+            </div>
           </CardDescription>
         </CardHeader>
 
