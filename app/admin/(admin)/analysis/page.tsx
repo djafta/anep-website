@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { HorizontalBarChart } from "@/components/admin/horizonta-bar-chart";
+import { Qualification } from "@/lib/types";
 
 export default async function Page() {
   const data = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/analysis`, {
@@ -51,8 +52,8 @@ export default async function Page() {
           },
           {
             total: data.stats.totalQualifications,
-            label: "Qualificações com nomes duplicados",
-            count: data.stats.duplicatedNames
+            label: "Qualificações duplicadas",
+            count: data.stats.duplicatedQualifications.total
           }
         ] }/>
       </div>
@@ -218,6 +219,50 @@ export default async function Page() {
                 <div className={ "hidden lg:block" }>{ unknown.level }</div>
                 <div className={ "hidden lg:block text-destructive" }>{ unknown.certificate }</div>
                 <div className={ "hidden lg:block" }>{ unknown.code }</div>
+              </Link>
+            )) }
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className={ "mt-16 max-w-sm" }>
+        <HorizontalBarChart data={ [
+          {
+            total: data.stats.totalQualifications,
+            label: "Qualificações com certificados desconhecidos",
+            count: data.stats.duplicatedQualifications.total
+          }
+        ] }/>
+      </div>
+
+      <Card className="mt-16">
+        <CardHeader>
+          <CardTitle>Qualificações duplicadas</CardTitle>
+          <CardDescription>
+            Ao realizar a análise, foram identificadas as qualificações abaixo com nome, nível e certificado idênticos.
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent className="p-0">
+          <div className="grid lg:grid-cols-6 px-6 py-3 border-b text-sm font-medium">
+            <div className={ "col-span-3" }>Nome</div>
+            <div className={ "hidden lg:block" }>Nível</div>
+            <div className={ "hidden lg:block" }>Certificado</div>
+            <div className={ "hidden lg:block" }>Código</div>
+          </div>
+
+          <div className="max-h-64 overflow-y-auto">
+            { data.duplicatedQualifications.sort((a: Qualification, b: Qualification) => Number(a.level) - Number(b.level)).map((duplicate: any) => (
+              <Link
+                target="_blank"
+                href={ `/admin/qualifications/${ duplicate.publicId }` }
+                key={ duplicate.publicId }
+                className="grid lg:grid-cols-6 px-6 py-4 hover:bg-muted/30 odd:text-destructive"
+              >
+                <div className={ "col-span-3" }>{ duplicate.name }</div>
+                <div className={ "hidden lg:block" }>{ duplicate.level }</div>
+                <div className={ "hidden lg:block" }>{ duplicate.certificate }</div>
+                <div className={ "hidden lg:block" }>{ duplicate.code }</div>
               </Link>
             )) }
           </div>

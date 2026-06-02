@@ -156,20 +156,32 @@ export async function GET() {
     ),
   ).filter(([, count]) => count > 1);
 
-  const duplicatedNames = Object.entries(
-    qualifications.reduce<Record<string, number>>((acc, qualification) => {
-      if (!qualification.name || !qualification.level) {
+  const counts = qualifications.reduce<Record<string, number>>(
+    (acc, qualification) => {
+      if (!qualification.name || !qualification.level || !qualification.certificate) {
         return acc;
       }
 
-      const key = `${ qualification.name }-${ qualification.level }`;
+      const key = `${ qualification.name }:${ qualification.level }:${ qualification.certificate }`;
 
-      acc[key] = (acc[key] || 0) + 1;
+      acc[key] = (acc[key] ?? 0) + 1;
 
       return acc;
-    }, {}),
-  ).filter(([, count]) => count > 1);
+    },
+    {},
+  );
 
+  const duplicatedQualifications = qualifications.filter(
+    (qualification) => {
+      if (!qualification.name || !qualification.level) {
+        return false;
+      }
+
+      const key = `${ qualification.name }:${ qualification.level }:${ qualification.certificate }`;
+
+      return counts[key] > 1;
+    },
+  );
 
   const statusCodes = results.reduce<Record<number, number>>(
     (acc, result) => {
@@ -248,7 +260,10 @@ export async function GET() {
 
       duplicatedUrls: duplicatedUrls.length,
 
-      duplicatedNames: duplicatedNames.length,
+      duplicatedQualifications: {
+        total: duplicatedQualifications.length,
+        percentage: (duplicatedQualifications.length / qualifications.length) * 100,
+      },
 
       invalidPdfContentType: {
         total: pdfContentTypeFailures.length,
@@ -287,7 +302,7 @@ export async function GET() {
     brokenLinkQualifications,
     unnamedQualifications,
     duplicatedUrls,
-    duplicatedNames,
+    duplicatedQualifications,
     wrongNames,
     wrongTitles,
     unknownCertificates,
