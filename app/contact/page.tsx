@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const contacts = {
-  phone: "+258 21 484 030",
+  phone: "+25821484030",
 };
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
             <div className="space-y-6">
               <Link
                 className="flex items-center p-6 border border-gray-200 rounded-lg hover:bg-gray-50 transition duration-300"
-                href="/chat"
+                href="mailto:suporte@anep.gov.mz"
               >
                 <Mail className="text-blue-500 mr-6" size={24} />
                 <div>
