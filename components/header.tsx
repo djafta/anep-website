@@ -150,27 +150,18 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                     </p>
                   </div>
 
-                  <Separator/>
-                  <div className="grid md:grid-rows-2 gap-2 p-3 max-w-7xl">
-                    <a
-                      href={ '/about/legislation' }
-                      className="text-gray-600 block hover:underline">
-                      Legislação
-                    </a>
-                    <a
-                      href={ '/about/organogram' }
-                      className="text-gray-600 block hover:underline">
-                      Organograma da ANEP
-                    </a>
-                  </div>
-                  <Separator/>
-
                   <div className="flex items-center gap-2 p-3 py-6">
                     <a
                       className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"
                       href="/about"
                     >
                       Aprender mais sobre a ANEP
+                      <ChevronRight className="size-3 stroke-1 ml-1"/>
+                    </a>
+                    <a
+                      href={ '/about/legislation' }
+                      className="text-sm text-white flex items-center bg-secondary px-4 py-2 rounded-3xl">
+                      Legislação
                       <ChevronRight className="size-3 stroke-1 ml-1"/>
                     </a>
                   </div>
@@ -239,101 +230,101 @@ export async function Header({ theme = "dark" }: HeaderProps) {
               </DropdownContent>
             </NavItem>
 
-            {/*<NavItem>*/}
-            {/*  <DropdownTrigger href="/institutions">*/}
-            {/*    Instituições*/}
-            {/*    <ChevronDown className="inline-block size-3 ml-2"/>*/}
-            {/*  </DropdownTrigger>*/}
+            {/*<NavItem>*/ }
+            {/*  <DropdownTrigger href="/institutions">*/ }
+            {/*    Instituições*/ }
+            {/*    <ChevronDown className="inline-block size-3 ml-2"/>*/ }
+            {/*  </DropdownTrigger>*/ }
 
-            {/*  <DropdownContent>*/}
-            {/*    <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">*/}
-            {/*      <div>*/}
-            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Instituições de Educação*/}
-            {/*          Profissional</h2>*/}
-            {/*        <p className={ 'text-sm text-muted-foreground px-3' }>*/}
-            {/*          Instituições de Educação Profissional acreditadas pela ANEP para ministrar qualificações do*/}
-            {/*          certificado*/}
-            {/*          vocacional e realizar exames de RCA.*/}
-            {/*        </p>*/}
-            {/*        <ul className={ 'grid grid-cols-3 py-3' }>*/}
-            {/*          { IEPS.map((item) => (*/}
-            {/*            <li key={ item.href } className="hover:bg-muted w-fit p-3 rounded-lg">*/}
-            {/*              <a href={ item.href }>*/}
-            {/*                <h3 className="m-0 mb-1 leading-5 text-sm font-medium">*/}
-            {/*                  { item.title }*/}
-            {/*                </h3>*/}
-            {/*                <p className="m-0 text-sm leading-5 text-gray-500">*/}
-            {/*                  { item.description }*/}
-            {/*                </p>*/}
-            {/*              </a>*/}
-            {/*            </li>*/}
-            {/*          )) }*/}
-            {/*        </ul>*/}
-            {/*      </div>*/}
-            {/*      <Separator/>*/}
-            {/*      <div>*/}
-            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Instituições de Ensino Superior</h2>*/}
-            {/*        <p className={ 'text-sm text-muted-foreground px-3' }>*/}
-            {/*          Instituições de Ensino Superior acreditadas pela ANEP para ministrar qualificações do certificado*/}
-            {/*          A, B e C.*/}
-            {/*        </p>*/}
-            {/*        <ul className={ 'grid grid-cols-3 py-3' }>*/}
-            {/*          { IES.map((item) => (*/}
-            {/*            <li key={ item.href } className="hover:bg-muted w-fit p-3 rounded-lg">*/}
-            {/*              <a href={ item.href }>*/}
-            {/*                <h3 className="m-0 mb-1 leading-5 text-sm font-medium">*/}
-            {/*                  { item.title }*/}
-            {/*                </h3>*/}
-            {/*                <p className="m-0 text-sm leading-5 text-gray-500">*/}
-            {/*                  { item.description }*/}
-            {/*                </p>*/}
-            {/*              </a>*/}
-            {/*            </li>*/}
-            {/*          )) }*/}
-            {/*        </ul>*/}
-            {/*      </div>*/}
-            {/*      <Separator/>*/}
-            {/*      <div className="flex items-center gap-2 p-3 py-6">*/}
-            {/*        <a*/}
-            {/*          className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"*/}
-            {/*          href="/institutions"*/}
-            {/*        >*/}
-            {/*          Aprender mais sobre as instituições*/}
-            {/*          <ChevronRight className="size-3 stroke-1 ml-1"/>*/}
-            {/*        </a>*/}
-            {/*      </div>*/}
-            {/*    </div>*/}
-            {/*  </DropdownContent>*/}
-            {/*</NavItem>*/}
-            {/*<NavItem>*/}
-            {/*  <DropdownTrigger href="/fnep">*/}
-            {/*    FNEP*/}
-            {/*    <ChevronDown className="inline-block size-3 ml-2"/>*/}
-            {/*  </DropdownTrigger>*/}
+            {/*  <DropdownContent>*/ }
+            {/*    <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">*/ }
+            {/*      <div>*/ }
+            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Instituições de Educação*/ }
+            {/*          Profissional</h2>*/ }
+            {/*        <p className={ 'text-sm text-muted-foreground px-3' }>*/ }
+            {/*          Instituições de Educação Profissional acreditadas pela ANEP para ministrar qualificações do*/ }
+            {/*          certificado*/ }
+            {/*          vocacional e realizar exames de RCA.*/ }
+            {/*        </p>*/ }
+            {/*        <ul className={ 'grid grid-cols-3 py-3' }>*/ }
+            {/*          { IEPS.map((item) => (*/ }
+            {/*            <li key={ item.href } className="hover:bg-muted w-fit p-3 rounded-lg">*/ }
+            {/*              <a href={ item.href }>*/ }
+            {/*                <h3 className="m-0 mb-1 leading-5 text-sm font-medium">*/ }
+            {/*                  { item.title }*/ }
+            {/*                </h3>*/ }
+            {/*                <p className="m-0 text-sm leading-5 text-gray-500">*/ }
+            {/*                  { item.description }*/ }
+            {/*                </p>*/ }
+            {/*              </a>*/ }
+            {/*            </li>*/ }
+            {/*          )) }*/ }
+            {/*        </ul>*/ }
+            {/*      </div>*/ }
+            {/*      <Separator/>*/ }
+            {/*      <div>*/ }
+            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Instituições de Ensino Superior</h2>*/ }
+            {/*        <p className={ 'text-sm text-muted-foreground px-3' }>*/ }
+            {/*          Instituições de Ensino Superior acreditadas pela ANEP para ministrar qualificações do certificado*/ }
+            {/*          A, B e C.*/ }
+            {/*        </p>*/ }
+            {/*        <ul className={ 'grid grid-cols-3 py-3' }>*/ }
+            {/*          { IES.map((item) => (*/ }
+            {/*            <li key={ item.href } className="hover:bg-muted w-fit p-3 rounded-lg">*/ }
+            {/*              <a href={ item.href }>*/ }
+            {/*                <h3 className="m-0 mb-1 leading-5 text-sm font-medium">*/ }
+            {/*                  { item.title }*/ }
+            {/*                </h3>*/ }
+            {/*                <p className="m-0 text-sm leading-5 text-gray-500">*/ }
+            {/*                  { item.description }*/ }
+            {/*                </p>*/ }
+            {/*              </a>*/ }
+            {/*            </li>*/ }
+            {/*          )) }*/ }
+            {/*        </ul>*/ }
+            {/*      </div>*/ }
+            {/*      <Separator/>*/ }
+            {/*      <div className="flex items-center gap-2 p-3 py-6">*/ }
+            {/*        <a*/ }
+            {/*          className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"*/ }
+            {/*          href="/institutions"*/ }
+            {/*        >*/ }
+            {/*          Aprender mais sobre as instituições*/ }
+            {/*          <ChevronRight className="size-3 stroke-1 ml-1"/>*/ }
+            {/*        </a>*/ }
+            {/*      </div>*/ }
+            {/*    </div>*/ }
+            {/*  </DropdownContent>*/ }
+            {/*</NavItem>*/ }
+            {/*<NavItem>*/ }
+            {/*  <DropdownTrigger href="/fnep">*/ }
+            {/*    FNEP*/ }
+            {/*    <ChevronDown className="inline-block size-3 ml-2"/>*/ }
+            {/*  </DropdownTrigger>*/ }
 
-            {/*  <DropdownContent>*/}
-            {/*    <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">*/}
-            {/*      <div>*/}
-            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Fundo Nacional de Educação*/}
-            {/*          Profissional</h2>*/}
-            {/*        <p className={ 'px-3 text-sm text-muted-foreground' }>*/}
-            {/*          O FNEP é o Instrumento público de financiamento do Subsistema de Educação Profissional, gerido*/}
-            {/*          pela ANEP. Visa assegurar recursos financeiros para a formação profissional orientada ao mercado*/}
-            {/*          de trabalho, no âmbito da Lei n.º 26/2022 (Lei de Educação Profissional)*/}
-            {/*        </p>*/}
-            {/*      </div>*/}
-            {/*      <div className="flex items-center gap-2 p-3 py-6">*/}
-            {/*        <a*/}
-            {/*          className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"*/}
-            {/*          href="/fnep"*/}
-            {/*        >*/}
-            {/*          Aprender mais sobre o FNEP*/}
-            {/*          <ChevronRight className="size-3 stroke-1 ml-1"/>*/}
-            {/*        </a>*/}
-            {/*      </div>*/}
-            {/*    </div>*/}
-            {/*  </DropdownContent>*/}
-            {/*</NavItem>*/}
+            {/*  <DropdownContent>*/ }
+            {/*    <div className="flex flex-col justify-center gap-4 max-w-7xl mx-auto py-6 p-1">*/ }
+            {/*      <div>*/ }
+            {/*        <h2 className={ 'text-lg font-semibold text-primary p-3' }>Fundo Nacional de Educação*/ }
+            {/*          Profissional</h2>*/ }
+            {/*        <p className={ 'px-3 text-sm text-muted-foreground' }>*/ }
+            {/*          O FNEP é o Instrumento público de financiamento do Subsistema de Educação Profissional, gerido*/ }
+            {/*          pela ANEP. Visa assegurar recursos financeiros para a formação profissional orientada ao mercado*/ }
+            {/*          de trabalho, no âmbito da Lei n.º 26/2022 (Lei de Educação Profissional)*/ }
+            {/*        </p>*/ }
+            {/*      </div>*/ }
+            {/*      <div className="flex items-center gap-2 p-3 py-6">*/ }
+            {/*        <a*/ }
+            {/*          className="text-sm text-white flex items-center bg-primary px-4 py-2 rounded-3xl"*/ }
+            {/*          href="/fnep"*/ }
+            {/*        >*/ }
+            {/*          Aprender mais sobre o FNEP*/ }
+            {/*          <ChevronRight className="size-3 stroke-1 ml-1"/>*/ }
+            {/*        </a>*/ }
+            {/*      </div>*/ }
+            {/*    </div>*/ }
+            {/*  </DropdownContent>*/ }
+            {/*</NavItem>*/ }
 
             <NavItem>
               <DropdownTrigger href="/galery">
@@ -392,13 +383,9 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                     <div className="grid md:grid-rows-2 gap-2 p-3 max-w-7xl">
                       <a
                         href={ '/about/legislation' }
-                        className="text-gray-600 block hover:underline">
+                        className="text-sm flex items-center rounded-3xl">
                         Legislação
-                      </a>
-                      <a
-                        href={ '/about/organogram' }
-                        className="text-gray-600 block hover:underline">
-                        Organograma da ANEP
+                        <ChevronRight className="size-3 stroke-1 ml-1"/>
                       </a>
                     </div>
                   </AccordionContent>
@@ -434,56 +421,56 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                   </AccordionContent>
                 </AccordionItem>
 
-                {/*<AccordionItem value={ 'Instituições' }>*/}
-                {/*  <AccordionTrigger>*/}
-                {/*    <a href={ '/institutions' } className={ 'w-fit' }>Instituições</a>*/}
-                {/*  </AccordionTrigger>*/}
-                {/*  <AccordionContent>*/}
-                {/*    <section>*/}
-                {/*      <h2 className={ 'p-3' }>*/}
-                {/*        de Educação Profissional*/}
-                {/*      </h2>*/}
-                {/*      <div className={ 'grid grid-cols-1 p-3' }>*/}
-                {/*        {*/}
-                {/*          IEPS.map((institution: InstitutionLink) => (*/}
-                {/*            <a*/}
-                {/*              key={ institution.href }*/}
-                {/*              className="w-fit text-sm p-3 text-muted-foreground transition-all duration-300 rounded-xl"*/}
-                {/*              href={ institution.href }*/}
-                {/*            >*/}
-                {/*              { institution.title }*/}
-                {/*            </a>*/}
-                {/*          ))*/}
-                {/*        }*/}
-                {/*      </div>*/}
-                {/*    </section>*/}
-                {/*    <section>*/}
-                {/*      <h2 className={ 'p-3' }>*/}
-                {/*        de Ensino Superior*/}
-                {/*      </h2>*/}
-                {/*      <div className={ 'grid grid-cols-1 p-3' }>*/}
-                {/*        {*/}
-                {/*          IES.map((institution: InstitutionLink) => (*/}
-                {/*            <a*/}
-                {/*              key={ institution.href }*/}
-                {/*              className="w-fit text-sm p-3 text-muted-foreground transition-all duration-300 rounded-xl"*/}
-                {/*              href={ institution.href }*/}
-                {/*            >*/}
-                {/*              { institution.title }*/}
-                {/*            </a>*/}
-                {/*          ))*/}
-                {/*        }*/}
-                {/*      </div>*/}
-                {/*    </section>*/}
-                {/*  </AccordionContent>*/}
-                {/*</AccordionItem>*/}
-                {/*<AccordionItem value={ 'FNEP' }>*/}
-                {/*  <AccordionTrigger>*/}
-                {/*    <a href={ '/fnep' } className={ 'w-fit' }>FNEP</a>*/}
-                {/*  </AccordionTrigger>*/}
-                {/*  <AccordionContent>*/}
-                {/*  </AccordionContent>*/}
-                {/*</AccordionItem>*/}
+                {/*<AccordionItem value={ 'Instituições' }>*/ }
+                {/*  <AccordionTrigger>*/ }
+                {/*    <a href={ '/institutions' } className={ 'w-fit' }>Instituições</a>*/ }
+                {/*  </AccordionTrigger>*/ }
+                {/*  <AccordionContent>*/ }
+                {/*    <section>*/ }
+                {/*      <h2 className={ 'p-3' }>*/ }
+                {/*        de Educação Profissional*/ }
+                {/*      </h2>*/ }
+                {/*      <div className={ 'grid grid-cols-1 p-3' }>*/ }
+                {/*        {*/ }
+                {/*          IEPS.map((institution: InstitutionLink) => (*/ }
+                {/*            <a*/ }
+                {/*              key={ institution.href }*/ }
+                {/*              className="w-fit text-sm p-3 text-muted-foreground transition-all duration-300 rounded-xl"*/ }
+                {/*              href={ institution.href }*/ }
+                {/*            >*/ }
+                {/*              { institution.title }*/ }
+                {/*            </a>*/ }
+                {/*          ))*/ }
+                {/*        }*/ }
+                {/*      </div>*/ }
+                {/*    </section>*/ }
+                {/*    <section>*/ }
+                {/*      <h2 className={ 'p-3' }>*/ }
+                {/*        de Ensino Superior*/ }
+                {/*      </h2>*/ }
+                {/*      <div className={ 'grid grid-cols-1 p-3' }>*/ }
+                {/*        {*/ }
+                {/*          IES.map((institution: InstitutionLink) => (*/ }
+                {/*            <a*/ }
+                {/*              key={ institution.href }*/ }
+                {/*              className="w-fit text-sm p-3 text-muted-foreground transition-all duration-300 rounded-xl"*/ }
+                {/*              href={ institution.href }*/ }
+                {/*            >*/ }
+                {/*              { institution.title }*/ }
+                {/*            </a>*/ }
+                {/*          ))*/ }
+                {/*        }*/ }
+                {/*      </div>*/ }
+                {/*    </section>*/ }
+                {/*  </AccordionContent>*/ }
+                {/*</AccordionItem>*/ }
+                {/*<AccordionItem value={ 'FNEP' }>*/ }
+                {/*  <AccordionTrigger>*/ }
+                {/*    <a href={ '/fnep' } className={ 'w-fit' }>FNEP</a>*/ }
+                {/*  </AccordionTrigger>*/ }
+                {/*  <AccordionContent>*/ }
+                {/*  </AccordionContent>*/ }
+                {/*</AccordionItem>*/ }
 
                 <AccordionItem value={ 'Galery' }>
                   <AccordionTrigger>
