@@ -157,19 +157,17 @@ export async function GET() {
   ).filter(([, count]) => count > 1);
 
   const duplicatedNames = Object.entries(
-    qualifications.reduce<Record<string, number>>(
-      (acc, qualification) => {
-        if (!qualification.name) {
-          return acc;
-        }
-
-        acc[qualification.name] =
-          (acc[qualification.name] || 0) + 1;
-
+    qualifications.reduce<Record<string, number>>((acc, qualification) => {
+      if (!qualification.name || !qualification.level) {
         return acc;
-      },
-      {},
-    ),
+      }
+
+      const key = `${ qualification.name }-${ qualification.level }`;
+
+      acc[key] = (acc[key] || 0) + 1;
+
+      return acc;
+    }, {}),
   ).filter(([, count]) => count > 1);
 
 
