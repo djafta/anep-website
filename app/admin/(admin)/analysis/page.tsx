@@ -238,7 +238,7 @@ export default async function Page() {
         <CardHeader>
           <CardTitle>Qualificações com certificados desconhecidos</CardTitle>
           <CardDescription>
-            Estas qualificações tem certificados que diferem de Vocacional e Ocupacional.
+            Estas qualificações tem certificados que diferem de "Vocacional" e "Ocupacional".
           </CardDescription>
         </CardHeader>
 
