@@ -5,6 +5,8 @@ import Image from "next/image";
 import { StatsCard } from "@/components/stats-card";
 import { BriefcaseBusiness, Component, Star } from "lucide-react";
 import { CnqpModules } from "@/components/cnqp-modules";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const generalStats = [
   { number: "14", label: "Campos", icon: Star },
@@ -17,19 +19,32 @@ export default async function CnqpPage() {
     <div className="pt-12 flex-1 bg-white">
       <section className="pb-0 bg-neutral-100">
         <header
-          className="relative min-h-screen max-w-7xl px-4 mx-auto grid md:grid-cols-2 md:py-10 items-center justify-center">
-          <div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-primary pt-10">Catálogo Nacional de Qualificações
+          className="relative min-h-screen max-w-7xl px-4 mx-auto grid grid-cols-1 md:py-10 items-center justify-center">
+          <div className={"max-w-4xl mx-auto flex flex-col justify-center items-center gap-8"}>
+            <h1 className="text-4xl md:text-6xl font-bold text-primary text-center">Catálogo Nacional de Qualificações
               Profissionais</h1>
-            <p className="text-md mb-8 max-w-2xl text-gray-600 text-justify">
+            <p className="text-sm max-w-2xl text-gray-600 text-center">
               O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
               profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
               país, no Subsistema de Educação Profissional.
             </p>
+            <Link href={"/cnqp/qualifications"} className={"rounded-full bg-primary p-3 text-sm text-white"}>Explorar qualificações</Link>
           </div>
-          <div className="flex justify-end items-center py-16 my-auto bg-neutral-100">
-            <div className="group [perspective:2000px]">
-              <div className="
+        </header>
+        <div className="py-20 xl:absolute bottom-0 w-full left-0">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              { generalStats.map((stat, index) => (
+                <StatsCard key={ index } description={ stat.label } icon={ stat.icon } number={ stat.number }/>
+              )) }
+            </div>
+          </div>
+        </div>
+        <main>
+          <div>
+            <div className="flex justify-end items-center py-16 my-auto bg-neutral-100">
+              <div className="group [perspective:2000px]">
+                <div className="
                 relative
                 transition-all duration-500 ease-out
                 transform-gpu
@@ -37,21 +52,21 @@ export default async function CnqpPage() {
                 rotate-y-[-25deg]
                 group-hover:rotate-y-[-12deg]
               ">
-                {/* Capa */ }
-                <Image
-                  src="/cnqp-brochure.png"
-                  alt="CNQP Brochure"
-                  width={ 420 }
-                  height={ 500 }
-                  className="
+                  {/* Capa */ }
+                  <Image
+                    src="/cnqp-brochure.png"
+                    alt="CNQP Brochure"
+                    width={ 420 }
+                    height={ 500 }
+                    className="
                   rounded-md
                   shadow-[40px_40px_60px_rgba(0,0,0,0.35)]
                   transition-all duration-500
                   "
-                />
+                  />
 
-                {/* Sombra interna simulando páginas */ }
-                <div className="
+                  {/* Sombra interna simulando páginas */ }
+                  <div className="
                   pointer-events-none
                   absolute inset-0
                   rounded-md
@@ -59,20 +74,10 @@ export default async function CnqpPage() {
                   from-black/25 via-transparent to-transparent
                 "/>
 
+                </div>
               </div>
             </div>
           </div>
-          <div className="py-20 xl:absolute bottom-0">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                { generalStats.map((stat, index) => (
-                  <StatsCard key={ index } description={ stat.label } icon={ stat.icon } number={ stat.number }/>
-                )) }
-              </div>
-            </div>
-          </div>
-        </header>
-        <main>
           <div className="py-32 bg-gray-50" id="qualifications">
             <div className="max-w-7xl mx-auto px-4">
               <div className={ 'flex items-center justify-between' }>
