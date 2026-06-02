@@ -5,6 +5,41 @@ import Link from "next/link";
 import { HorizontalBarChart } from "@/components/admin/horizonta-bar-chart";
 import { Qualification } from "@/lib/types";
 
+const highlightLabel = (
+  label: string,
+  searchTerms: string[],
+) => {
+  const terms = searchTerms
+    .filter(Boolean)
+    .map((term) =>
+      term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+    );
+
+  if (!terms.length) {
+    return label;
+  }
+
+  const regex = new RegExp(
+    `(?<![\\p{L}\\p{N}])(${terms.join("|")})(?![\\p{L}\\p{N}])`,
+    "giu",
+  );
+
+  return label.split(regex).map((part, i) =>
+    terms.some(
+      (term) => part.toLowerCase() === term.toLowerCase(),
+    ) ? (
+      <span
+        key={i}
+        className="text-white font-semibold bg-destructive rounded-sm"
+      >
+        {part}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  );
+};
+
 export default async function Page() {
   const data = await fetch(`${ process.env.NEXT_PUBLIC_API_URL }/qualifications/analysis`, {
     next: {
@@ -126,7 +161,7 @@ export default async function Page() {
                 key={ wrong.publicId }
                 className="grid lg:grid-cols-6 px-6 py-4 hover:bg-muted/30"
               >
-                <div className={ "col-span-3 text-destructive" }>{ wrong.name }</div>
+                <div className={ "col-span-3 text-destructive" }>{ highlightLabel(wrong.name, ["1", "2", "3", "4", "5", "CV", "CO", "Nivel", "nível", "Certificado", "Vocacional", "Ocupacional"])  }</div>
                 <div className={ "hidden lg:block" }>{ wrong.level }</div>
                 <div className={ "hidden lg:block" }>{ wrong.certificate }</div>
                 <div className={ "hidden lg:block" }>{ wrong.code }</div>
@@ -171,7 +206,7 @@ export default async function Page() {
                 key={ wrong.publicId }
                 className="grid lg:grid-cols-6 px-6 py-4 hover:bg-muted/30"
               >
-                <div className={ "col-span-3 text-destructive" }>{ wrong.title }</div>
+                <div className={ "col-span-3 text-red-400" }>{ highlightLabel(wrong.title, ["1", "2", "3", "4", "5", "CV", "CO", "Nivel", "nível"]) }</div>
                 <div className={ "hidden lg:block" }>{ wrong.level }</div>
                 <div className={ "hidden lg:block" }>{ wrong.certificate }</div>
                 <div className={ "hidden lg:block" }>{ wrong.code }</div>
