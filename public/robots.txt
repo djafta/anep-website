@@ -1,0 +1,31 @@
+# Bloqueia o robô do ChatGPT
+User-agent: GPTBot
+Disallow: /
+
+# Bloqueia a IA do Google (Gemini) de usar seu conteúdo
+User-agent: Google-Extended
+Disallow: /
+
+# Bloqueia o robô da Anthropic (Claude)
+User-agent: ClaudeBot
+Disallow: /
+
+# Bloqueia o robô da Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+# Bloqueia o robô da Microsoft (Bing AI)
+User-agent: Bingbot
+Disallow: /
+
+# Bloqueia o robô da Meta (LLaMA)
+User-agent: MetaBot
+Disallow: /
+
+# Bloqueia o robô da OpenAI (ChatGPT)
+User-agent: OpenAI
+Disallow: /
+
+# Bloqueia o robô da Cohere
+User-agent: CohereBot
+Disallow: /
