@@ -28,7 +28,7 @@ export type StandardLayoutProps = {
 
 export default function Layout({ children, header }: StandardLayoutProps) {
   return (
-    <html lang="en" className={ cn("flex min-h-full font-sans", "font-sans", inter.variable) }>
+    <html lang="en" className={ cn("flex flex-1 min-h-full font-sans", "font-sans", inter.variable) }>
     <body className={ `min-h-0 flex-1 flex flex-col` }>
     { header }
     { children }
