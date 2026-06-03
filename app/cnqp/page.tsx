@@ -3,8 +3,7 @@ import React from "react";
 import { CnqpFields } from "@/components/cnqp-fields";
 import Image from "next/image";
 import { StatsCard } from "@/components/stats-card";
-import { BriefcaseBusiness, ChevronRight, Component, Star } from "lucide-react";
-import { CnqpModules } from "@/components/cnqp-modules";
+import { BriefcaseBusiness, Component, Star } from "lucide-react";
 import Link from "next/link";
 
 const generalStats = [
@@ -101,20 +100,26 @@ export default async function CnqpPage() {
               <CnqpFields/>
             </div>
             <div className="py-32 bg-gray-50" id="modules">
-              <div className="max-w-7xl mx-auto px-4">
+              <div className="max-w-7xl mx-auto px-4 bg-white rounded-3xl py-6 shadow-lg">
                 <div className={ 'flex items-center justify-between' }>
-                  <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-primary mb-4">Módulos Independentes</h2>
-                    <p className="text-gray-600 max-w-2xl text-justify">
+                  <div className="flex gap-10 flex-col">
+                    <h2 className="text-3xl font-bold text-primary">Módulos Independentes</h2>
+                    <p className="text-gray-600 max-w-3xl">
                       <strong>Módulo independente</strong> é um conjunto de resultados de aprendizagem que conferem
                       competências que
                       podem ser adquiridas, avaliadas e usadas no mercado de trabalho ou na sociedade para a prestação
                       de um serviço, produção de um artefacto, melhoria pessoal ou uma combinação dos factores citados.
                       Diferem dos restantes por não estarem registados e agregados a uma qualificação específica.
                     </p>
+                    <div>
+                      <Link
+                        href={ "/cnqp/modules/independents" }
+                        className={ "rounded-full bg-primary p-3 text-sm text-white" }>
+                        Ver módulos independentes
+                      </Link>
+                    </div>
                   </div>
                 </div>
-                <CnqpModules/>
               </div>
             </div>
           </div>
