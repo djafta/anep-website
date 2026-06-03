@@ -54,7 +54,7 @@ export function SubfieldView({ subfield, field }: Props) {
             Qualificações
           </span>
           <span className="text-2xl font-semibold tracking-tight leading-none mt-0.5">
-            { subfield.qualifications }
+            { subfield.totalQualifications }
           </span>
         </div>
 

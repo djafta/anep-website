@@ -63,7 +63,7 @@ export function FieldView({ field }: Props) {
             Sub-campos
           </span>
           <span className="text-2xl font-semibold tracking-tight leading-none mt-0.5">
-            { field.subfields }
+            { field.totalSubfields }
           </span>
         </div>
 

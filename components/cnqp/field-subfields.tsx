@@ -20,7 +20,7 @@ export function FieldSubfields({ subfields }: FieldSubfieldsProps) {
               <div
                 className="relative p-4 rounded-xl bg-white border hover:bg-muted cursor-pointer transition-all duration-300">
                 <span
-                  className="block text-right text-xs text-muted-foreground">{ subfield.qualifications } Qualificações</span>
+                  className="block text-right text-xs text-muted-foreground">{ subfield.totalQualifications } Qualificações</span>
                 <h2 className="text-md font-semibold h-12">{ subfield.name }</h2>
                 <div className={ 'flex items-center justify-between' }>
                   <Badge className={ 'rounded-full' }>{ subfield.code.toUpperCase() }</Badge>

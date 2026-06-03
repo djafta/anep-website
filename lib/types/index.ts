@@ -11,7 +11,7 @@ export type Field = {
   icon?: string;
   description?: string;
   sortOrder: number;
-  subfields: number;
+  totalSubfields: number;
 }
 
 export type Subfield = {
@@ -21,7 +21,7 @@ export type Subfield = {
   code: string;
   description?: string;
   sortOrder: number;
-  qualifications: number;
+  totalQualifications: number;
 }
 
 export type Qualification = {
