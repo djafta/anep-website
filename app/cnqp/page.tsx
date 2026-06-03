@@ -3,9 +3,8 @@ import React from "react";
 import { CnqpFields } from "@/components/cnqp-fields";
 import Image from "next/image";
 import { StatsCard } from "@/components/stats-card";
-import { BriefcaseBusiness, Component, Star } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight, Component, Star } from "lucide-react";
 import { CnqpModules } from "@/components/cnqp-modules";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const generalStats = [
@@ -20,7 +19,7 @@ export default async function CnqpPage() {
       <section className="pb-0 bg-neutral-100">
         <header
           className="relative min-h-screen max-w-7xl px-4 mx-auto grid grid-cols-1 md:py-10 items-center justify-center">
-          <div className={"max-w-4xl mx-auto flex flex-col justify-center items-center gap-8"}>
+          <div className={ "max-w-4xl mx-auto flex flex-col justify-center items-center gap-8" }>
             <h1 className="text-4xl md:text-6xl font-bold text-primary text-center">Catálogo Nacional de Qualificações
               Profissionais</h1>
             <p className="text-sm max-w-2xl text-gray-600 text-center">
@@ -28,7 +27,8 @@ export default async function CnqpPage() {
               profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
               país, no Subsistema de Educação Profissional.
             </p>
-            <Link href={"/cnqp/qualifications"} className={"rounded-full bg-primary p-3 text-sm text-white"}>Explorar qualificações</Link>
+            <Link href={ "/cnqp/qualifications" } className={ "rounded-full bg-primary p-3 text-sm text-white" }>Explorar
+              qualificações</Link>
           </div>
         </header>
         <div className="py-20 xl:absolute bottom-0 w-full left-0">
@@ -41,7 +41,7 @@ export default async function CnqpPage() {
           </div>
         </div>
         <main>
-          <div className={"max-w-7xl mx-auto"}>
+          <div className={ "max-w-7xl mx-auto" }>
             <div className="flex justify-end items-center py-16 my-auto bg-neutral-100">
               <div className="group [perspective:2000px]">
                 <div className="
@@ -78,17 +78,24 @@ export default async function CnqpPage() {
               </div>
             </div>
           </div>
-          <div className="py-32 bg-gray-50" id="qualifications">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className={ 'flex items-center justify-between' }>
-                <div className="mb-16">
-                  <h2 className="text-3xl font-bold text-primary mb-4">Campos de Qualificações</h2>
-                  <p className="text-gray-600 max-w-2xl text-justify">
+          <div className="bg-gray-50" id="qualifications">
+            <div className="py-32 max-w-7xl mx-auto px-4">
+              <div className={ 'flex items-center justify-between mb-20' }>
+                <div className="gap-6 flex flex-col">
+                  <h2 className="text-3xl font-bold text-primary">Campos de Qualificações</h2>
+                  <p className="text-gray-600 max-w-2xl text-justify my-3">
                     Os campos do CNQP representam grandes áreas profissionais que organizam as qualificações de acordo
                     com sectores de actividade e competências específicas. Cada campo reúne cursos e formações
                     relacionadas a um mesmo domínio, facilitando a identificação do percurso formativo mais adequado aos
                     interesses, talentos e objectivos profissionais do formando.
                   </p>
+                  <div className={ "block" }>
+                    <Link
+                      href={ "/cnqp/qualifications" }
+                      className={ "rounded-full bg-primary p-3 text-sm text-white" }>
+                      Explorar qualificações
+                    </Link>
+                  </div>
                 </div>
               </div>
               <CnqpFields/>
