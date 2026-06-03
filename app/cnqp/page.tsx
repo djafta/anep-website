@@ -41,7 +41,7 @@ export default async function CnqpPage() {
           </div>
         </div>
         <main>
-          <div>
+          <div className={"max-w-7xl mx-auto"}>
             <div className="flex justify-end items-center py-16 my-auto bg-neutral-100">
               <div className="group [perspective:2000px]">
                 <div className="
