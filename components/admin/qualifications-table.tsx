@@ -6,6 +6,7 @@ type Qualification = {
   title: string;
   code: string;
   level: string;
+  certificate: string;
 };
 
 type QualificationsTableProps = {
@@ -17,9 +18,10 @@ export function QualificationsTable({ data }: QualificationsTableProps) {
     <div className="w-full rounded-xl border border-zinc-200 bg-white overflow-hidden">
 
       {/* Header (hidden no mobile) */}
-      <div className="hidden md:grid grid-cols-5 bg-zinc-50 text-zinc-500 uppercase text-[11px] tracking-wide">
-        <div className="px-4 py-3 col-span-2">Nome</div>
-        <div className="px-4 py-3 col-span-2">Código</div>
+      <div className="hidden md:grid grid-cols-6 bg-zinc-50 text-zinc-500 uppercase text-[11px] tracking-wide">
+        <div className="px-4 py-3 col-span-3">Nome</div>
+        <div className="px-4 py-3 col-span-1">Código</div>
+        <div className="px-4 py-3 col-span-1 text-center">Certificado</div>
         <div className="px-4 py-3 text-right">Nível</div>
       </div>
 
@@ -33,19 +35,25 @@ export function QualificationsTable({ data }: QualificationsTableProps) {
           >
 
             {/* Desktop row */}
-            <div className="hidden lg:grid grid-cols-5 items-center px-4 py-3 text-sm">
+            <div className="hidden lg:grid grid-cols-6 items-center px-4 py-3 text-sm">
 
-              <div className="text-zinc-600 truncate col-span-2">
+              <div className="text-zinc-600 truncate col-span-3">
                 {item.name}
               </div>
 
-              <div className={'col-span-2'}>
+              <div className={'col-span-1'}>
                 <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-700">
                   {item.code}
                 </span>
               </div>
 
-              <div className="text-right">
+              <div className={'col-span-1 text-center'}>
+                <span className="rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-700">
+                  {item.certificate}
+                </span>
+              </div>
+
+              <div className="text-right col-span-1">
                 <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
                   {item.level}
                 </span>
