@@ -18,8 +18,10 @@ const titlePattern = new RegExp(
   "i",
 );
 
-const forbiddenTitleParts =
-  /\b(vocacional|ocupacional|nível|cv|co)\b/i;
+const forbiddenNameParts =
+  /\b(vocacional|ocupacional|nível|certificado|CV|CO)\b/i;
+
+const cvWithNumberRegex = /\bCV\s*\d+/i;
 
 function isWrongName(q: { name: string | null, title: string | null }) {
   const name = q.name?.trim();
@@ -29,7 +31,18 @@ function isWrongName(q: { name: string | null, title: string | null }) {
 
   if (title && name === title) return true;
 
-  return forbiddenTitleParts.test(name);
+  const nameLower = name.toLowerCase();
+
+  if (forbiddenNameParts.test(name)) {
+    return name === "certificado a" || name === "certificado b" || name === "certificado c"
+  }
+
+  if (cvWithNumberRegex.test(name)) return true;
+
+  if (nameLower.includes("certificado vocacional")) return true;
+  if (nameLower.includes("certificado ocupacional")) return true;
+
+  return false;
 }
 
 function isWrongTitle(q: { name: string | null, title: string | null }) {
