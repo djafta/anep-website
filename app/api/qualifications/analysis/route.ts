@@ -171,11 +171,11 @@ export async function GET() {
 
   const counts = qualifications.reduce<Record<string, number>>(
     (acc, qualification) => {
-      if (!qualification.name || !qualification.level || !qualification.certificate) {
+      if (!qualification.code || !qualification.level || !qualification.certificate) {
         return acc;
       }
 
-      const key = `${ qualification.name }:${ qualification.level }:${ qualification.certificate }`;
+      const key = `${ qualification.code.replaceAll(" ", "").replaceAll("-", "") }:${ qualification.level }:${ qualification.certificate }`;
 
       acc[key] = (acc[key] ?? 0) + 1;
 
@@ -186,11 +186,11 @@ export async function GET() {
 
   const duplicatedQualifications = qualifications.filter(
     (qualification) => {
-      if (!qualification.name || !qualification.level) {
+      if (!qualification.code || !qualification.level) {
         return false;
       }
 
-      const key = `${ qualification.name }:${ qualification.level }:${ qualification.certificate }`;
+      const key = `${ qualification.code.replaceAll(" ", "").replaceAll("-", "") }:${ qualification.level }:${ qualification.certificate }`;
 
       return counts[key] > 1;
     },
