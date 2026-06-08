@@ -28,7 +28,7 @@ const directors = [
   },
   {
     name: "Augusto Machunguene",
-    title: "Director Nacional de Direção",
+    title: "Director Nacional",
     area: "Fundo Nacional de Educação Profissional",
     avatarUrl: "/images/directors/fnep.png",
   },
