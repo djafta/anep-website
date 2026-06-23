@@ -90,7 +90,7 @@ function FigureCard({ figure }: { figure: Figure }) {
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button size={ 'icon-sm' } variant="ghost"><EllipsisVertical/></Button>
+              <Button className={ 'rounded-full' } size={ 'icon-sm' } variant="ghost"><EllipsisVertical/></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align={ 'end' }>
               <DropdownMenuItem>
