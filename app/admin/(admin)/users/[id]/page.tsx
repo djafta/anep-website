@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 import { ChangeUserPasswordForm } from "@/components/admin/users/change-user-password.form";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PERMISSION_GROUPS, ROLES_LABELS } from "@/app/admin/(admin)/users/user-permissions";
+import { cn } from "@/lib/utils";
 
 export default async function UserPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -18,11 +19,21 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
   return (
     <div className={ 'flex flex-col gap-4 flex-1' }>
       <div className="space-y-4 text-sm">
-        <div className={ "rounded-3xl bg-white shadow-xl space-y-4 text-sm p-6 relative" }>
-          <h2 className="font-semibold text-3xl">{ user.name }</h2>
-          <span className={ 'absolute right-4 top-4 bg-green-700 rounded-full size-2' }/>
-          <p className="text-sm px-1 bg-primary rounded-3xl w-fit text-white">{ user.email }</p>
-          <p>{ ROLES_LABELS[user.role] }</p>
+        <div className={ "rounded-3xl bg-white shadow-xl text-sm p-6 relative" }>
+          <h2 className="font-semibold text-3xl text-primary">{ user.name }</h2>
+          <span className={ cn('absolute right-4 top-4  rounded-full size-2',
+            {
+              "bg-green-600": user.deletedAt == null,
+              "bg-gray-400": user.deletedAt != null,
+              "bg-red-500": user.blockedAt != null,
+            }) }/>
+          <p className={ cn("text-xs px-1 bg-primary rounded-3xl w-fit mt-2 text-white", {
+            "bg-primary": user.deletedAt == null,
+            "bg-gray-400": user.deletedAt != null,
+            "bg-red-500": user.blockedAt != null,
+          }) }>{ user.email }
+          </p>
+          <p className={ "mt-3" }>{ ROLES_LABELS[user.role] }</p>
         </div>
 
         <div className={ "py-20" }>
@@ -65,6 +76,7 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
                         </div>
                         <Checkbox
                           name="permissions"
+                          disabled={ !!user.deletedAt || !!user.blockedAt }
                           value={ perm.value }
                           checked={ user.scopes.includes(perm.value) }
                           className="mt-1 border-border/60 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
