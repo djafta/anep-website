@@ -95,14 +95,32 @@ model Subfield {
   @@map("subfields")
 }
 
+model Figure {
+  id          Int     @id @default(autoincrement())
+  publicId    String  @unique(map: "figures_public_id_unique") @map("public_id") @db.VarChar(36)
+  title       String? @db.Text
+  description String? @db.Text
+  sortOrder   Int?    @map("sort_order")
+  categories  String  @default("") @db.Text
+  url         String? @db.Text
+
+  createdAt   DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt   DateTime? @updatedAt @map("updated_at") @db.Timestamp(6)
+  deletedAt   DateTime? @map("deleted_at") @db.Timestamp(6)
+  publishedAt DateTime? @map("published_at") @db.Timestamp(6)
+
+  @@map("figures")
+}
+
 model User {
   id                Int                 @id @default(autoincrement())
-  name              String?             @db.VarChar(255)
+  name              String?             @db.Text
   publicId          String?             @unique(map: "user_public_id_unique") @map("public_id") @db.VarChar(36)
   email             String              @unique(map: "user_email_unique")
   passwordHash      String              @default("$argon2id$v=19$m=65536,t=3,p=4$5E1YqD/pmib3gFpNDJy6JQ$xnUXO3lrIVZmD6oDswkKbUQakQfIGdfXLFjdXJjv03I") @map("password_hash") @db.VarChar(255)
   qualifications    Qualification[]
   role              UserRole            @default(MANAGER)
+  scopes            String[]
   createdAt         DateTime?           @default(now()) @map("created_at") @db.Timestamp(6)
   updatedAt         DateTime?           @updatedAt @map("updated_at") @db.Timestamp(6)
   deletedAt         DateTime?           @map("deleted_at") @db.Timestamp(6)
