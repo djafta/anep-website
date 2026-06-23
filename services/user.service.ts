@@ -14,6 +14,8 @@ export async function findUserByEmail(email: string) {
       email: true,
       role: true,
       scopes: true,
+      deletedAt: true,
+      blockedAt: true,
     }
   })
 }
@@ -28,13 +30,15 @@ export async function findUserByPublicId(publicId: string) {
       email: true,
       role: true,
       scopes: true,
+      deletedAt: true,
+      blockedAt: true,
     }
   })
 }
 
 export async function findPasswordHashByEmail(email: string) {
   return prisma.user.findUniqueOrThrow({
-    where: { email },
+    where: { email, deletedAt: null },
     select: {
       passwordHash: true,
     }
@@ -80,6 +84,8 @@ export async function listUsers() {
       email: true,
       role: true,
       scopes: true,
+      deletedAt: true,
+      blockedAt: true,
     }
   })
 }

@@ -13,6 +13,11 @@ export async function POST(request: NextRequest) {
     }
 
     const user = await findUserByEmail(email);
+
+    if (user.blockedAt) {
+      return NextResponse.json({ error: "USER_BLOCKED" }, { status: 403 });
+    }
+
     const token = signToken(user);
 
     const response = NextResponse.json({ success: true });

@@ -87,7 +87,7 @@ function FigureCard({ figure }: { figure: Figure }) {
               <Button className={ 'rounded-full' } size={ 'icon-sm' } variant="ghost"><EllipsisVertical/></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align={ 'end' }>
-              <DropdownMenuItem>
+              <DropdownMenuItem disabled>
                 <Pencil/>
                 Editar
               </DropdownMenuItem>

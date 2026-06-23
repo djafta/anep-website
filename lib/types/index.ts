@@ -59,4 +59,6 @@ export type User = {
   name: string;
   role: string;
   scopes: string[];
+  deletedAt: string | null;
+  blockedAt: string | null;
 }
