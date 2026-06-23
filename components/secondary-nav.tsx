@@ -58,9 +58,9 @@ export function SecondaryNav({ links }: SecondaryNavProps): JSX.Element {
   };
 
   return (
-    <aside className="self-start w-full sticky lg:top-36">
+    <aside className="self-start w-full sticky lg:top-32">
       {/* Search */ }
-      <div>
+      <div className={'py-1'}>
         <div className="relative">
           <Input
             value={ search }

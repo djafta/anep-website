@@ -327,7 +327,7 @@ export async function Header({ theme = "dark" }: HeaderProps) {
             {/*</NavItem>*/ }
 
             <NavItem>
-              <DropdownTrigger href="/galery">
+              <DropdownTrigger href="/gallery">
                 Galeria
               </DropdownTrigger>
             </NavItem>
@@ -472,9 +472,9 @@ export async function Header({ theme = "dark" }: HeaderProps) {
                 {/*  </AccordionContent>*/ }
                 {/*</AccordionItem>*/ }
 
-                <AccordionItem value={ 'Galery' }>
+                <AccordionItem value={ 'gallery' }>
                   <AccordionTrigger>
-                    <a href={ '/galery' } className={ 'w-fit' }>Galeria</a>
+                    <a href={ '/gallery' } className={ 'w-fit' }>Galeria</a>
                   </AccordionTrigger>
                   <AccordionContent>
                   </AccordionContent>

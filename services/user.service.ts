@@ -13,6 +13,29 @@ export async function findUserByEmail(email: string) {
       name: true,
       email: true,
       role: true,
+      scopes: true,
+    }
+  })
+}
+
+export async function findUserByPublicId(publicId: string) {
+  return prisma.user.findUniqueOrThrow({
+    where: { publicId },
+    select: {
+      publicId: true,
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      scopes: true,
+    }
+  })
+}
+
+export async function findPasswordHashByEmail(email: string) {
+  return prisma.user.findUniqueOrThrow({
+    where: { email },
+    select: {
       passwordHash: true,
     }
   })
@@ -23,6 +46,7 @@ export const createUserSchema = z.object({
   name: z.string().min(1, { message: "INVALID_NAME" }),
   email: z.email({ message: "INVALID_EMAIL" }),
   password: z.string().min(6, { message: "INVALID_PASSWORD" }),
+  scopes: z.string().array().optional().default([]),
 });
 
 export async function createUser(data: z.infer<typeof createUserSchema>) {
@@ -34,6 +58,7 @@ export async function createUser(data: z.infer<typeof createUserSchema>) {
       name: data.name,
       email: data.email,
       passwordHash: passwordHash,
+      scopes: data.scopes,
     },
     select: {
       id: true,
@@ -53,7 +78,8 @@ export async function listUsers() {
       id: true,
       name: true,
       email: true,
-      role: true
+      role: true,
+      scopes: true,
     }
   })
 }
@@ -63,6 +89,7 @@ export const updateUserSchema = z.object({
   name: z.string().min(1, { message: "INVALID_NAME" }).optional(),
   email: z.email({ message: "INVALID_EMAIL" }).optional(),
   password: z.string().min(6, { message: "INVALID_PASSWORD" }).optional(),
+  scopes: z.string().array().optional().default([]),
 });
 
 export async function updateUser(data: z.infer<typeof updateUserSchema>) {
@@ -75,6 +102,7 @@ export async function updateUser(data: z.infer<typeof updateUserSchema>) {
       name: data.name || user.name,
       email: data.email || user.email,
       passwordHash: passwordHash,
+      scopes: data.scopes || [],
     },
   });
 }
