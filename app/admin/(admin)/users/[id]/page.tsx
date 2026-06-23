@@ -1,7 +1,6 @@
 import { User } from "@/lib/types";
 import { cookies } from "next/headers";
 import { ChangeUserPasswordForm } from "@/components/admin/users/change-user-password.form";
-import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PERMISSION_GROUPS, ROLES_LABELS } from "@/app/admin/(admin)/users/user-permissions";
 
