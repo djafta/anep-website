@@ -28,7 +28,7 @@ export function ChangeUserPasswordForm({ publicId }: { publicId?: string }) {
           }
           <Input disabled={ isPending } type="password" placeholder="Nova palavra passe" name="newPassword" required/>
           <Button disabled={ isPending } type="submit" className={ 'mt-2' }>
-            { isPending ? 'A alterar...' : 'Alterar' }
+            { isPending ? 'A alterar...' : 'Alterar palavra passe' }
           </Button>
         </form>
       </div>
