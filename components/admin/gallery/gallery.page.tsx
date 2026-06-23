@@ -73,12 +73,6 @@ function FigureCard({ figure }: { figure: Figure }) {
     })
   }
 
-  function handleDelete() {
-    startTransition(async () => {
-      await api.delete(`gallery/figures/${ figure.publicId }`)
-    })
-  }
-
   return (
     <div key={ figure.publicId } className={ "rounded-xl  border bg-white" }>
       <div className={ "p-3 flex justify-between items-center" }>
@@ -109,7 +103,7 @@ function FigureCard({ figure }: { figure: Figure }) {
       <img
         src={ figure.url }
         alt={ figure.description }
-        className={ "object-cover aspect-video" }
+        className={ "object-cover aspect-video w-full" }
       />
       <div className={ "p-2" }>
         <h3 className={ "text-xs font-semibold truncate max-w-full" }>{ figure.title }</h3>
