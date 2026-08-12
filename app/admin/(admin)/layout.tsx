@@ -52,7 +52,7 @@ export default async function AdminDashboardLayout({ children, header }: Dashboa
 
     const links: { label: string, href: string }[] = [];
 
-    if (user.scopes.includes('create:qualifications')) {
+    if (user.scopes.includes('create:qualification')) {
       links.push(...CNQPLinks)
     }
 
