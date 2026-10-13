@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Footer } from "@/components/footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -31,7 +32,9 @@ export default function Layout({ children, header }: StandardLayoutProps) {
     <html lang="en" className={ cn("flex flex-1 min-h-full font-sans", "font-sans", inter.variable) }>
     <body className={ `min-h-0 flex-1 flex flex-col` }>
     { header }
-    { children }
+    <TooltipProvider>
+      { children }
+    </TooltipProvider>
     <Toaster/>
     <Footer/>
     </body>

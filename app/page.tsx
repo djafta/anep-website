@@ -19,7 +19,7 @@ const generalStats = [
 export default async function HomePage() {
   return (
     <div>
-      <div className={ 'absolute left-0 top-0 w-screen h-screen home-bg -z-10' }/>
+      <div className={ 'absolute left-0 top-0 w-full h-full home-bg -z-10' }/>
       <div className={ 'z-30 backdrop-blur-xs' }>
         <section className="py-32 ">
           <div className="max-w-7xl mx-auto px-4">

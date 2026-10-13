@@ -325,7 +325,16 @@ export async function Header({ theme = "dark" }: HeaderProps) {
             {/*    </div>*/ }
             {/*  </DropdownContent>*/ }
             {/*</NavItem>*/ }
-
+            <NavItem>
+              <DropdownTrigger href="/fnep">
+                FNEP
+              </DropdownTrigger>
+            </NavItem>
+            <NavItem>
+              <DropdownTrigger href="/rca">
+                RCA
+              </DropdownTrigger>
+            </NavItem>
             <NavItem>
               <DropdownTrigger href="/gallery">
                 Galeria

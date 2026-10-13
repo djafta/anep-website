@@ -1,10 +1,8 @@
-onlyBuiltDependencies:
-  - "@heroui/shared-utils"
-  - "@prisma/client"
-  - "@prisma/engines"
-  - "@tailwindcss/oxide"
-  - argon2
-  - msw
-  - prisma
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  '@prisma/engines': true
+  '@tailwindcss/oxide': true
+  argon2: true
+  msw: true
+  prisma: true
+  sharp: true
+  unrs-resolver: true

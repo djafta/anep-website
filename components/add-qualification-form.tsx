@@ -69,7 +69,7 @@ export function AddQualificationForm() {
 
         <Field>
           <FieldLabel>Nível</FieldLabel>
-          <Input name="level" type="number" required min={ "1" } max={ "5" }/>
+          <Input name="level" type="number" required min={ "1" } max={ "10" }/>
         </Field>
 
         <Field>

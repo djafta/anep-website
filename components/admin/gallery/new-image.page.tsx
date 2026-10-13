@@ -9,6 +9,8 @@ import { Spinner } from "@/components/ui/spinner";
 import { api } from "@/lib/http/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { CircleQuestionMark } from "lucide-react";
 
 export function NewImagePage() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -17,6 +19,7 @@ export function NewImagePage() {
   const [title, setTitle] = useState("");
   const [categories, setCategories] = useState("");
   const [description, setDescription] = useState("");
+  const [order, setOrder] = useState(5);
 
   const [preview, setPreview] = useState<string>();
   const [isPending, startTransition] = useTransition();
@@ -121,14 +124,40 @@ export function NewImagePage() {
       ) }
 
       <div className="flex flex-col gap-4">
-        <Field>
-          <FieldLabel htmlFor="title">Título</FieldLabel>
-          <Input
-            onChange={ (e) => setTitle(e.target.value) }
-            id="title"
-            placeholder="Seminário Nacional de Turismo"
-          />
-        </Field>
+        <div className={ "flex flex-col gap-4 lg:flex-row" }>
+          <Field>
+            <FieldLabel htmlFor="title">Título</FieldLabel>
+            <Input
+              onChange={ (e) => setTitle(e.target.value) }
+              id="title"
+              placeholder="Seminário Nacional de Turismo"
+            />
+          </Field>
+          <Field className={ "lg:max-w-24" }>
+            <FieldLabel htmlFor="order">
+              Ordem
+              <Tooltip>
+                <TooltipTrigger>
+                  <CircleQuestionMark className={'size-4'}/>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <FieldDescription>
+                    A ordem em que a imagem será exibida na galeria. Quanto menor o número, mais acima a imagem será
+                    exibida.
+                  </FieldDescription>
+                </TooltipContent>
+              </Tooltip>
+            </FieldLabel>
+            <Input
+              type={ "number" }
+              min={ 0 }
+              value={ order }
+              onChange={ (e) => setOrder(Number(e.target.value)) }
+              id="order"
+              placeholder="Ordem da imagem"
+            />
+          </Field>
+        </div>
 
         <Field>
           <FieldLabel htmlFor="categories">Categorias</FieldLabel>

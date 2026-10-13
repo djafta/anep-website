@@ -1,400 +1,285 @@
-import { Banknote, Building2, Globe, GraduationCap, Landmark, ShieldCheck, TrendingUp, Users, } from "lucide-react"
+// app/fnep/page.tsx
+// Next.js (App Router) + Tailwind CSS + TypeScript
+// Server Component. Sem navbar nem footer: use os do seu layout.tsx.
 
-function Hero() {
+import type { Metadata } from "next";
+import Link from "next/link";
+import type { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "FNEP – Fundo Nacional de Educação Profissional",
+  description:
+    "Financiamento partilhado para uma educação profissional de qualidade em Moçambique.",
+};
+
+/* ---------- Conteúdo ---------- */
+
+const STATS = [
+  { value: "2.060", label: "bolsas para raparigas" },
+  { value: "11", label: "instituições beneficiárias" },
+  { value: "≈ 33 M", label: "meticais em financiamento" },
+  { value: "264", label: "instituições na rede de ETP" },
+];
+
+const LEGAL = [
+  {
+    title: "Lei n.º 23/2014, de 23 de Setembro",
+    text: "Lei da Educação Profissional. Define a organização, estruturação e funcionamento do sector e cria a ANEP e o Fundo.",
+  },
+  {
+    title: "Lei n.º 6/2016, de 16 de Junho",
+    text: "Altera e republica a Lei da Educação Profissional.",
+  },
+  {
+    title: "Autoridade Nacional de Educação Profissional",
+    text: "Administra o FNEP, gere o Quadro Nacional de Qualificações Profissionais e certifica os graduados.",
+  },
+];
+
+const FINANCES = [
+  {
+    title: "Bolsas de estudo",
+    text: "Matrícula, propinas, material escolar, equipamento de protecção individual, internato, transporte e higiene menstrual.",
+  },
+  {
+    title: "Centros de Referência",
+    text: "Transformação de institutos técnico-profissionais em Centros de Referência (PROCREF), com laboratórios e oficinas apetrechados.",
+  },
+  {
+    title: "Parcerias com empresas",
+    text: "Comparticipação do empresariado, para que a formação responda ao que o mercado de trabalho realmente precisa.",
+  },
+  {
+    title: "Contratos-programa",
+    text: "Financiamento às Instituições de Educação Profissional com metas e resultados acordados.",
+  },
+];
+
+const TIMELINE = [
+  { year: "2006", text: "Início da Reforma da Educação Profissional." },
+  { year: "2014", text: "A Lei 23/2014 estabelece a ANEP e o FNEP." },
+  { year: "2021", text: "Iniciativa presidencial dos Centros de Referência." },
+  { year: "2025", text: "Contratos-programa de bolsas para raparigas." },
+];
+
+const HOW = [
+  {
+    title: "Mobilização de recursos",
+    text: "Dotações do Estado, contribuições do sector empresarial e financiamento de parceiros.",
+  },
+  {
+    title: "Alocação por contrato",
+    text: "Instituições acreditadas e programas elegíveis recebem fundos mediante contrato-programa.",
+  },
+  {
+    title: "Qualidade e certificação",
+    text: "A ANEP garante a qualidade e certifica os graduados no âmbito do Quadro Nacional de Qualificações.",
+  },
+];
+
+/* ---------- Auxiliares ---------- */
+
+const muted = "text-slate-600 dark:text-slate-400";
+const rule = "border-slate-200 dark:border-slate-800";
+
+function Section({
+                   id,
+                   title,
+                   tone = "base",
+                   children,
+                 }: {
+  id?: string;
+  title: string;
+  tone?: "base" | "soft";
+  children: ReactNode;
+}) {
   return (
     <section
-      className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden px-6 py-32 text-center">
-      {/* soft radial glow */ }
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="h-[600px] w-[900px] rounded-full bg-primary/5 blur-[120px]"/>
-      </div>
-
-      <h1
-        className="relative mx-auto max-w-4xl text-[clamp(3rem,8vw,6.5rem)] font-bold leading-[1.02] tracking-tight text-foreground">
-        Fundo Nacional de{ " " }
-        <em className="not-italic text-primary">Educação<br/>Profissional</em>
-      </h1>
-
-      <p className="relative mx-auto mt-8 max-w-lg text-xl text-muted-foreground leading-relaxed font-light">
-        O mecanismo que financia a formação técnica e profissional
-        em todo o território moçambicano.
-      </p>
-
-      {/* floating numbers */ }
-      <div className="relative mt-20 grid grid-cols-2 gap-x-16 gap-y-8 sm:grid-cols-4">
-        { [
-          { value: "0,65%", label: "Contribuição mensal" },
-          { value: "Lei 26/22", label: "Base legal" },
-          { value: "11", label: "Províncias" },
-          { value: "34+", label: "IEP apoiadas" },
-        ].map((s) => (
-          <div key={ s.label }>
-            <p className="text-[2.5rem] font-bold leading-none tracking-tight text-foreground">
-              { s.value }
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">{ s.label }</p>
-          </div>
-        )) }
-      </div>
-    </section>
-  )
-}
-
-// ─── WHAT IS ──────────────────────────────────────────────────────────────────
-
-function WhatIs() {
-  return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <div className="grid grid-cols-1 gap-20 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-
-          <div className="lg:sticky lg:top-24">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              O que é
-            </p>
-            <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-              Um fundo criado para qualificar Moçambique
-            </h2>
-          </div>
-
-          <div className="space-y-10">
-            <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              O <strong className="font-semibold text-foreground">FNEP</strong> é o instrumento
-              central do Sistema Nacional de Educação Profissional. Foi concebido para reunir,
-              gerir e distribuir recursos financeiros de forma coordenada e transparente,
-              garantindo que as acções de formação técnica e profissional acontecem
-              em todo o país.
-            </p>
-
-            <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              Gerido pela <strong className="font-semibold text-foreground">Autoridade Nacional
-              de Educação Profissional (ANEP)</strong>, o Fundo conecta o Estado,
-              as empresas, os trabalhadores e os parceiros internacionais num esforço
-              comum de capacitar os cidadãos moçambicanos para o mercado de trabalho.
-            </p>
-
-            <p className="text-xl text-muted-foreground leading-relaxed font-light">
-              Foi criado pela <strong className="font-semibold text-foreground">Lei n.º 26/2022,
-              de 29 de Dezembro</strong> — a Lei de Educação Profissional da República
-              de Moçambique.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── HOW IT WORKS ─────────────────────────────────────────────────────────────
-
-function HowItWorks() {
-  const steps = [
-    {
-      num: "01",
-      title: "As empresas contribuem",
-      desc: "Todas as empresas públicas e privadas registadas em Moçambique declaram a folha de salários e contribuem mensalmente com 0,65% do seu valor total, através da plataforma e-FRN integrada com o INSS.",
-    },
-    {
-      num: "02",
-      title: "Os recursos são geridos",
-      desc: "A ANEP recolhe, regista e gere todos os recursos — contribuições empresariais, dotações do Orçamento do Estado e apoios de parceiros internacionais — numa plataforma digital dedicada.",
-    },
-    {
-      num: "03",
-      title: "As IEP candidatam-se",
-      desc: "As Instituições de Educação Profissional acreditadas pela ANEP submetem candidaturas de financiamento para programas de formação alinhados com as necessidades reais do mercado de trabalho.",
-    },
-    {
-      num: "04",
-      title: "As formações acontecem",
-      desc: "Com o financiamento aprovado, as IEP executam os programas. A ANEP monitoriza a qualidade e avalia o impacto no emprego e na empregabilidade dos cidadãos formados.",
-    },
-  ]
-
-  return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          Como funciona
-        </p>
-        <h2
-          className="mb-20 max-w-2xl text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-          Do pagamento à formação
+      id={id}
+      className={`py-24 md:py-36 ${tone === "soft" ? "bg-slate-50/70 dark:bg-slate-900/50" : ""}`}
+    >
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-12 md:gap-16 md:px-10">
+        <h2 className="text-3xl font-semibold leading-[1.15] tracking-tight text-slate-900 dark:text-slate-100 md:sticky md:top-24 md:col-span-4 md:self-start md:text-4xl">
+          {title}
         </h2>
-
-        <div className="space-y-0 divide-y divide-border/50">
-          { steps.map((s) => (
-            <div
-              key={ s.num }
-              className="grid grid-cols-1 gap-6 py-10 sm:grid-cols-[5rem_1fr_2fr]"
-            >
-              <span className="text-4xl font-bold text-primary/20 leading-none">
-                { s.num }
-              </span>
-              <h3 className="text-lg font-semibold text-foreground self-start">
-                { s.title }
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                { s.desc }
-              </p>
-            </div>
-          )) }
-        </div>
+        <div className="md:col-span-8">{children}</div>
       </div>
     </section>
-  )
+  );
 }
 
-// ─── FINANCING ────────────────────────────────────────────────────────────────
-
-function Financing() {
+function Button({
+                  href,
+                  children,
+                  outline = false,
+                }: {
+  href: string;
+  children: ReactNode;
+  outline?: boolean;
+}) {
   return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <div className="grid grid-cols-1 gap-20 lg:grid-cols-[1fr_1.4fr] lg:items-start">
+    <Link
+      href={href}
+      className={`inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17396e] ${
+        outline
+          ? "border border-slate-300 text-slate-800 hover:border-[#17396e] hover:text-[#17396e] dark:border-slate-700 dark:text-slate-200"
+          : "bg-[#17396e] text-white hover:bg-[#122d58]"
+      }`}
+    >
+      {children}
+    </Link>
+  );
+}
 
-          <div className="lg:sticky lg:top-24">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Financiamento
-            </p>
-            <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-              Múltiplas fontes, um único objectivo
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">
-              O FNEP beneficia de fontes diversificadas, garantindo sustentabilidade
-              e independência relativamente a uma única origem de recursos.
-            </p>
+/* ---------- Página ---------- */
+
+export default function FnepPage() {
+  return (
+    <main className="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+      {/* Abertura */}
+      <header className="bg-gradient-to-b from-slate-50 to-white pb-24 pt-28 dark:from-slate-900 dark:to-slate-950 md:pb-32 md:pt-40">
+        <div className="mx-auto max-w-6xl px-6 md:px-10">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[80px]">
+            Fundo Nacional de Educação Profissional
+          </h1>
+          <p className={`mt-8 max-w-xl text-xl leading-relaxed ${muted}`}>
+            Financiamento partilhado para uma educação profissional de qualidade, ligada ao mercado de
+            trabalho e ao desenvolvimento de Moçambique.
+          </p>
+          <div className="mt-12 flex flex-wrap gap-3">
+            <Button href="#financia">O que financia</Button>
+            <Button href="#base" outline>
+              Base legal
+            </Button>
           </div>
 
-          <div className="space-y-14">
-            { [
-              {
-                icon: <Banknote className="h-6 w-6"/>,
-                title: "Orçamento do Estado",
-                desc: "O Governo dota o FNEP com verbas do Orçamento Geral do Estado, assegurando o financiamento público base de toda a rede de educação profissional moçambicana.",
-              },
-              {
-                icon: <Building2 className="h-6 w-6"/>,
-                title: "Contribuição Empresarial — 0,65%",
-                desc: "Empresas públicas e privadas contribuem mensalmente com 0,65% do total da folha de salários, declarada na plataforma e-FRN integrada com o INSS. É a principal fonte de financiamento privado do sistema.",
-                accent: true,
-              },
-              {
-                icon: <Globe className="h-6 w-6"/>,
-                title: "Parceiros Internacionais",
-                desc: "Parceiros de cooperação bilateral e multilateral apoiam o Fundo com recursos financeiros e assistência técnica para o desenvolvimento da educação profissional.",
-              },
-              {
-                icon: <Landmark className="h-6 w-6"/>,
-                title: "Outras Fontes",
-                desc: "O Regulamento do FNEP prevê a angariação de recursos através de outras fontes diversificadas, incluindo doações, legados e rendimentos gerados pelas actividades do próprio Fundo.",
-              },
-            ].map((f) => (
-              <div
-                key={ f.title }
-                className={ `flex gap-6 ${ f.accent ? "opacity-100" : "opacity-70 hover:opacity-100 transition-opacity" }` }
-              >
-                <div className={ `mt-0.5 shrink-0 ${ f.accent ? "text-primary" : "text-muted-foreground" }` }>
-                  { f.icon }
-                </div>
-                <div>
-                  <h3 className={ `text-lg font-semibold ${ f.accent ? "text-primary" : "text-foreground" }` }>
-                    { f.title }
-                  </h3>
-                  <p className="mt-2 text-base text-muted-foreground leading-relaxed">
-                    { f.desc }
-                  </p>
-                </div>
+          <dl className={`mt-24 grid grid-cols-2 gap-y-12 border-t pt-12 md:mt-32 md:grid-cols-4 ${rule}`}>
+            {STATS.map((s) => (
+              <div key={s.label}>
+                <dt className="sr-only">{s.label}</dt>
+                <dd>
+                  <span className="block text-4xl font-light tracking-tight text-[#17396e] dark:text-blue-300 md:text-5xl">
+                    {s.value}
+                  </span>
+                  <span className={`mt-2 block max-w-[14rem] text-sm ${muted}`}>{s.label}</span>
+                </dd>
               </div>
-            )) }
-          </div>
+            ))}
+          </dl>
         </div>
-      </div>
-    </section>
-  )
-}
+      </header>
 
-// ─── GOVERNANCE ───────────────────────────────────────────────────────────────
+      {/* Sobre */}
+      <Section id="sobre" title="Um fundo para sustentar a reforma">
+        <div className={`max-w-2xl space-y-7 text-lg leading-8 ${muted}`}>
+          <p className="text-xl leading-9 text-slate-800 dark:text-slate-200">
+            O FNEP é o mecanismo de financiamento criado no âmbito da Reforma da Educação Profissional, com
+            gestão e financiamento partilhados entre o Estado, o sector empresarial e parceiros de
+            cooperação.
+          </p>
+          <p>
+            É administrado pela Autoridade Nacional de Educação Profissional (ANEP), órgão regulador e de
+            garantia de qualidade do sector. Além do orçamento do Estado, o Fundo conta com a
+            comparticipação do empresariado e com parcerias como a do Banco Mundial, através do projecto
+            MozSkills.
+          </p>
+        </div>
+      </Section>
 
-function Governance() {
-  return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          Governação
+      {/* Missão: único bloco de cor da página */}
+      <section className="bg-[#17396e] py-24 text-white md:py-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10">
+          <p className="max-w-4xl text-2xl font-medium leading-snug tracking-tight md:text-4xl md:leading-[1.25]">
+            Formar cidadãos profissionalmente competentes e empreendedores, e tornar a economia e as
+            empresas moçambicanas mais competitivas.
+          </p>
+        </div>
+      </section>
+
+      {/* Base legal */}
+      <Section id="base" title="Base legal e institucional">
+        <ul className={`divide-y border-y ${rule} divide-slate-200 dark:divide-slate-800`}>
+          {LEGAL.map((i) => (
+            <li key={i.title} className="grid gap-3 py-9 md:grid-cols-5 md:gap-10">
+              <h3 className="text-lg font-medium md:col-span-2">{i.title}</h3>
+              <p className={`leading-7 md:col-span-3 ${muted}`}>{i.text}</p>
+            </li>
+          ))}
+        </ul>
+        <p className={`mt-8 text-sm ${muted}`}>
+          Para o texto integral e regulamentos aplicáveis, consulte o Boletim da República e os documentos
+          oficiais da ANEP.
         </p>
-        <h2
-          className="mb-6 max-w-2xl text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-          Gerido com todos, para todos
-        </h2>
-        <p className="mb-20 max-w-xl text-xl text-muted-foreground leading-relaxed font-light">
-          O FNEP adopta um modelo tripartido e participativo. As decisões sobre
-          a aplicação dos recursos são partilhadas por todos os actores do
-          sistema de educação profissional.
-        </p>
+      </Section>
 
-        <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-4">
-          { [
-            {
-              icon: <Landmark className="h-7 w-7"/>,
-              title: "Estado",
-              desc: "Garante o alinhamento com as políticas públicas de emprego, formação e desenvolvimento económico do país.",
-            },
-            {
-              icon: <Building2 className="h-7 w-7"/>,
-              title: "Empregadores",
-              desc: "Garantem que os programas de formação respondem às necessidades reais do sector produtivo e do mercado de trabalho.",
-            },
-            {
-              icon: <Users className="h-7 w-7"/>,
-              title: "Trabalhadores",
-              desc: "Representados pelos sindicatos, asseguram a voz dos trabalhadores nas decisões sobre os recursos do Fundo.",
-            },
-            {
-              icon: <ShieldCheck className="h-7 w-7"/>,
-              title: "Sociedade Civil",
-              desc: "Promove a transparência, a responsabilização social e os interesses das comunidades na gestão do Fundo.",
-            },
-          ].map((a) => (
-            <div key={ a.title }>
-              <div className="mb-5 text-primary">{ a.icon }</div>
-              <h3 className="text-lg font-semibold text-foreground">{ a.title }</h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{ a.desc }</p>
+      {/* O que financia */}
+      <Section id="financia" title="O que o FNEP financia" tone="soft">
+        <div className="grid gap-x-16 gap-y-16 sm:grid-cols-2">
+          {FINANCES.map((i) => (
+            <article key={i.title} className={`border-t pt-6 ${rule}`}>
+              <h3 className="text-xl font-medium">{i.title}</h3>
+              <p className={`mt-3 leading-7 ${muted}`}>{i.text}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* Destaque */}
+      <Section title="Bolsas MozSkills para raparigas">
+        <div className="grid gap-16 lg:grid-cols-5">
+          <div className={`space-y-6 leading-8 lg:col-span-3 ${muted}`}>
+            <p className="text-xl leading-9 text-slate-800 dark:text-slate-200">
+              Em parceria com o Banco Mundial, o FNEP assinou contratos-programa para financiar bolsas a
+              2.060 raparigas em 11 Instituições de Educação Profissional.
+            </p>
+            <p>
+              São oito Institutos Técnicos Profissionais e três Centros de Formação Profissional, nas
+              províncias de Cabo Delgado, Niassa, Nampula, Tete, Manica, Maputo Província e Cidade de
+              Maputo.
+            </p>
+            <p>
+              O objectivo é aumentar o acesso e a retenção de raparigas, sobretudo no ramo industrial,
+              tradicionalmente frequentado por rapazes.
+            </p>
+          </div>
+
+          <ol className="relative space-y-10 border-l border-slate-300 pl-8 dark:border-slate-700 lg:col-span-2">
+            {TIMELINE.map((m) => (
+              <li key={m.year} className="relative">
+                <span className="absolute -left-[37px] top-2 h-2.5 w-2.5 rounded-full bg-[#17396e] ring-4 ring-white dark:bg-blue-300 dark:ring-slate-950" />
+                <span className="text-sm font-medium text-[#17396e] dark:text-blue-300">{m.year}</span>
+                <p className={`mt-1 leading-7 ${muted}`}>{m.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
+
+      {/* Como funciona */}
+      <Section title="Gestão e prestação de contas" tone="soft">
+        <p className={`mb-14 max-w-xl text-lg leading-8 ${muted}`}>
+          Um modelo participativo, regulado pela ANEP e articulado com o Ministério da Educação e Cultura.
+        </p>
+        <div className="grid gap-12 sm:grid-cols-3">
+          {HOW.map((i) => (
+            <div key={i.title} className={`border-t pt-6 ${rule}`}>
+              <h3 className="text-lg font-medium">{i.title}</h3>
+              <p className={`mt-3 text-[15px] leading-7 ${muted}`}>{i.text}</p>
             </div>
-          )) }
+          ))}
         </div>
-      </div>
-    </section>
-  )
-}
 
-// ─── WHO BENEFITS ─────────────────────────────────────────────────────────────
-
-function WhoBenefits() {
-  return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <div className="grid grid-cols-1 gap-20 lg:grid-cols-[1fr_1.4fr] lg:items-start">
-
-          <div className="lg:sticky lg:top-24">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Beneficiários
-            </p>
-            <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-              Quem beneficia do FNEP?
-            </h2>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed font-light">
-              O Fundo cria valor para toda a cadeia — dos formandos às empresas,
-              das comunidades à economia nacional.
-            </p>
-          </div>
-
-          <div className="space-y-0 divide-y divide-border/50">
-            { [
-              {
-                icon: <GraduationCap className="h-5 w-5"/>,
-                title: "Formandos e Jovens",
-                desc: "Cidadãos que frequentam cursos técnico-profissionais em IEP acreditadas têm acesso a formação de qualidade, melhorando as suas perspectivas de emprego e rendimento.",
-              },
-              {
-                icon: <Landmark className="h-5 w-5"/>,
-                title: "Centros de Formação",
-                desc: "As IEP acreditadas pela ANEP podem solicitar financiamento para os seus programas, expandindo a capacidade e qualidade da oferta formativa.",
-              },
-              {
-                icon: <Building2 className="h-5 w-5"/>,
-                title: "Empresas e Empregadores",
-                desc: "O sector empresarial beneficia de mão-de-obra mais qualificada e adaptada às suas necessidades reais, aumentando a produtividade.",
-              },
-              {
-                icon: <Users className="h-5 w-5"/>,
-                title: "Comunidades Locais",
-                desc: "As comunidades em todo o país beneficiam do desenvolvimento de competências, criação de emprego e empreendedorismo impulsionado pela formação.",
-              },
-              {
-                icon: <TrendingUp className="h-5 w-5"/>,
-                title: "Economia Nacional",
-                desc: "A qualificação da força de trabalho contribui para o aumento da produtividade e para a posição competitiva de Moçambique na integração regional africana.",
-              },
-            ].map((g) => (
-              <div key={ g.title } className="flex gap-6 py-8">
-                <div className="mt-0.5 shrink-0 text-primary">{ g.icon }</div>
-                <div>
-                  <h3 className="text-base font-semibold text-foreground">{ g.title }</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{ g.desc }</p>
-                </div>
-              </div>
-            )) }
-          </div>
+        <div className="mt-20 flex flex-wrap gap-3">
+          <Button href="/contact">Contactar a ANEP</Button>
+          <Button href="/news" outline>
+            Ver notícias
+          </Button>
         </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── CLOSING ──────────────────────────────────────────────────────────────────
-
-function Closing() {
-  return (
-    <section className="border-t border-border/50 px-6 py-28 md:py-36">
-      <div className="mx-auto max-w-screen-xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Enquadramento
-          </p>
-          <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-foreground">
-            Um sistema integrado de qualificação nacional
-          </h2>
-          <p className="mx-auto mt-8 max-w-xl text-xl text-muted-foreground leading-relaxed font-light">
-            A plataforma do FNEP está integrada com o sistema{ " " }
-            <strong className="font-medium text-foreground">e-FRN do INSS</strong>, o
-            que permite recolher automaticamente informações sobre empregadores e
-            trabalhadores, tornando o processo de contribuição simples e eficiente.
-          </p>
-          <p className="mx-auto mt-6 max-w-xl text-xl text-muted-foreground leading-relaxed font-light">
-            A gestão do Fundo é assegurada pela{ " " }
-            <strong className="font-medium text-foreground">ANEP</strong> em articulação
-            com todos os parceiros sociais, com prestação de contas pública e regular,
-            orientada por resultados mensuráveis na empregabilidade dos cidadãos.
-          </p>
-
-          <div className="mt-16 flex flex-wrap justify-center gap-3">
-            { [
-              "Lei n.º 26/2022",
-              "ANEP",
-              "IEP Acreditadas",
-              "e-FRN · INSS",
-              "Tripartismo",
-              "Formação Técnica",
-              "Empregabilidade",
-              "Desenvolvimento Nacional",
-            ].map((t) => (
-              <span
-                key={ t }
-                className="rounded-full border border-border px-4 py-1.5 text-xs text-muted-foreground"
-              >
-                { t }
-              </span>
-            )) }
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ─── PAGE ─────────────────────────────────────────────────────────────────────
-
-export default function FNEPPage() {
-  return (
-    <div className="bg-background min-h-screen text-foreground antialiased">
-      <Hero/>
-      <WhatIs/>
-      <HowItWorks/>
-      <Financing/>
-      <Governance/>
-      <WhoBenefits/>
-      <Closing/>
-    </div>
-  )
+        <p className={`mt-12 max-w-xl text-xs leading-6 ${muted}`}>
+          Fontes: Lei 23/2014 e Lei 6/2016; ANEP; AIM (Maio de 2025); Banco Mundial (MozSkills). Valores e
+          dados sujeitos a actualização oficial.
+        </p>
+      </Section>
+    </main>
+  );
 }
