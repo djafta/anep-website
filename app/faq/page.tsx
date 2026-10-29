@@ -15,45 +15,37 @@ const faqCategories = [
       {
         question: "O que é a ANEP?",
         answer:
-          "A ANEP (Autoridade Nacional de Educação Profissional) é o órgão responsável por regular, supervisionar e promover a educação profissional em nível nacional. Nosso objetivo é garantir a qualidade e relevância das qualificações profissionais para atender às necessidades do mercado de trabalho e do desenvolvimento econômico do país.",
-        hasDetailedAnswer: true,
-        detailLink: "/faq/what-is-anep",
+          "A ANEP (Autoridade Nacional de Educação Profissional) é o órgão responsável por regular, supervisionar e promover a educação profissional a nível nacional. Nosso objetivo é garantir a qualidade e relevância das qualificações profissionais para atender às necessidades do mercado de trabalho e do desenvolvimento económico e social do país.",
       },
       {
         question: "Quais são as principais funções da ANEP?",
         answer:
-          "As principais funções da ANEP incluem: desenvolver e atualizar padrões de qualificação profissional, acreditar instituições de ensino profissional, supervisionar a qualidade dos cursos oferecidos, promover parcerias entre instituições de ensino e empresas, e fornecer orientação sobre carreiras e qualificações profissionais.",
-        hasDetailedAnswer: true,
-        detailLink: "/faq/funcoes-anep",
+          "As principais funções da ANEP incluem: desenvolver e actualizar qualificações profissionais, acreditar instituições de Educação Profissional, supervisionar a oferta das qualificações nas instituições de Educação Profissional, certificar os formandos, formadores e avaliadores de Educação Profissional e assegurar o envolvimento do sector produtivo na Educação Profissional.",
       },
       {
-        question: "Como a ANEP beneficia os estudantes e profissionais?",
+        question: "Como a ANEP beneficia os formandos e profissionais?",
         answer:
-          "A ANEP beneficia estudantes e profissionais ao garantir que as qualificações sejam reconhecidas nacionalmente, facilitando a mobilidade profissional. Também asseguramos que os cursos atendam às necessidades do mercado de trabalho, aumentando as chances de empregabilidade dos graduados.",
+          "A ANEP beneficia formandos e profissionais ao garantir que as qualificações sejam reconhecidas nacionalmente, facilitando a mobilidade profissional. Também assegura que as qualificações atendam às necessidades do mercado de trabalho, aumentando as chances de empregabilidade dos graduados.",
       },
     ],
   },
   {
-    category: "Qualificações e Cursos",
+    category: "Qualificações",
     questions: [
       {
-        question: "Como posso encontrar cursos acreditados pela ANEP?",
+        question: "Como posso encontrar qualificações acreditadas pela ANEP?",
         answer:
-          "Você pode encontrar cursos acreditados pela ANEP através do nosso site oficial, na seção 'Qualificações'. Lá, você encontrará uma lista completa de instituições e cursos aprovados, com opções de filtro por área de estudo e nível de qualificação.",
+          "Pode encontrar qualificações acreditadas pela ANEP no Catálogo Nacional de Qualificações Profissionais (CNQP). <a href='/cnqp'>Disponível aqui.</a",
       },
       {
         question: "Qual é a diferença entre os níveis de qualificação?",
         answer:
-          "A ANEP utiliza um sistema de 6 níveis de qualificação, variando do Nível 1 (habilidades básicas) ao Nível 6 (qualificações avançadas, equivalentes a graduação). Cada nível representa um aumento na complexidade das habilidades e conhecimentos adquiridos, bem como na autonomia e responsabilidade esperadas no ambiente de trabalho.",
-        hasDetailedAnswer: true,
-        detailLink: "/faq/niveis-qualificacao",
+          "A ANEP utiliza um sistema de 6 níveis de qualificação, variando do Nível 1 (habilidades básicas) ao Nível 6 (qualificações avançadas, equivalentes a graduação). Cada nível representa um aumento na complexidade das habilidades e conhecimentos adquiridos, bem como na autonomia e responsabilidade esperadas no ambiente de trabalho."
       },
       {
         question: "As qualificações da ANEP são reconhecidas internacionalmente?",
         answer:
           "Muitas das qualificações da ANEP são reconhecidas internacionalmente, graças a acordos de reconhecimento mútuo com autoridades de qualificação de outros países. No entanto, é sempre recomendável verificar o reconhecimento específico da qualificação no país onde você pretende trabalhar ou estudar.",
-        hasDetailedAnswer: true,
-        detailLink: "/faq/reconhecimento-internacional",
       },
     ],
   },
@@ -116,12 +108,7 @@ export default function Page() {
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="text-gray-600 mb-4">{ item.answer }</p>
-                    { item.hasDetailedAnswer && (
-                      <Link className="text-[#003B71] hover:underline flex items-center" href={ item.detailLink }>
-                        Ver mais <ChevronRight className="w-4 h-4 ml-1"/>
-                      </Link>
-                    ) }
+                    <p className="text-gray-600 mb-4" dangerouslySetInnerHTML={{__html:item.answer}}/>
                   </AccordionContent>
                 </AccordionItem>
               )) }
@@ -146,7 +133,7 @@ export default function Page() {
             href="/contact"
             className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 text-sm transition-colors duration-300"
           >
-            Entre em Contato
+            Entre em Contacto
           </Link>
         </motion.div>
       </main>

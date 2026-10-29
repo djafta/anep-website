@@ -24,13 +24,14 @@ export default async function HomePage() {
         <section className="py-32 ">
           <div className="max-w-7xl mx-auto px-4">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-4xl max-w-2xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6">
-                Autoridade Nacional da Educação Profissional
+              <h1 className="text-4xl max-w-2xl md:text-6xl font-bold text-white tracking-tight mb-6">
+                Autoridade Nacional de Educação Profissional
               </h1>
-              <p className="text-xl text-gray-500 mb-12 leading-relaxed max-w-xl">
-                Educação Profissional de Excelência: Competências para o trabalho e talento para o desenvolvimento de
-                Moçambique
-              </p>
+              <div className="text-xl text-white mb-12 leading-relaxed max-w-xl">
+                <p>Educação Profissional de Excelência</p>
+                <p>Competências para o trabalho</p>
+                <p>Talento para o desenvolvimento económico e social</p>
+              </div>
               <div className="flex flex-col sm:flex-row justify-start gap-4">
                 <Button
                   asChild
@@ -70,7 +71,7 @@ export default async function HomePage() {
       <section className="py-32 bg-gray-50" id="qualifications">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-left mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Catálogo Nacional das Qualificações Profissionais</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Catálogo Nacional de Qualificações Profissionais</h2>
             <p className="text-gray-600 max-w-xl md:pt-5">
               O CNQP é um instrumento dinâmico, que contém as competências padrão de todas as qualificações
               profissionais nacionais, registadas e certificáveis, informando sobre a oferta formativa disponível no
@@ -83,11 +84,11 @@ export default async function HomePage() {
 
       {/* Contact Section */ }
       <section className="py-32 px-4 bg-gray-50" id="contato">
-        <div className="max-w-7xl mx-auto px-4 py-10 rounded-2xl shadow-xl bg-white">
+        <div className="max-w-7xl mx-auto px-4 xl:px-8 py-10 rounded-2xl shadow-xl bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Entre em Contato</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Entre em Contacto</h2>
             <p className="text-gray-600 mb-8">
-              Nossa equipe está disponível para ajudar com suas dúvidas sobre educação profissional, certificações e
+              Nossa equipe está disponível para o(a) ajudar a esclarecer as dúvidas sobre educação profissional, certificações e
               processos de acreditação.
             </p>
             <Button

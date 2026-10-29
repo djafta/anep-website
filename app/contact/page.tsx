@@ -3,6 +3,8 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
 const contacts = {
   phone: "+25821484030",
+  mobile1: "+258823043568",
+  mobile2: "+258843899397",
 };
 
 export default function Page() {
@@ -28,7 +30,7 @@ export default function Page() {
               </div>
             </Link>
             <Link
-              className="flex items-center p-6 border border-gray-200 rounded-lg hover:bg-gray-50 transition duration-300"
+              className="flex items-center p-6 border border-gray-200 rounded-lg hover:bg-gray-50 transition duration-300 xl:hidden"
               href={ `tel:${ contacts.phone }` }
             >
               <Phone className="text-blue-500 mr-6" size={ 24 }/>
@@ -47,7 +49,7 @@ export default function Page() {
               <MapPin className="text-blue-500 mr-6 mt-1" size={ 24 }/>
               <div>
                 <h3 className="font-semibold">Endereço</h3>
-                <p className="text-gray-600 leading-relaxed">Av. 24 Mao Tsé Tung, nº 72</p>
+                <p className="text-gray-600 leading-relaxed">Av. Mao Tsé Tung, Esquina com Armando Tivane nº 72</p>
                 <p className="text-gray-600 leading-relaxed">Maputo, Moçambique</p>
               </div>
             </div>
@@ -56,6 +58,8 @@ export default function Page() {
               <div>
                 <h3 className="font-semibold">Telefone</h3>
                 <p className="text-gray-600 leading-relaxed">{ contacts.phone }</p>
+                <p className="text-gray-600 leading-relaxed">{ contacts.mobile1 }</p>
+                <p className="text-gray-600 leading-relaxed">{ contacts.mobile2 }</p>
               </div>
             </div>
             <div className="flex items-start">
@@ -79,7 +83,7 @@ export default function Page() {
       <section className="bg-gray-50 p-10 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4">Perguntas frequentes</h2>
         <p className="text-gray-600 mb-6 leading-relaxed">
-          Antes de entrar em contacto, consulte nossas perguntas frequentes para encontrar respostas rápidas para suas
+          Antes de entrar em contacto, consulte as perguntas frequentes para encontrar respostas rápidas à eventuais
           dúvidas.
         </p>
         <Link className="text-blue-500 hover:underline font-medium" href="/faq">
