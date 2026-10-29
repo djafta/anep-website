@@ -1,0 +1,35 @@
+
+services:
+  anep-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    expose:
+      - "3000"
+
+    networks:
+      - web-proxy
+
+    labels:
+      # Enable Traefik for this container.
+      - "traefik.enable=true"
+      - "traefik.docker.network=web-proxy"
+
+      # Configure the HTTPS router.
+      - "traefik.http.routers.anep-website.rule=Host(`beta.anep.gov.mz`)"
+      - "traefik.http.routers.anep-website.entrypoints=websecure"
+      - "traefik.http.routers.anep-website.tls=true"
+      - "traefik.http.routers.anep-website.tls.certresolver=anep"
+
+      # Configure the internal application port.
+      - "traefik.http.services.anep-website.loadbalancer.server.port=3000"
+
+networks:
+  web-proxy:
+    external: true
