@@ -1,10 +1,9 @@
-// app/fnep/page.tsx
-// Next.js (App Router) + Tailwind CSS + TypeScript
-// Server Component. Sem navbar nem footer: use os do seu layout.tsx.
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { BadgeCheck, GraduationCap, Layers, RefreshCw, Timer, type LucideIcon } from "lucide-react";
+
+import { GraduateVideos, type GraduateVideo } from "@/components/graduate-videos";
 
 export const metadata: Metadata = {
   title: "FNEP – Fundo Nacional de Educação Profissional",
@@ -36,25 +35,35 @@ const LEGAL = [
   {
     title: "Lei da Educação Profissional n 26/2022 (Revista)",
     text: "Regulamento da Autoridade Nacional de Educação Profissional.",
-  }
+  },
 ];
 
-const FINANCES = [
+const FINANCES: { icon: LucideIcon; title: string; text: string; href?: string }[] = [
   {
-    title: "Bolsas de estudo",
-    text: "Matrícula, propinas, material escolar, equipamento de protecção individual, internato, transporte e higiene menstrual.",
+    icon: GraduationCap,
+    title: "Estágios pré-profissionais",
+    text: "Destinados aos formandos das instituições de Educação Profissional.",
   },
   {
-    title: "Centros de Referência",
-    text: "Transformação de institutos técnico-profissionais em Centros de Referência (PROCREF), com laboratórios e oficinas apetrechados.",
+    icon: RefreshCw,
+    title: "Actualização e requalificação",
+    text: "Formação profissional para actualização e ou requalificação profissional dos trabalhadores da empresa contribuinte.",
   },
   {
-    title: "Parcerias com empresas",
-    text: "Comparticipação do empresariado, para que a formação responda ao que o mercado de trabalho realmente precisa.",
+    icon: Layers,
+    title: "Categorias do qualificador profissional",
+    text: "Formação profissional nas categorias previstas no qualificador profissional.",
   },
   {
-    title: "Contratos-programa",
-    text: "Financiamento às Instituições de Educação Profissional com metas e resultados acordados.",
+    icon: Timer,
+    title: "Qualificações de curta duração",
+    text: "Relacionadas com as qualificações profissionais aprovadas e acreditadas pela ANEP.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Reconhecimento de Competências Adquiridas",
+    text: "Acções de Reconhecimento de Competências Adquiridas ao longo da vida.",
+    href: "/rca",
   },
 ];
 
@@ -73,10 +82,18 @@ const HOW = [
   {
     title: "Alocação de recursos",
     text: "Instituições acreditadas e programas elegíveis recebem fundos em forma de subvenções ou contrato-programa.",
-  }
+  },
 ];
 
-/* ---------- Auxiliares ---------- */
+const baseUrl = process.env.NEXT_PUBLIC_STORAGE_URL;
+
+const GRADUATES: GraduateVideo[] = [
+  { course: "Electricidade", icon: "zap", src: `${baseUrl}/fnep/valorizacao-da-rapariga-na-electricidade.mp4` },
+  { course: "Mecânica", icon: "wrench", src: `${baseUrl}/fnep/valorizacao-da-rapariga-na-mecanica.mp4` },
+  { course: "TICs", icon: "cpu", src: `${baseUrl}/fnep/valorizacao-da-rapariga-nas-tic.mp4` },
+  { course: "Agricultura", icon: "sprout", src: `${baseUrl}/fnep/valorizacao-da-rapariga-na-agricultura.mp4` },
+  // { course: "Electricidade", icon: "zap", youtubeId: "XXXXXXXXXXX", poster: `${baseUrl}/videos/electricidade.jpg`, name: "Nome", detail: "Instituto Industrial de Maputo" },
+];
 
 const muted = "text-slate-600 dark:text-slate-400";
 const rule = "border-slate-200 dark:border-slate-800";
@@ -94,15 +111,14 @@ function Section({
 }) {
   return (
     <section
-      id={ id }
-      className={ `py-24 md:py-36 ${ tone === "soft" ? "bg-slate-50/70 dark:bg-slate-900/50" : "" }` }
+      id={id}
+      className={`py-24 md:py-36 ${tone === "soft" ? "bg-slate-50/70 dark:bg-slate-900/50" : ""}`}
     >
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-12 md:gap-16 md:px-10">
-        <h2
-          className="text-3xl font-semibold leading-[1.15] tracking-tight text-slate-900 dark:text-slate-100 md:sticky md:top-24 md:col-span-4 md:self-start md:text-4xl">
-          { title }
+        <h2 className="text-3xl font-semibold leading-[1.15] tracking-tight text-slate-900 dark:text-slate-100 md:sticky md:top-24 md:col-span-4 md:self-start md:text-4xl">
+          {title}
         </h2>
-        <div className="md:col-span-8">{ children }</div>
+        <div className="md:col-span-8">{children}</div>
       </div>
     </section>
   );
@@ -119,14 +135,14 @@ function Button({
 }) {
   return (
     <Link
-      href={ href }
-      className={ `inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17396e] ${
+      href={href}
+      className={`inline-flex items-center rounded-full px-7 py-3.5 text-[15px] font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17396e] ${
         outline
           ? "border border-slate-300 text-slate-800 hover:border-[#17396e] hover:text-[#17396e] dark:border-slate-700 dark:text-slate-200"
           : "bg-[#17396e] text-white hover:bg-[#122d58]"
-      }` }
+      }`}
     >
-      { children }
+      {children}
     </Link>
   );
 }
@@ -136,17 +152,15 @@ function Button({
 export default function FnepPage() {
   return (
     <main className="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
-      {/* Abertura */ }
-      <header
-        className="bg-gradient-to-b from-slate-50 to-white pb-24 pt-28 dark:from-slate-900 dark:to-slate-950 md:pb-32 md:pt-40">
+      {/* Abertura */}
+      <header className="bg-gradient-to-b from-slate-50 to-white pb-24 pt-28 dark:from-slate-900 dark:to-slate-950 md:pb-32 md:pt-40">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
-          <h1
-            className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[80px]">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[80px]">
             Fundo Nacional de Educação Profissional
           </h1>
-          <p className={ `mt-8 max-w-xl text-xl leading-relaxed ${ muted }` }>
-            O FNEP é um fundo através do qual são recolhidas e geridas as contribuições monetárias para o financiamento
-            da formação, no âmbito do Subsistema de Educação Profissional.
+          <p className={`mt-8 max-w-xl text-xl leading-relaxed ${muted}`}>
+            O FNEP é um fundo através do qual são recolhidas e geridas as contribuições monetárias para o
+            financiamento da formação, no âmbito do Subsistema de Educação Profissional.
           </p>
           <div className="mt-12 flex flex-wrap gap-3">
             <Button href="#financia">O que financia</Button>
@@ -155,26 +169,25 @@ export default function FnepPage() {
             </Button>
           </div>
 
-          <dl className={ `mt-24 grid grid-cols-2 gap-y-12 border-t pt-12 md:mt-32 md:grid-cols-3 ${ rule }` }>
-            { STATS.map((s) => (
-              <div key={ s.label }>
-                <dt className="sr-only">{ s.label }</dt>
+          <dl className={`mt-24 grid grid-cols-2 gap-y-12 border-t pt-12 md:mt-32 md:grid-cols-3 ${rule}`}>
+            {STATS.map((s) => (
+              <div key={s.label}>
+                <dt className="sr-only">{s.label}</dt>
                 <dd>
-                  <span
-                    className="block text-4xl font-light tracking-tight text-[#17396e] dark:text-blue-300 md:text-5xl">
-                    { s.value }
+                  <span className="block text-4xl font-light tracking-tight text-[#17396e] dark:text-blue-300 md:text-5xl">
+                    {s.value}
                   </span>
-                  <span className={ `mt-2 block max-w-[14rem] text-sm ${ muted }` }>{ s.label }</span>
+                  <span className={`mt-2 block max-w-[14rem] text-sm ${muted}`}>{s.label}</span>
                 </dd>
               </div>
-            )) }
+            ))}
           </dl>
         </div>
       </header>
 
-      {/* Sobre */ }
+      {/* Sobre */}
       <Section id="sobre" title="Um fundo para financiar a formação">
-        <div className={ `max-w-2xl space-y-7 text-lg leading-8 ${ muted }` }>
+        <div className={`max-w-2xl space-y-7 text-lg leading-8 ${muted}`}>
           <p className="text-xl leading-9 text-slate-800 dark:text-slate-200">
             O FNEP é o mecanismo de financiamento criado no âmbito da Reforma da Educação Profissional, com
             gestão e financiamento partilhados entre o Estado, o sector empresarial e parceiros de
@@ -182,13 +195,13 @@ export default function FnepPage() {
           </p>
           <p>
             É administrado pela Autoridade Nacional de Educação Profissional (ANEP), órgão regulador e de
-            garantia de qualidade do sector. Além do orçamento do Estado, o Fundo conta com a
-            comparticipação do sector productivo e parceiros de cooperação.
+            garantia de qualidade do sector. Além do orçamento do Estado, o Fundo conta com a comparticipação
+            do sector productivo e parceiros de cooperação.
           </p>
         </div>
       </Section>
 
-      {/* Missão: único bloco de cor da página */ }
+      {/* Missão: único bloco de cor da página */}
       <section className="bg-[#17396e] py-24 text-white md:py-32">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <p className="max-w-4xl text-2xl font-medium leading-snug tracking-tight md:text-4xl md:leading-[1.25]">
@@ -198,84 +211,118 @@ export default function FnepPage() {
         </div>
       </section>
 
-      {/* Base legal */ }
+      {/* Base legal */}
       <Section id="base" title="Base legal e institucional">
-        <ul className={ `divide-y border-y ${ rule } divide-slate-200 dark:divide-slate-800` }>
-          { LEGAL.map((i) => (
-            <li key={ i.title } className="grid gap-3 py-9 md:grid-cols-5 md:gap-10">
-              <h3 className="text-lg font-medium md:col-span-2">{ i.title }</h3>
-              <p className={ `leading-7 md:col-span-3 ${ muted }` }>{ i.text }</p>
+        <ul className={`divide-y border-y ${rule} divide-slate-200 dark:divide-slate-800`}>
+          {LEGAL.map((i) => (
+            <li key={i.title} className="grid gap-3 py-9 md:grid-cols-5 md:gap-10">
+              <h3 className="text-lg font-medium md:col-span-2">{i.title}</h3>
+              <p className={`leading-7 md:col-span-3 ${muted}`}>{i.text}</p>
             </li>
-          )) }
+          ))}
         </ul>
-        <p className={ `mt-8 text-sm ${ muted }` }>
+        <p className={`mt-8 text-sm ${muted}`}>
           Para o texto integral e regulamentos aplicáveis, consulte o Boletim da República e os documentos
           oficiais da ANEP.
         </p>
       </Section>
 
-      {/* O que financia */ }
+      {/* O que financia */}
       <Section id="financia" title="O que o FNEP financia" tone="soft">
-        <div className="grid gap-x-16 gap-y-16 sm:grid-cols-2">
-          { FINANCES.map((i) => (
-            <article key={ i.title } className={ `border-t pt-6 ${ rule }` }>
-              <h3 className="text-xl font-medium">{ i.title }</h3>
-              <p className={ `mt-3 leading-7 ${ muted }` }>{ i.text }</p>
-            </article>
-          )) }
+        <p className="max-w-2xl text-xl leading-9 text-slate-800 dark:text-slate-200">
+          São financiáveis pelo FNEP as seguintes acções:
+        </p>
+        <div className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2">
+          {FINANCES.map((i, idx) => {
+            const Icon = i.icon;
+            const last = idx === FINANCES.length - 1;
+            return (
+              <article key={i.title} className={`border-t pt-8 ${rule} ${last ? "sm:col-span-2" : ""}`}>
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-[#17396e]/[0.07] text-[#17396e] dark:bg-blue-300/10 dark:text-blue-300">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+                <h3 className="mt-6 text-xl font-medium">{i.title}</h3>
+                <p className={`mt-3 max-w-xl leading-7 ${muted}`}>{i.text}</p>
+                {i.href && (
+                  <Link
+                    href={i.href}
+                    className="mt-5 inline-block text-[15px] font-medium text-[#17396e] underline-offset-4 hover:underline dark:text-blue-300"
+                  >
+                    Saber mais sobre o RCA →
+                  </Link>
+                )}
+              </article>
+            );
+          })}
         </div>
       </Section>
 
-      {/* Destaque */ }
+      {/* Destaque */}
       <Section title="Bolsas MozSkills para raparigas">
         <div className="grid gap-16 lg:grid-cols-5">
-          <div className={ `space-y-6 leading-8 lg:col-span-3 ${ muted }` }>
+          <div className={`space-y-6 leading-8 lg:col-span-3 ${muted}`}>
             <p className="text-xl leading-9 text-slate-800 dark:text-slate-200">
               Em parceria com o Banco Mundial, o FNEP assinou contratos-programa para financiar bolsas a
               3.531 raparigas em 20 Instituições de Educação Profissional.
             </p>
             <p>
-              São 14 Institutos Técnicos Profissionais e 6 Centros de Formação Profissional, nas
-              províncias de Cabo Delgado, Niassa, Nampula, Zambézia, Tete, Manica, Sofala, Inhambane, Gaza, Província de
-              Maputo, Cidade de Maputo.
+              São 14 Institutos Técnicos Profissionais e 6 Centros de Formação Profissional, nas províncias
+              de Cabo Delgado, Niassa, Nampula, Zambézia, Tete, Manica, Sofala, Inhambane, Gaza, Província
+              de Maputo, Cidade de Maputo.
             </p>
             <p>
               O objectivo é aumentar o acesso e a retenção de raparigas, sobretudo no ramo industrial,
               tradicionalmente frequentado por rapazes.
             </p>
+            <p>
+              <Link
+                href="#vozes"
+                className="inline-block text-[15px] font-medium text-[#17396e] underline-offset-4 hover:underline dark:text-blue-300"
+              >
+                Ouvir as graduadas →
+              </Link>
+            </p>
           </div>
 
           <ol className="relative space-y-10 border-l border-slate-300 pl-8 dark:border-slate-700 lg:col-span-2">
-            { TIMELINE.map((m) => (
-              <li key={ m.year } className="relative">
-                <span
-                  className="absolute -left-[37px] top-2 h-2.5 w-2.5 rounded-full bg-[#17396e] ring-4 ring-white dark:bg-blue-300 dark:ring-slate-950"/>
-                <span className="text-sm font-medium text-[#17396e] dark:text-blue-300">{ m.year }</span>
-                <p className={ `mt-1 leading-7 ${ muted }` }>{ m.text }</p>
+            {TIMELINE.map((m) => (
+              <li key={m.year} className="relative">
+                <span className="absolute -left-[37px] top-2 h-2.5 w-2.5 rounded-full bg-[#17396e] ring-4 ring-white dark:bg-blue-300 dark:ring-slate-950" />
+                <span className="text-sm font-medium text-[#17396e] dark:text-blue-300">{m.year}</span>
+                <p className={`mt-1 leading-7 ${muted}`}>{m.text}</p>
               </li>
-            )) }
+            ))}
           </ol>
         </div>
       </Section>
 
-      {/* Como funciona */ }
-      <Section title="Gestão e prestação de contas" tone="soft">
-        <p className={ `mb-14 max-w-xl text-lg leading-8 ${ muted }` }>
+      {/* Vozes das graduadas */}
+      <Section id="vozes" title="Vozes das graduadas" tone="soft">
+        <p className="max-w-2xl text-xl leading-9 text-slate-800 dark:text-slate-200">
+          As graduadas falam sobre os incentivos que tiveram para seguir cursos técnicos geralmente
+          frequentados por rapazes.
+        </p>
+        <div className="mt-14">
+          <GraduateVideos videos={GRADUATES} />
+        </div>
+      </Section>
+
+      {/* Como funciona */}
+      <Section title="Gestão e prestação de contas">
+        <p className={`mb-14 max-w-xl text-lg leading-8 ${muted}`}>
           Um modelo participativo, regulado pela ANEP e articulado com o Ministério da Educação e Cultura.
         </p>
         <div className="grid gap-12 sm:grid-cols-2">
-          { HOW.map((i) => (
-            <div key={ i.title } className={ `border-t pt-6 ${ rule }` }>
-              <h3 className="text-lg font-medium">{ i.title }</h3>
-              <p className={ `mt-3 text-[15px] leading-7 ${ muted }` }>{ i.text }</p>
+          {HOW.map((i) => (
+            <div key={i.title} className={`border-t pt-6 ${rule}`}>
+              <h3 className="text-lg font-medium">{i.title}</h3>
+              <p className={`mt-3 text-[15px] leading-7 ${muted}`}>{i.text}</p>
             </div>
-          )) }
+          ))}
         </div>
 
         <div className="mt-20 flex flex-wrap gap-3">
-          <Button href="/contact">
-            Aceder a SGCC-Fnep
-          </Button>
+          <Button href="/contact">Aceder a SGCC-Fnep</Button>
           <Button href="/contact" outline>
             Contactar a ANEP
           </Button>
