@@ -153,6 +153,7 @@
 
 .home-bg {
     background-image: url(/home-hero.png);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position-x: 30%;
 }

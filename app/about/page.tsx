@@ -138,33 +138,6 @@ export default async function AboutPage() {
           </div>
         </section>
         <TeamSection/>
-        <section className="py-24 px-4 bg-primary text-white">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Nosso Impacto</h2>
-            <p className="text-xl text-white mb-12 max-w-3xl mx-auto">
-              A ANEP tem transformado vidas e impulsionado o desenvolvimento econômico através da educação
-              profissional de excelência.
-            </p>
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">200+</h3>
-                <p className="text-white">Qualificações Desenvolvidas</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">10+</h3>
-                <p className="text-white">Instituições Parceiras</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">50+</h3>
-                <p className="text-white">Empregadores Colaboradores</p>
-              </div>
-              <div>
-                <h3 className="text-4xl font-bold text-secondary mb-2">1M+</h3>
-                <p className="text-white">Estudantes Beneficiados</p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );
